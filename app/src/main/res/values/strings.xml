@@ -9,4 +9,29 @@
     </string>
     <string name="app_title">SKUT</string>
     <string name="splash_content_description">splash_image</string>
+    <string-array name="data_question">
+        <item>Acne</item>
+        <item>Cancer</item>
+        <item>Millia</item>
+        <item>Rosacea</item>
+        <item>Eczema</item>
+    </string-array>
+    <string-array name="data_answer">
+        <item>Acne is a skin condition that occurs when your hair follicles become plugged with oil and dead skin cells. It causes whiteheads, blackheads or pimples. Acne is most common among teenagers, though it affects people of all ages.</item>
+        <item>Skin cancer is the out-of-control growth of abnormal cells in the epidermis, the outermost skin layer, caused by unrepaired DNA damage that triggers mutations. These mutations lead the skin cells to multiply rapidly and form malignant tumors.</item>
+        <item>Milia are small, dome-shaped bumps that are usually white or yellow. They’re usually not itchy or painful. However, they may cause discomfort for some people. Rough sheets or clothing may cause milia to appear irritated and red.</item>
+        <item>Rosacea (roe-ZAY-she-uh) is a common skin condition that causes blushing or flushing and visible blood vessels in your face. It may also produce small, pus-filled bumps. </item>
+        <item>Eczema is a term related to inflammation of the skin. This disorder is also known as dermatitis. When it occurs, an allergic skin reaction can be characterized by the appearance of redness, rash, and itching.</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="daily_trivia">Daily Trivia</string>
+    <string name="do_you_know_that_moisturizer_is_the_best_defense_against_dry_skin">Do you know that moisturizer is the best defense against dry skin?</string>
+    <string name="beauty_tips">Beauty Tips</string>
+    <string name="face_scan_history">Face Scan History</string>
+    <string name="welcome">Welcome</string>
+    <string name="common_facial_skin_disease">Common Facial Skin Disease</string>
+    <string name="daily_treatment">Daily Treatment</string>
+    <string name="disease_name">Disease Name</string>
+    <string name="disease_description">Disease Description</string>
 </resources>

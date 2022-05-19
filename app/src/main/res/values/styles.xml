@@ -47,4 +47,9 @@
         <style name="TextContent.Bold.Big.Center">
             <item name="android:gravity">center</item>
         </style>
+    <style name="Widget.BottomNavigationView"
+        parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/open_sans</item>
+        <item name="android:minHeight">0dp</item>
+    </style>
 </resources>

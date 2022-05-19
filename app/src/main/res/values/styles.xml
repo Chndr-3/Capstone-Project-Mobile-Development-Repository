@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <style name="SplashScreen" parent="Theme.AppCompat.DayNight.NoActionBar"/>
+
+        <style name="TextContent">
+            <item name="android:layout_width">0dp</item>
+            <item name="android:layout_height">wrap_content</item>
+            <item name="android:fontFamily">@font/open_sans</item>
+        </style>
+
+        <style name="TextContent.Big">
+            <item name="android:textSize">24sp</item>
+        </style>
+
+        <style name="TextContent.Medium">
+            <item name="android:textSize">20sp</item>
+        </style>
+
+        <style name="TextContent.small">
+            <item name="android:textSize">16sp</item>
+        </style>
+
+        <style name="TextContent.Bold">
+            <item name="android:textStyle">bold</item>
+        </style>
+
+        <style name="TextContent.Bold.Big">
+            <item name="android:textSize">24sp</item>
+        </style>
+
+        <style name="TextContent.Bold.Medium">
+            <item name="android:textSize">20sp</item>
+        </style>
+
+        <style name="TextContent.Bold.small">
+            <item name="android:textSize">16sp</item>
+        </style>
+
+        <style name="TextContent.Center">
+            <item name="android:gravity">center</item>
+        </style>
+
+        <style name="TextContent.Bold.Center">
+            <item name="android:gravity">center</item>
+        </style>
+
+        <style name="TextContent.Bold.Big.Center">
+            <item name="android:gravity">center</item>
+        </style>
+</resources>

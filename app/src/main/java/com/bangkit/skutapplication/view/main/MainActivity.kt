@@ -1,7 +1,8 @@
-package com.bangkit.skutapplication
+package com.bangkit.skutapplication.view.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.bangkit.skutapplication.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

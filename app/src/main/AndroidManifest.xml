@@ -10,18 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SkutApplication">
         <activity
+            android:name=".view.beautytips.BeautyTipsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.disease.DiseaseActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.main.SplashScreenActivity"
             android:exported="true"
             android:theme="@style/SplashScreen">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".view.main.MainActivity"
-            android:exported="true"/>
+            android:exported="true" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

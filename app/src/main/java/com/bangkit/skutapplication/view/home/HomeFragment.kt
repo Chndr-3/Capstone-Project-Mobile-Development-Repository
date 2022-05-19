@@ -1,5 +1,6 @@
 package com.bangkit.skutapplication.view.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import com.bangkit.skutapplication.R
 import java.util.ArrayList
 import com.bangkit.skutapplication.databinding.FragmentHomeBinding
 import com.bangkit.skutapplication.model.ViewPagerItem
+import com.bangkit.skutapplication.view.beautytips.BeautyTipsActivity
 
 
 class HomeFragment : Fragment() {
@@ -26,6 +28,10 @@ class HomeFragment : Fragment() {
 
         setHasOptionsMenu(true)
         (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+        binding.buttonBeautyTips.setOnClickListener {
+            val intent = Intent(context, BeautyTipsActivity::class.java)
+            startActivity(intent)
+        }
 
     }
     private val listViewPagerItem: ArrayList<ViewPagerItem>

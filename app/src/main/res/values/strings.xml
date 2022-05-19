@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">SkutApplication</string>
+    <string name="my_formatted_text">
+    <font color="@color/black">Your</font>
+    <font color="#6ED2F0">Sk<font color="@color/black">in</font></font>
+    <font color="@color/black">Sol<font color="#6ED2F0">ut</font>ion</font>
+
+
+    </string>
+    <string name="app_title">SKUT</string>
+    <string name="splash_content_description">splash_image</string>
 </resources>

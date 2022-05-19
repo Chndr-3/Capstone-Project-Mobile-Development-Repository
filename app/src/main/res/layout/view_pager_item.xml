@@ -18,7 +18,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/diseaseName"
+                android:id="@+id/beautyTips"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -35,7 +35,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/diseaseDescription"
+                android:id="@+id/beautyDescription"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -49,7 +49,7 @@
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/diseaseName" />
+                app:layout_constraintTop_toBottomOf="@+id/beautyTips" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

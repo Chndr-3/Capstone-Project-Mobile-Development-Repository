@@ -8,4 +8,21 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#63AAC5</color>
+
+    <color name="blue_700">#0E4E96</color>
+    <color name="blue_500">#1D70BE</color>
+    <color name="blue_200">#C6DFF5</color>
+    <color name="grey_200">#C5CAE9</color>
+
+    <color name="pink">#F06292</color>
+    <color name="navi">#2D3D4F</color>
+    <color name="purple">#A155B9</color>
+
+    <color name="red_200">#F06292</color>
+    <color name="red_700">#AD1457</color>
+
+    <color name="pink_500">#D81B60</color>
+    <color name="pink_200">#FF8FAF</color>
+
+    <color name="mtrl_textinput_default_box_stroke_color">#63AAC5</color>
 </resources>

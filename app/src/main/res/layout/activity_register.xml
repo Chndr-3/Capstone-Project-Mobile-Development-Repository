@@ -6,4 +6,127 @@
     android:layout_height="match_parent"
     tools:context=".view.register.RegisterActivity">
 
+    <TextView
+        android:id="@+id/tvRegister"
+        style="@style/TextContent.Bold.Big"
+        android:text="@string/register"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvFillData"
+        app:layout_constraintStart_toStartOf="@+id/tvFillData" />
+
+    <TextView
+        android:id="@+id/tvFillData"
+        style="@style/TextContent.Medium"
+        android:layout_marginBottom="24dp"
+        android:text="@string/fill_your_data_correctly"
+        android:textColor="?android:textColorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/tvName"
+        app:layout_constraintStart_toStartOf="@+id/tvEmail" />
+
+    <TextView
+        android:id="@+id/tvName"
+        style="@style/TextContent.Bold.Medium"
+        android:text="@string/name"
+        android:textColor="?android:textColorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/nameEditTextLayout"
+        app:layout_constraintStart_toStartOf="@+id/emailEditTextLayout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameEditTextLayout"
+        style="@style/TextInputLayoutStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvEmail"
+        app:layout_constraintEnd_toEndOf="@+id/emailEditTextLayout"
+        app:layout_constraintStart_toStartOf="@+id/emailEditTextLayout"
+        app:startIconDrawable="@drawable/ic_baseline_person_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tvEmail"
+        style="@style/TextContent.Bold.Medium"
+        android:text="@string/email"
+        android:textColor="?android:textColorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/emailEditTextLayout"
+        app:layout_constraintStart_toStartOf="@+id/emailEditTextLayout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailEditTextLayout"
+        style="@style/TextInputLayoutStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:startIconDrawable="@drawable/ic_baseline_email_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tvPassword"
+        style="@style/TextContent.Bold.Medium"
+        android:layout_marginTop="16dp"
+        android:text="@string/password"
+        android:textColor="?android:textColorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/emailEditTextLayout"
+        app:layout_constraintTop_toBottomOf="@+id/emailEditTextLayout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordEditTextLayout"
+        style="@style/TextInputLayoutStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/emailEditTextLayout"
+        app:layout_constraintStart_toStartOf="@+id/tvPassword"
+        app:layout_constraintTop_toBottomOf="@+id/tvPassword"
+        app:startIconDrawable="@drawable/ic_baseline_lock_24">
+
+        <com.bangkit.skutapplication.view.customview.MyEditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.bangkit.skutapplication.view.customview.MyButton
+        android:id="@+id/registerButton"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/register"
+        app:layout_constraintEnd_toEndOf="@+id/passwordEditTextLayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/passwordEditTextLayout"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -55,7 +55,7 @@
     <string name="register">Register</string>
 
     <string name="please_login_first">Please <font color="#63AAC5">login</font> first</string>
-    <string name="fill_your_data_correctly">Fill your <font color="#A155B9">data</font> correctly</string>
+    <string name="fill_your_data_correctly">Fill your <font color="#63AAC5">data</font> correctly</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="name">Name</string>

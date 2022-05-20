@@ -30,12 +30,12 @@ class BeautyTipsAdapter(private val listTips: List<BeautyTipsItem>) : RecyclerVi
         viewHolder.beautyDescription.visibility = if(isVisible) View.VISIBLE else View.GONE
         viewHolder.card.setOnClickListener{
             tips.isVisible = !tips.isVisible
-            if(isVisible) {
-                viewHolder.dropDown.setImageResource(R.drawable.ic_baseline_arrow_drop_up_24)
-            }else{
-                viewHolder.dropDown.setImageResource(R.drawable.ic_baseline_arrow_drop_down_24)
-            }
             notifyItemChanged(position)
+        }
+        if(isVisible) {
+            viewHolder.dropDown.setImageResource(R.drawable.ic_baseline_arrow_drop_up_24)
+        }else{
+            viewHolder.dropDown.setImageResource(R.drawable.ic_baseline_arrow_drop_down_24)
         }
 
     }

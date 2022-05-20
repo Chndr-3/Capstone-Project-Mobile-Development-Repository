@@ -34,4 +34,18 @@
     <string name="daily_treatment">Daily Treatment</string>
     <string name="disease_name">Disease Name</string>
     <string name="disease_description">Disease Description</string>
+
+    <string name="password_error">Password minimum 6 characters</string>
+    <string name="login">Login</string>
+    <string name="does_not_have_an_account">Doesn\'t have an account?</string>
+    <string name="register">Register</string>
+
+    <string name="please_login_first">Please <font color="#63AAC5">login</font> first</string>
+    <string name="fill_your_data_correctly">Fill your <font color="#A155B9">data</font> correctly</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="name">Name</string>
+
+    <string name="account_created">Account Successfully Created</string>
+    <string name="logout">Logout</string>
 </resources>

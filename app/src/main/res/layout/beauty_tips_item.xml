@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
@@ -20,7 +22,8 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="20dp"
             android:backgroundTint="@color/blue"
             app:cardCornerRadius="90dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,13 +49,14 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:fontFamily="@font/open_sans_bold"
+            android:paddingBottom="10dp"
             android:text="@string/disease_name"
             android:textAlignment="viewStart"
             android:textColor="#000000"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/materialCardView2"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/dropDown"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/materialCardView2"
             app:layout_constraintTop_toTopOf="@+id/materialCardView2"
@@ -75,6 +79,17 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/materialCardView2"
             app:layout_constraintTop_toBottomOf="@+id/beautyTips" />
+
+        <ImageView
+            android:id="@+id/dropDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/beautyTips"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.666"
+            app:srcCompat="@drawable/ic_baseline_arrow_drop_down_24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

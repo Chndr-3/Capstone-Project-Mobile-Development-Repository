@@ -17,8 +17,8 @@ class ViewPagerAdapter(private val listDisease: List<ViewPagerItem>) :
     RecyclerView.Adapter<ViewPagerAdapter.Pager2ViewHolder>() {
 
     inner class Pager2ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val itemDiseaseName : TextView = itemView.findViewById(R.id.diseaseName)
-        val itemDiseaseDescription: TextView = itemView.findViewById(R.id.diseaseDescription)
+        val itemDiseaseName : TextView = itemView.findViewById(R.id.beautyTips)
+        val itemDiseaseDescription: TextView = itemView.findViewById(R.id.beautyDescription)
         fun bind(list: ViewPagerItem) {
             itemDiseaseName.text = list.diseaseName
             itemDiseaseDescription.text = list.diseaseDescription

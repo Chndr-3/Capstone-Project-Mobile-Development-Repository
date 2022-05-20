@@ -23,6 +23,20 @@
         <item>Rosacea (roe-ZAY-she-uh) is a common skin condition that causes blushing or flushing and visible blood vessels in your face. It may also produce small, pus-filled bumps. </item>
         <item>Eczema is a term related to inflammation of the skin. This disorder is also known as dermatitis. When it occurs, an allergic skin reaction can be characterized by the appearance of redness, rash, and itching.</item>
     </string-array>
+    <string-array name="number">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="beautyTips">
+        <item>Use multiple face masks to maximize your results.</item>
+        <item>Moisturize both day and night.</item>
+
+    </string-array>
+    <string-array name="beautyDescription">
+        <item>Skincare is not one-size-fits-all, so customizing your routine can help get you the best results for your complexion. "Multi-masking is when multiple facial masks are used or layered simultaneously on the skin to combat different skin concerns at one time," explains New York City aesthetician Cecilia Wong.</item>
+        <item>"The best times to moisturize are right after you get out of the shower and right before you go to bed," explained Dr. Janet Prystowsky M.D., an NYC-based dermatologist. Avoid lotions with heavy fragrances and make sure you find a moisturizer gentle enough for every day use with zero irritation.</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="daily_trivia">Daily Trivia</string>

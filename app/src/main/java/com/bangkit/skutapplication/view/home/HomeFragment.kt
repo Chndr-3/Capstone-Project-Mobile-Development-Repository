@@ -28,10 +28,7 @@ class HomeFragment : Fragment() {
 
         setHasOptionsMenu(true)
         (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
-        binding.buttonBeautyTips.setOnClickListener {
-            val intent = Intent(context, BeautyTipsActivity::class.java)
-            startActivity(intent)
-        }
+
 
     }
     private val listViewPagerItem: ArrayList<ViewPagerItem>
@@ -62,6 +59,10 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         showViewPager()
+        binding.buttonBeautyTips.setOnClickListener {
+            val intent = Intent(activity, BeautyTipsActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     companion object {

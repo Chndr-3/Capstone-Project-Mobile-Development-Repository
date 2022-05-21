@@ -62,4 +62,8 @@
 
     <string name="account_created">Account Successfully Created</string>
     <string name="logout">Logout</string>
+
+    <string name="home">Home</string>
+    <string name="camera">Camera</string>
+    <string name="profile">Profile</string>
 </resources>

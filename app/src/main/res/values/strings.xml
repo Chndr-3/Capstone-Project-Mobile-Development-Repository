@@ -31,17 +31,23 @@
     <string-array name="beautyTips">
         <item>Use multiple face masks to maximize your results.</item>
         <item>Moisturize both day and night.</item>
+        <item>Cleansing twice.</item>
+        <item>Cool-water cleanse</item>
+        <item>Facial massage</item>
 
     </string-array>
     <string-array name="beautyDescription">
         <item>Skincare is not one-size-fits-all, so customizing your routine can help get you the best results for your complexion. "Multi-masking is when multiple facial masks are used or layered simultaneously on the skin to combat different skin concerns at one time," explains New York City aesthetician Cecilia Wong.</item>
         <item>"The best times to moisturize are right after you get out of the shower and right before you go to bed," explained Dr. Janet Prystowsky M.D., an NYC-based dermatologist. Avoid lotions with heavy fragrances and make sure you find a moisturizer gentle enough for every day use with zero irritation.</item>
+        <item>Using two cleansers helps to remove debris, makeup, and oil from the day.</item>
+        <item>Hot water is too intense for your face. Use lukewarm or cool water, and avoid washing your face in the shower unless you turn down the temp.</item>
+    <item>A face massage or face roller can help de-puff your skin. A massaging tool can increase blood flow, leaving you looking awake and fresh.</item>
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="daily_trivia">Daily Trivia</string>
     <string name="do_you_know_that_moisturizer_is_the_best_defense_against_dry_skin">Do you know that moisturizer is the best defense against dry skin?</string>
-    <string name="beauty_tips">Beauty Tips</string>
+    <string name="beauty_tips">Beauty Tips:</string>
     <string name="face_scan_history">Face Scan History</string>
     <string name="welcome">Welcome</string>
     <string name="common_facial_skin_disease">Common Facial Skin Disease</string>

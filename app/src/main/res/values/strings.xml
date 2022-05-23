@@ -71,4 +71,6 @@
     <string name="profile">Profile</string>
     <string name="change_language">Ganti Bahasa</string>
     <string name="edit_profil">Edit Profil</string>
+    <string name="choose_pictures">Pilih Gambar</string>
+    <string name="save">simpan</string>
 </resources>

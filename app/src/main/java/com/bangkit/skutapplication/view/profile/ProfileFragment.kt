@@ -1,5 +1,6 @@
 package com.bangkit.skutapplication.view.profile
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
@@ -7,27 +8,28 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.bangkit.skutapplication.R
-import com.bangkit.skutapplication.databinding.FragmentHomeBinding
+import androidx.core.net.toUri
+import androidx.datastore.preferences.preferencesDataStore
+import androidx.lifecycle.ViewModelProvider
 import com.bangkit.skutapplication.databinding.FragmentProfileBinding
+import com.bangkit.skutapplication.datastore.UserPreference
+import com.bangkit.skutapplication.datastore.ViewModelFactory
+import com.bangkit.skutapplication.view.profile.editprofile.EditProfileActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class ProfileFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private lateinit var binding: FragmentProfileBinding
+    private lateinit var viewModel: ProfileViewModel
+    private val Context.dataStore by preferencesDataStore(name = "profile")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = FragmentProfileBinding.inflate(layoutInflater)
-
 
     }
 
@@ -45,7 +47,27 @@ class ProfileFragment : Fragment() {
         binding.buttonLanguage.setOnClickListener {
             startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
         }
+        binding.buttonEdit.setOnClickListener {
+            val intent = Intent(activity, EditProfileActivity::class.java)
+            startActivity(intent)
+        }
+        viewModel.getUser().observe(getViewLifecycleOwner()) {
+            binding.userName.text = it.username
+            binding.circleImageView.setImageURI(it.image.toUri())
+        }
+
     }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        viewModel = ViewModelProvider(
+            this,
+            ViewModelFactory(UserPreference.getInstance(context.dataStore))
+        )[ProfileViewModel::class.java]
+
+    }
+
+
 
     companion object {
         /**

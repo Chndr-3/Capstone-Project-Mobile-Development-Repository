@@ -1,5 +1,6 @@
 package com.bangkit.skutapplication.view.profile
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +12,7 @@ import android.view.ViewGroup
 import androidx.core.net.toUri
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
+import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.FragmentProfileBinding
 import com.bangkit.skutapplication.datastore.UserPreference
 import com.bangkit.skutapplication.datastore.ViewModelFactory
@@ -52,8 +54,17 @@ class ProfileFragment : Fragment() {
             startActivity(intent)
         }
         viewModel.getUser().observe(getViewLifecycleOwner()) {
-            binding.userName.text = it.username
-            binding.circleImageView.setImageURI(it.image.toUri())
+            if(it.username.isNotEmpty()){
+                binding.userName.text = it.username
+            } else{
+                binding.userName.setText("guest")
+            }
+
+            if(it.image.isNotEmpty()) {
+                binding.circleImageView.setImageURI(it.image.toUri())
+            }else{
+                binding.circleImageView.setImageResource(R.drawable.ic_baseline_image_24)
+            }
         }
 
     }

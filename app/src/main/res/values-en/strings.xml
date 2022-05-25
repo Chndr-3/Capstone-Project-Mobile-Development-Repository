@@ -61,7 +61,7 @@
     <string name="register">Register</string>
 
     <string name="please_login_first">Tolong <font color="#63AAC5">masuk</font> terlebih dahulu</string>
-    <string name="fill_your_data_correctly">Isi <font color="#63AAC5">data</font> anda dengan benar</string>
+    <string name="fill_your_data_correctly">Fill your <font color="#63AAC5">data</font> correctly</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="name">Nama</string>
@@ -76,4 +76,10 @@
     <string name="edit_profil">Edit Profile</string>
     <string name="choose_pictures">Choose Pictures</string>
     <string name="save">Save</string>
+    <string name="capture_button">Capture button</string>
+    <string name="switch_camera">switch camera</string>
+    <string name="image_preview">image preview</string>
+    <string name="unggah">Upload</string>
+    <string name="ambil_ulang">Re-take?</string>
+    <string name="hasil">Result</string>
 </resources>

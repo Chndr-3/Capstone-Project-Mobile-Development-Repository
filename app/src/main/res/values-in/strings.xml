@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="create_your_own_daily_treatment_remainder_schedule">Create your own daily treatment remainder schedule</string>
+    <string name="product_name_input">Product Name</string>
+    <string name="time_input">Time</string>
+    <string name="add_image">add image</string>
+</resources>

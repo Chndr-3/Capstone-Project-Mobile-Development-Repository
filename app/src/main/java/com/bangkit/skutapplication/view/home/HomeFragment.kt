@@ -14,6 +14,7 @@ import java.util.ArrayList
 import com.bangkit.skutapplication.databinding.FragmentHomeBinding
 import com.bangkit.skutapplication.model.ViewPagerItem
 import com.bangkit.skutapplication.view.beautytips.BeautyTipsActivity
+import com.bangkit.skutapplication.view.dailytreatment.DailyTreatmentActivity
 
 
 class HomeFragment : Fragment() {
@@ -61,6 +62,10 @@ class HomeFragment : Fragment() {
         showViewPager()
         binding.buttonBeautyTips.setOnClickListener {
             val intent = Intent(activity, BeautyTipsActivity::class.java)
+            startActivity(intent)
+        }
+        binding.buttonDailyTreatment.setOnClickListener {
+            val intent = Intent(activity, DailyTreatmentActivity::class.java)
             startActivity(intent)
         }
     }

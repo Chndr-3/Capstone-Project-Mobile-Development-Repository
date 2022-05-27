@@ -59,18 +59,26 @@
     <string name="login">Masuk</string>
     <string name="does_not_have_an_account">Tidak punya akun?</string>
     <string name="register">Daftar</string>
-    <string name="please_login_first">Please <font color="#63AAC5">login</font> first</string>
-    <string name="fill_your_data_correctly">Fill your <font color="#63AAC5">data</font> correctly</string>
+    <string name="please_login_first">Tolong <font color="#63AAC5">masuk</font> terlebih dahulu</string>
+    <string name="fill_your_data_correctly">Isi <font color="#63AAC5">data</font> anda dengan benar</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="name">Nama</string>
     <string name="account_created">Akun berhasil dibuat</string>
     <string name="logout">Keluar</string>
-    <string name="home">Home</string>
-    <string name="camera">Camera</string>
-    <string name="profile">Profile</string>
+    <string name="home">"Halaman Utama "</string>
+    <string name="camera">Kamera</string>
+    <string name="profile">Profil</string>
     <string name="change_language">Ganti Bahasa</string>
     <string name="edit_profil">Edit Profil</string>
     <string name="choose_pictures">Pilih Gambar</string>
     <string name="save">simpan</string>
+    <string name="product_name">product name</string>
+    <string name="time">time</string>
+    <string name="create_your_own_daily_treatment_remainder_schedule">Create your own daily treatment remainder schedule</string>
+    <string name="button">button</string>
+    <string name="create">Create</string>
+    <string name="product_name_input">Product Name</string>
+    <string name="time_input">Time</string>
+    <string name="add_image">add image</string>
 </resources>

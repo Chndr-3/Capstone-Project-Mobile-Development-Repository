@@ -10,7 +10,7 @@
         android:id="@+id/tvResultTitle"
         style="@style/TextContent.Bold.Big.Center"
         android:layout_marginBottom="16dp"
-        android:text="@string/hasil"
+        android:text="@string/result"
         android:textColor="?android:textColorPrimary"
         android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/imgPreview"

@@ -79,7 +79,10 @@
     <string name="capture_button">Capture button</string>
     <string name="switch_camera">switch camera</string>
     <string name="image_preview">image preview</string>
-    <string name="unggah">Upload</string>
-    <string name="ambil_ulang">Re-take?</string>
-    <string name="hasil">Result</string>
+    <string name="upload">Upload</string>
+    <string name="re_take">Re-take?</string>
+    <string name="result">Result</string>
+    <string name="failed_to_load_camera">Failed to load Camera</string>
+    <string name="permission_not_granted">Permission not granted</string>
+    <string name="failed_take_photo">Failed_take_photo</string>
 </resources>

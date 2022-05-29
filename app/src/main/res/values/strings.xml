@@ -76,7 +76,10 @@
     <string name="capture_button">Tombol ambil gambar</string>
     <string name="switch_camera">Ganti kamera</string>
     <string name="image_preview">Pratinjau gambar</string>
-    <string name="unggah">Unggah</string>
-    <string name="ambil_ulang">Ambil Ulang?</string>
-    <string name="hasil">Hasil</string>
+    <string name="upload">Unggah</string>
+    <string name="re_take">Ambil Ulang?</string>
+    <string name="result">Hasil</string>
+    <string name="failed_to_load_camera">Gagal menampilkan Kamera</string>
+    <string name="permission_not_granted">Tidak mendapatkan permission.</string>
+    <string name="failed_take_photo">Gagal menangkap gambar</string>
 </resources>

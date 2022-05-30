@@ -9,6 +9,7 @@ import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.ActivityRegisterBinding
 import com.bangkit.skutapplication.view.customview.MyButton
 import com.bangkit.skutapplication.view.customview.MyEditText
+import com.google.android.material.appbar.MaterialToolbar
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -20,6 +21,11 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val toolbar: MaterialToolbar = binding.toolbar
+        setSupportActionBar(toolbar)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         myEditText = binding.passwordEditText
         myButton = binding.registerButton
@@ -77,5 +83,10 @@ class RegisterActivity : AppCompatActivity() {
         val email = binding.emailEditText.text
         val password = myEditText.text
         myButton.isEnabled = password != null && "$password".isNotEmpty() && email != null && "$email".isNotEmpty()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return super.onSupportNavigateUp()
     }
 }

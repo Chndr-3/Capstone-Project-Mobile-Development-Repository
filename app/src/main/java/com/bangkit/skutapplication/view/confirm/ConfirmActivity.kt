@@ -4,7 +4,6 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toolbar
 import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.ActivityConfirmBinding
 import com.bangkit.skutapplication.view.camera.CameraFragment
@@ -25,7 +24,7 @@ class ConfirmActivity : AppCompatActivity() {
         val toolbar: MaterialToolbar = binding.toolbar
         setSupportActionBar(toolbar)
 
-        supportActionBar?.title = "Confirm"
+        supportActionBar?.title = getString(R.string.confirm)
 
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24)
 

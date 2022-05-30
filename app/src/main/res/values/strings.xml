@@ -83,4 +83,5 @@
     <string name="permission_not_granted">Tidak mendapatkan permission.</string>
     <string name="failed_take_photo">Gagal menangkap gambar</string>
     <string name="next">Lanjut</string>
+    <string name="confirm">Konfirmasi</string>
 </resources>

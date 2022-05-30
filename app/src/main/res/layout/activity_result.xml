@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.result.ResultActivity">
+
+    <TextView
+        android:id="@+id/tvResultTitle"
+        style="@style/TextContent.Bold.Big.Center"
+        android:layout_marginBottom="16dp"
+        android:text="@string/result"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/imgPreview"
+        app:layout_constraintEnd_toEndOf="@+id/imgPreview"
+        app:layout_constraintStart_toStartOf="@+id/imgPreview" />
+
+    <ImageView
+        android:id="@+id/imgPreview"
+        android:layout_width="0dp"
+        android:layout_height="350dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/image_preview"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
+        app:srcCompat="@drawable/ic_place_holder" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        style="@style/TextContent.Bold.Medium"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="@string/disease_description"
+        android:textColor="?android:textColorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/imgPreview"
+        app:layout_constraintStart_toStartOf="@+id/imgPreview"
+        app:layout_constraintTop_toBottomOf="@+id/imgPreview" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.42" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

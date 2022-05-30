@@ -62,7 +62,7 @@ class RegisterActivity : AppCompatActivity() {
                     AlertDialog.Builder(this).apply {
                         setTitle("Hore!")
                         setMessage(getString(R.string.account_created))
-                        setPositiveButton("Lanjut") { _, _ ->
+                        setPositiveButton(getString(R.string.next)) { _, _ ->
                             finish()
                         }
                         create()

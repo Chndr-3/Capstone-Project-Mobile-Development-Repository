@@ -19,11 +19,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SkutApplication">
         <activity
-            android:name=".view.camera.ResultActivity"
+            android:name=".view.result.ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".view.camera.UploadActivity"
-            android:exported="false" />
+            android:name=".view.confirm.ConfirmActivity"
+            android:exported="false"
+            android:theme="@style/Theme.NoActionBar"/>
         <activity
             android:name=".view.profile.editprofile.EditProfileActivity"
             android:exported="false" />

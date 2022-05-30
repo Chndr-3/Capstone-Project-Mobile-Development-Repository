@@ -84,5 +84,6 @@
     <string name="result">Result</string>
     <string name="failed_to_load_camera">Failed to load Camera</string>
     <string name="permission_not_granted">Permission not granted</string>
-    <string name="failed_take_photo">Failed_take_photo</string>
+    <string name="failed_take_photo">Failed to capture image</string>
+    <string name="next">Next</string>
 </resources>

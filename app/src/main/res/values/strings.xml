@@ -82,4 +82,5 @@
     <string name="failed_to_load_camera">Gagal menampilkan Kamera</string>
     <string name="permission_not_granted">Tidak mendapatkan permission.</string>
     <string name="failed_take_photo">Gagal menangkap gambar</string>
+    <string name="next">Lanjut</string>
 </resources>

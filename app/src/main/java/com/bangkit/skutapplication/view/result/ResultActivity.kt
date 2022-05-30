@@ -1,4 +1,4 @@
-package com.bangkit.skutapplication.view.camera
+package com.bangkit.skutapplication.view.result
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

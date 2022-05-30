@@ -1,11 +1,13 @@
 package com.bangkit.skutapplication.view.camera
 
 import android.Manifest
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,11 +16,11 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.FragmentCameraBinding
-import com.bangkit.skutapplication.view.camera.UploadActivity.Companion.EXTRA_IMAGE_URI
+import com.bangkit.skutapplication.view.confirm.ConfirmActivity
+import com.bangkit.skutapplication.view.confirm.ConfirmActivity.Companion.EXTRA_IMAGE_URI
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -113,6 +115,7 @@ class CameraFragment : Fragment() {
             ContextCompat.getMainExecutor(safeContext),
             object : ImageCapture.OnImageSavedCallback {
                 override fun onError(exc: ImageCaptureException) {
+                    Log.e(TAG, "Photo capture failed: ${exc.message}", exc)
                     Toast.makeText(
                         safeContext,
                         getString(R.string.failed_take_photo),
@@ -124,8 +127,8 @@ class CameraFragment : Fragment() {
                     val msg = "Photo capture succeeded: $savedUri"
                     Toast.makeText(safeContext, msg, Toast.LENGTH_SHORT).show()
 
-                    val intent = Intent(activity, UploadActivity::class.java)
-                    intent.putExtra(EXTRA_IMAGE_URI, savedUri)
+                    val intent = Intent(activity, ConfirmActivity::class.java)
+                    intent.putExtra(EXTRA_IMAGE_URI, savedUri.toString())
                     startActivity(intent)
                 }
             }

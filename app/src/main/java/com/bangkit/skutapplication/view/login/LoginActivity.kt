@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import androidx.appcompat.app.AlertDialog
 import com.bangkit.skutapplication.databinding.ActivityLoginBinding
 import com.bangkit.skutapplication.view.customview.MyButton
@@ -17,6 +18,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var myButton: MyButton
     private lateinit var myEditText: MyEditText
+    private lateinit var loginViewModel: LoginViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +45,10 @@ class LoginActivity : AppCompatActivity() {
 
             }
         })
+
+        loginViewModel.isLoading.observe(this) {
+            showLoading(it)
+        }
     }
 
     private fun setupAction() {
@@ -88,5 +94,13 @@ class LoginActivity : AppCompatActivity() {
         val email = binding.emailEditText.text
         val password = myEditText.text
         myButton.isEnabled = password != null && "$password".isNotEmpty() && email != null && "$email".isNotEmpty()
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        if (isLoading) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
+        }
     }
 }

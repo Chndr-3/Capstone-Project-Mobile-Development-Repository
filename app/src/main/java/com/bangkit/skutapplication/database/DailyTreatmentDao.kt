@@ -11,8 +11,8 @@ interface DailyTreatmentDao {
     fun insert(item: DailyTreatmentItem)
     @Update
     fun update(item: DailyTreatmentItem)
-    @Delete
-    fun delete(item: DailyTreatmentItem)
+    @Query("DELETE FROM item WHERE id = :id ")
+    fun delete(id: Int)
     @Query("SELECT * from item ORDER BY id ASC")
     fun getAllItem(): LiveData<List<DailyTreatmentItem>>
 }

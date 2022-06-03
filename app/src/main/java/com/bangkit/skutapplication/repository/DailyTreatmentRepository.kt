@@ -23,8 +23,8 @@ class DailyTreatmentRepository(application: Application) {
         executorService.execute { mDailyTreatmentDao.insert(dailyTreatmentItem) }
     }
 
-    fun delete(dailyTreatmentItem: DailyTreatmentItem) {
-        executorService.execute { mDailyTreatmentDao.delete(dailyTreatmentItem) }
+    fun delete(id: Int) {
+        executorService.execute { mDailyTreatmentDao.delete(id) }
     }
 
     fun update(dailyTreatmentItem: DailyTreatmentItem) {

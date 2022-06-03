@@ -3,6 +3,7 @@
     package="com.bangkit.skutapplication">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
@@ -14,6 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SkutApplication">
+        <activity
+            android:name=".view.dailytreatment.NotificationActivity"
+            android:exported="false" />
         <activity
             android:name=".view.dailytreatment.AddDailyTreatmentActivity"
             android:exported="false" />
@@ -48,7 +52,11 @@
         <activity
             android:name=".view.main.MainActivity"
             android:exported="true" />
-
+        <receiver
+            android:name=".view.dailytreatment.AlarmReceiver"
+            android:enabled="true"
+            android:exported="false" >
+        </receiver>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

@@ -2,10 +2,10 @@ package com.bangkit.skutapplication.view.dailytreatment
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.ActivityAddDailyTreatmentBinding
@@ -34,8 +34,13 @@ class AddDailyTreatmentActivity : AppCompatActivity() {
             val model = DailyTreatmentItem(0,productImage.toString(), productName.toString(), time.toString())
             addDailyTreatmentViewModel.insert(model)
             Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show()
-            intent = Intent(this, DailyTreatmentActivity::class.java)
-            startActivity(intent)
+            val intentBack = Intent(
+                applicationContext,
+                DailyTreatmentActivity::class.java
+            ) //this intent will be called once the setting alaram is completes
+
+            intentBack.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intentBack)
 
         }
     }
@@ -46,7 +51,7 @@ class AddDailyTreatmentActivity : AppCompatActivity() {
     }
     private fun startGallery(){
         val intent = Intent()
-        intent.action = Intent.ACTION_GET_CONTENT
+        intent.action = Intent.ACTION_OPEN_DOCUMENT
         intent.type = "image/*"
         val chooser = Intent.createChooser(intent, getString(R.string.choose_pictures))
         launcherIntentGallery.launch(chooser)

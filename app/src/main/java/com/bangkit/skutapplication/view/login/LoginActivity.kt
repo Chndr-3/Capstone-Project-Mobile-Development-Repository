@@ -46,9 +46,9 @@ class LoginActivity : AppCompatActivity() {
             }
         })
 
-        loginViewModel.isLoading.observe(this) {
-            showLoading(it)
-        }
+//        loginViewModel.isLoading.observe(this) {
+//            showLoading(it)
+//        }
     }
 
     private fun setupAction() {

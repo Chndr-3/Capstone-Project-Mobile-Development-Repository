@@ -8,7 +8,6 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,10 +16,13 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.FragmentCameraBinding
 import com.bangkit.skutapplication.view.confirm.ConfirmActivity
 import com.bangkit.skutapplication.view.confirm.ConfirmActivity.Companion.EXTRA_IMAGE_URI
+import com.bangkit.skutapplication.view.home.HomeFragment
+import com.bangkit.skutapplication.view.main.MainActivity
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -95,6 +97,11 @@ class CameraFragment : Fragment() {
             else CameraSelector.DEFAULT_BACK_CAMERA
 
             startCamera()
+        }
+
+        binding.backButton.setOnClickListener {
+            val intent = Intent(activity, MainActivity::class.java)
+            startActivity(intent)
         }
 
         outputDirectory = getOutputDirectory()

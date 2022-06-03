@@ -14,7 +14,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        buildConfigField("String", "API_URL", '"-"')
+        buildConfigField("String", "API_URL", '"https://skut-cloud-run-h4rt7pqxya-et.a.run.app/"')
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

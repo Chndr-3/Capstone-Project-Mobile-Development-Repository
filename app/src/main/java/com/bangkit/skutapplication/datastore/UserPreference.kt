@@ -23,6 +23,24 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
         }
     }
 
+//    suspend fun login(loginResult: LoginResult) {
+//        dataStore.edit { preferences ->
+//            preferences[NAME_KEY] = loginResult.name
+//            preferences[TOKEN_KEY] = loginResult.token
+//            preferences[STATE_KEY] = true
+//        }
+//    }
+
+    suspend fun logout() {
+        dataStore.edit { preferences ->
+            preferences[USER_NAME] = ""
+            preferences[EMAIL] = ""
+            preferences[PASSWORD] = ""
+            preferences[TOKEN] = ""
+            preferences[IMG] = ""
+        }
+    }
+
     suspend fun saveUsername(username: String, image: String) {
         dataStore.edit { preferences ->
             preferences[USER_NAME] = username

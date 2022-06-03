@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.viewModels
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -50,10 +51,20 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
-        setupViewModel()
+//        setupViewModel()
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if(destination.id == R.id.cameraNav) {
+
+                navView.visibility = View.GONE
+            } else {
+
+                navView.visibility = View.VISIBLE
+            }
+        }
 
 //        selection()
     }

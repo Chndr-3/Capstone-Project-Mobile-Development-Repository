@@ -23,7 +23,8 @@
             android:exported="false" />
         <activity
             android:name=".view.dailytreatment.DailyTreatmentActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Daily Treatment"/>
         <activity
             android:name=".view.profile.editprofile.EditProfileActivity"
             android:exported="false" />
@@ -35,7 +36,8 @@
             android:exported="false" />
         <activity
             android:name=".view.beautytips.BeautyTipsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label = "Beauty Tips"/>
         <activity
             android:name=".view.disease.DiseaseActivity"
             android:exported="false" />

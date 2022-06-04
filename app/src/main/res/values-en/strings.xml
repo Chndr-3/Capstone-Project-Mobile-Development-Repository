@@ -4,8 +4,6 @@
     <font color="@color/black">Your</font>
     <font color="#6ED2F0">Sk<font color="@color/black">in</font></font>
     <font color="@color/black">Sol<font color="#6ED2F0">ut</font>ion</font>
-
-
     </string>
     <string name="app_title">SKUT</string>
     <string name="splash_content_description">gambar_splash</string>
@@ -23,10 +21,7 @@
         <item>Rosacea (roe-ZAY-she-uh) is a common skin condition that causes blushing or flushing and visible blood vessels in your face. It may also produce small, pus-filled bumps. </item>
         <item>Eczema is a term related to inflammation of the skin. This disorder is also known as dermatitis. When it occurs, an allergic skin reaction can be characterized by the appearance of redness, rash, and itching.</item>
     </string-array>
-    <string-array name="number">
-        <item>1</item>
-        <item>2</item>
-    </string-array>
+
 
     <string-array name="beautyTips">
         <item>Use multiple face masks to maximize your results.</item>
@@ -35,7 +30,24 @@
         <item>Cool-water cleanse</item>
         <item>Facial massage</item>
 
+
     </string-array>
+    <string-array name="acneDailyRoutine">
+        <item>Cleanse your face gently</item>
+        <item>Don\'t forget to apply your acne treatment medication</item>
+        <item>Apply an oil free moisturizer</item>
+        <item>Don\'t forget to use sunscreen </item>
+        <item>Cleanse again at night</item>
+        <item>Apply retinol product</item>
+    </string-array>
+    <integer-array name="acneDailyRoutineIcon">
+        <item>@drawable/foam</item>
+        <item>@drawable/facecleanser</item>
+        <item>@drawable/cream</item>
+        <item>@drawable/suncream</item>
+        <item>@drawable/night</item>
+        <item>@drawable/vitamin</item>
+    </integer-array>
     <string-array name="beautyDescription">
         <item>Skincare is not one-size-fits-all, so customizing your routine can help get you the best results for your complexion. "Multi-masking is when multiple facial masks are used or layered simultaneously on the skin to combat different skin concerns at one time," explains New York City aesthetician Cecilia Wong.</item>
         <item>"The best times to moisturize are right after you get out of the shower and right before you go to bed," explained Dr. Janet Prystowsky M.D., an NYC-based dermatologist. Avoid lotions with heavy fragrances and make sure you find a moisturizer gentle enough for every day use with zero irritation.</item>
@@ -82,4 +94,5 @@
     <string name="product_name_input">Product Name</string>
     <string name="time_input">Time</string>
     <string name="add_image">add image</string>
+    <string name="button">tombol</string>
 </resources>

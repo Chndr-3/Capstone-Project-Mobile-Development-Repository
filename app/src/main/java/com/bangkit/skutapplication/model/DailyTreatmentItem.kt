@@ -12,9 +12,7 @@ import java.sql.Time
 data class DailyTreatmentItem(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    var id: Int = 0,
-    @ColumnInfo(name = "product_image")
-    var product_image: String? = null,
+    var id: Int = 1,
     @ColumnInfo(name = "product_name")
     var product_name: String? = null,
     @ColumnInfo(name = "time")

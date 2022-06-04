@@ -22,10 +22,6 @@
         <item>Eczema is a term related to inflammation of the skin. This disorder is also known as dermatitis. When it occurs, an allergic skin reaction can be characterized by the appearance of redness, rash, and itching.</item>
     </string-array>
 
-    <string-array name="number">
-        <item>1</item>
-        <item>2</item>
-    </string-array>
 
     <string-array name="beautyTips">
         <item>Use multiple face masks to maximize your results.</item>
@@ -42,6 +38,50 @@
         <item>Hot water is too intense for your face. Use lukewarm or cool water, and avoid washing your face in the shower unless you turn down the temp.</item>
         <item>A face massage or face roller can help de-puff your skin. A massaging tool can increase blood flow, leaving you looking awake and fresh.</item>
     </string-array>
+
+    <string-array name="acneDailyRoutine">
+        <item>Cleanse your face gently</item>
+        <item>Don\'t forget to apply your acne treatment medication</item>
+        <item>Apply an oil free moisturizer</item>
+        <item>Don\'t forget to use sunscreen </item>
+        <item>Cleanse again at night</item>
+        <item>Apply retinol product</item>
+    </string-array>
+
+    <integer-array name="acneDailyRoutineIcon">
+        <item>@drawable/foam</item>
+        <item>@drawable/facecleanser</item>
+        <item>@drawable/cream</item>
+        <item>@drawable/suncream</item>
+        <item>@drawable/night</item>
+        <item>@drawable/vitamin</item>
+    </integer-array>
+
+    <string-array name="rosaceaDailyRoutine">
+        <item>Wash your face with a mild cleanser</item>
+        <item>Apply a hydrating moisturizer</item>
+        <item>Use sunscreen daily</item>
+        <item>Smooth on a calming facial serum</item>
+        <item>Incorporate a soothing mask once or twice a week</item>
+        <item>Consult a dermatologist for additional treatment</item>
+    </string-array>
+
+    <integer-array name="rosaceaDailyRoutineIcon">
+        <item>@drawable/foam</item>
+        <item>@drawable/cream</item>
+        <item>@drawable/suncream</item>
+        <item>@drawable/serum</item>
+        <item>@drawable/soothingmask</item>
+        <item>@drawable/dermatologist</item>
+    </integer-array>
+
+    <string-array name="skinCancerDailyRoutine">
+        <item>Consult a dermatologist for additional treatment</item>
+    </string-array>
+
+    <integer-array name="skinCancerDailyRoutineIcon">
+        <item>@drawable/dermatologist</item>
+    </integer-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="daily_trivia">Trivia Harian</string>
@@ -76,7 +116,9 @@
     <string name="create_your_own_daily_treatment_remainder_schedule">Create your own daily treatment remainder schedule</string>
     <string name="button">button</string>
     <string name="create">Create</string>
-    <string name="product_name_input">Product Name</string>
+    <string name="treatment_name_input">Treatment Name</string>
     <string name="time_input">Time</string>
     <string name="add_image">add image</string>
+    <string name="tab_text_1" translatable="false">Daily Routine</string>
+    <string name="tab_text_2" translatable="false">Skincare Routine</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.bangkit.skutapplication.view.login
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,11 +8,20 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import androidx.appcompat.app.AlertDialog
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
+import androidx.lifecycle.ViewModelProvider
 import com.bangkit.skutapplication.databinding.ActivityLoginBinding
+import com.bangkit.skutapplication.datastore.UserPreference
+import com.bangkit.skutapplication.datastore.ViewModelFactory
+import com.bangkit.skutapplication.model.user.LoginModel
 import com.bangkit.skutapplication.view.customview.MyButton
 import com.bangkit.skutapplication.view.customview.MyEditText
 import com.bangkit.skutapplication.view.main.MainActivity
 import com.bangkit.skutapplication.view.register.RegisterActivity
+
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
 class LoginActivity : AppCompatActivity() {
 
@@ -27,6 +37,8 @@ class LoginActivity : AppCompatActivity() {
 
         myEditText = binding.passwordEditText
         myButton = binding.loginButton
+
+        setupViewModel()
 
         setupAction()
 
@@ -46,9 +58,35 @@ class LoginActivity : AppCompatActivity() {
             }
         })
 
-//        loginViewModel.isLoading.observe(this) {
-//            showLoading(it)
-//        }
+        loginViewModel.isLoading.observe(this) {
+            showLoading(it)
+        }
+
+        loginViewModel.loginResult.observe(this) {
+            loginViewModel.login(it.token.toString())
+        }
+
+        loginViewModel.isSuccess.observe(this) {
+            AlertDialog.Builder(this).apply {
+                setTitle("Hore!")
+                setMessage("Anda berhasil login")
+                setPositiveButton("Lanjut") { _, _ ->
+                    val intent = Intent(context, MainActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                    startActivity(intent)
+                    finish()
+                }
+                create()
+                show()
+            }
+        }
+    }
+
+    private fun setupViewModel() {
+        loginViewModel = ViewModelProvider(
+            this,
+            ViewModelFactory(UserPreference.getInstance(dataStore))
+        )[LoginViewModel::class.java]
     }
 
     private fun setupAction() {
@@ -62,25 +100,14 @@ class LoginActivity : AppCompatActivity() {
                 password.isEmpty() -> {
                     binding.passwordEditTextLayout.error = "Masukkan password"
                 }
-                email != "skut@gmail.com" -> {
-                    binding.emailEditTextLayout.error = "Email tidak sesuai"
-                }
-                password != "skutapp" -> {
-                    binding.passwordEditTextLayout.error = "Password tidak sesuai"
-                }
+//                email != "skut@gmail.com" -> {
+//                    binding.emailEditTextLayout.error = "Email tidak sesuai"
+//                }
+//                password != "skutapp" -> {
+//                    binding.passwordEditTextLayout.error = "Password tidak sesuai"
+//                }
                 else -> {
-                    AlertDialog.Builder(this).apply {
-                        setTitle("Hore!")
-                        setMessage("Anda berhasil login")
-                        setPositiveButton("Lanjut") { _, _ ->
-                            val intent = Intent(context, MainActivity::class.java)
-                            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                            startActivity(intent)
-                            finish()
-                        }
-                        create()
-                        show()
-                    }
+                    loginViewModel.loginUser(LoginModel(email, password))
                 }
             }
         }

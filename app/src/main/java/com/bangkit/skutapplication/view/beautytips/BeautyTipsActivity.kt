@@ -2,6 +2,7 @@ package com.bangkit.skutapplication.view.beautytips
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.ActivityBeautyTipsBinding
@@ -15,6 +16,7 @@ class BeautyTipsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_beauty_tips)
         binding = ActivityBeautyTipsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setData(listBeautyTips)
     }
     private fun setData(item : ArrayList<BeautyTipsItem>){
@@ -36,4 +38,10 @@ class BeautyTipsActivity : AppCompatActivity() {
             }
             return listTips
         }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            finish()
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }

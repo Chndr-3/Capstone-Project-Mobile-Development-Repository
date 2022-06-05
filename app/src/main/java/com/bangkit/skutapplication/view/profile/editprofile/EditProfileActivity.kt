@@ -37,7 +37,11 @@ class EditProfileActivity : AppCompatActivity() {
         }
         viewModel.getUser().observe(this) {
             binding.nameEditText.setText(it.username)
-            binding.imageView.setImageURI(it.image.toUri())
+            if(it.image.isNotEmpty()) {
+                binding.imageView.setImageURI(it.image.toUri())
+            }else{
+                binding.imageView.setImageResource(R.drawable.ic_baseline_image_24)
+            }
             selectedImg = it.image.toUri()
         }
 
@@ -50,7 +54,7 @@ class EditProfileActivity : AppCompatActivity() {
     }
    private fun startGallery(){
        val intent = Intent()
-       intent.action = Intent.ACTION_GET_CONTENT
+       intent.action = Intent.ACTION_OPEN_DOCUMENT
        intent.type = "image/*"
        val chooser = Intent.createChooser(intent, getString(R.string.choose_pictures))
        launcherIntentGallery.launch(chooser)

@@ -136,4 +136,16 @@
     <string name="example_apply_moisturizer">Example: Apply Moisturizer</string>
     <string name="treatment_name_character">Treatment\'s Name character is too long</string>
     <string name="time_format_doesnt_match">Time format doesn\'t match</string>
+    <string name="capture_button">Tombol ambil gambar</string>
+    <string name="switch_camera">Ganti kamera</string>
+    <string name="image_preview">Pratinjau gambar</string>
+    <string name="upload">Unggah</string>
+    <string name="re_take">Ambil Ulang?</string>
+    <string name="result">Hasil</string>
+    <string name="failed_to_load_camera">Gagal menampilkan Kamera</string>
+    <string name="permission_not_granted">Tidak mendapatkan permission.</string>
+    <string name="failed_take_photo">Gagal menangkap gambar</string>
+    <string name="next">Lanjut</string>
+    <string name="confirm">Konfirmasi</string>
+
 </resources>

@@ -62,21 +62,17 @@
     <string name="daily_treatment">Daily Treatment</string>
     <string name="disease_name">Disease Name</string>
     <string name="disease_description">Disease Description</string>
-
     <string name="password_error">Password minimum 6 characters</string>
     <string name="login">Login</string>
     <string name="does_not_have_an_account">Doesn\'t have an account?</string>
     <string name="register">Register</string>
-
     <string name="please_login_first">Please <font color="#63AAC5">login</font> first</string>
     <string name="fill_your_data_correctly">Fill your <font color="#63AAC5">data</font> correctly</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="name">Nama</string>
-
     <string name="account_created">Account created successfully</string>
     <string name="logout">Logout</string>
-
     <string name="home">Home</string>
     <string name="camera">Camera</string>
     <string name="profile">Profile</string>
@@ -93,4 +89,15 @@
     <string name="button">tombol</string>
     <string name="treatment_name_character">Treatment\'s Name character is too long</string>
     <string name="time_format_doesnt_match">Time format doesn\'t match</string>
+    <string name="capture_button">Capture button</string>
+    <string name="switch_camera">switch camera</string>
+    <string name="image_preview">image preview</string>
+    <string name="upload">Upload</string>
+    <string name="re_take">Re-take?</string>
+    <string name="result">Result</string>
+    <string name="failed_to_load_camera">Failed to load Camera</string>
+    <string name="permission_not_granted">Permission not granted</string>
+    <string name="failed_take_photo">Failed to capture image</string>
+    <string name="next">Next</string>
+    <string name="confirm">Confirm</string>
 </resources>

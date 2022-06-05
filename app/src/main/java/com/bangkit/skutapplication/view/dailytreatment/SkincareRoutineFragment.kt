@@ -24,7 +24,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class SkincareTreatmentFragment : Fragment() {
+class SkincareRoutineFragment : Fragment() {
     private lateinit var binding: FragmentSkincareTreatmentBinding
     private lateinit var skincareTreatmentViewModel: DailyTreatmentViewModel
 

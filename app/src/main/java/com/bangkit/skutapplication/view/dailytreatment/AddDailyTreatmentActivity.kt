@@ -1,8 +1,7 @@
 package com.bangkit.skutapplication.view.dailytreatment
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
+import android.text.InputFilter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -10,38 +9,51 @@ import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.ActivityAddDailyTreatmentBinding
 import com.bangkit.skutapplication.helper.ItemViewModelFactory
 import com.bangkit.skutapplication.model.DailyTreatmentItem
-import com.bangkit.skutapplication.view.main.MainActivity
+import com.bangkit.skutapplication.view.customview.MinMaxFilter
+
 
 class AddDailyTreatmentActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddDailyTreatmentBinding
     private lateinit var addDailyTreatmentViewModel: AddDailyTreatmentViewModel
-    private lateinit var selectedImg: Uri
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_daily_treatment)
         binding = ActivityAddDailyTreatmentBinding.inflate(layoutInflater)
         setContentView(binding.root)
         addDailyTreatmentViewModel = obtainViewModel(this@AddDailyTreatmentActivity)
+
         takingData()
     }
 
-    private fun takingData(){
-        binding.setButton.setOnClickListener{
+    private fun takingData() {
+        binding.timeReminderHours.filters = arrayOf<InputFilter>(MinMaxFilter(0, 23))
+        binding.timeReminderMinutes.filters = arrayOf<InputFilter>(MinMaxFilter(0, 59))
+        binding.setButton.setOnClickListener {
             val productName = binding.productName.text
-            val time = binding.timeRemainder.text
-            val model = DailyTreatmentItem(0,productName.toString(), time.toString())
-            addDailyTreatmentViewModel.insert(model)
-            Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show()
-            val intentBack = Intent(
-                applicationContext,
-                DailyTreatmentActivity::class.java
-            ) //this intent will be called once the setting alaram is completes
+            val timeHours = binding.timeReminderHours.text
+            val timeMinute = binding.timeReminderMinutes.text
 
-            intentBack.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(intentBack)
-
+            val time = "$timeHours:$timeMinute"
+            when {
+                productName!!.isEmpty() -> {
+                    binding.productName.error = "Insert treatment name first"
+                }
+                timeHours!!.isEmpty() -> {
+                    binding.timeReminderHours.error = "Set the hour first"
+                }
+                timeMinute!!.isEmpty() -> {
+                    binding.timeReminderMinutes.error = "Set the minute first"
+                }
+                else -> {
+                    val model = DailyTreatmentItem(0, productName.toString(), time)
+                    addDailyTreatmentViewModel.insert(model)
+                    Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show()
+                    finish()
+                }
+            }
         }
     }
+
     private fun obtainViewModel(activity: AppCompatActivity): AddDailyTreatmentViewModel {
         val factory = ItemViewModelFactory.getInstance(activity.application)
         return ViewModelProvider(activity, factory).get(AddDailyTreatmentViewModel::class.java)

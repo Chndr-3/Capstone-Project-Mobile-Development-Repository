@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.model.DailyRoutine
 
-class DailyRoutineAdapter(private val listTips: List<DailyRoutine>) : RecyclerView.Adapter<DailyRoutineAdapter.ViewHolder>() {
+class SkincareRoutineAdapter(private val listTips: List<DailyRoutine>) : RecyclerView.Adapter<SkincareRoutineAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int) =
         ViewHolder(

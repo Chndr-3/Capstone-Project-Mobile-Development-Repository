@@ -11,7 +11,7 @@ class SectionsPageAdapter(activity: AppCompatActivity) :
         var fragment: Fragment? = null
         when (position) {
             0 -> fragment = DailyTreatmentFragment()
-            1 -> fragment = SkincareTreatmentFragment()
+            1 -> fragment = SkincareRoutineFragment()
         }
         return fragment as Fragment
     }

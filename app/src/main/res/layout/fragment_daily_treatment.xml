@@ -21,21 +21,19 @@
         <RadioButton
             android:id="@+id/acne"
             style="@style/RadioButton"
+            android:layout_width="100dp"
             android:text="Acne" />
 
         <RadioButton
             android:id="@+id/rosacea"
             style="@style/RadioButton"
+            android:layout_width="100dp"
             android:text="Rosacea" />
-
-        <RadioButton
-            android:id="@+id/cancer"
-            style="@style/RadioButton"
-            android:text="Cancer" />
 
         <RadioButton
             android:id="@+id/eczema"
             style="@style/RadioButton"
+            android:layout_width="100dp"
             android:text="Eczema" />
 
     </RadioGroup>
@@ -62,7 +60,7 @@
         android:src="@drawable/acne"
         app:layout_constraintBottom_toTopOf="@+id/rvDailyRoutine"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/radioGroup"
         app:layout_constraintVertical_bias="0.0" />
@@ -76,7 +74,7 @@
         android:src="@drawable/dermatitis"
         app:layout_constraintBottom_toTopOf="@+id/rvDailyRoutine"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.81"
+        app:layout_constraintHorizontal_bias="0.74"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/radioGroup"
         app:layout_constraintVertical_bias="0.0" />
@@ -89,21 +87,8 @@
         android:src="@drawable/rosacea"
         app:layout_constraintBottom_toTopOf="@+id/rvDailyRoutine"
         app:layout_constraintEnd_toEndOf="@+id/radioGroup"
-        app:layout_constraintHorizontal_bias="0.30"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="@+id/radioGroup"
-        app:layout_constraintTop_toTopOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_weight="1"
-        android:src="@drawable/skincancer"
-        app:layout_constraintBottom_toTopOf="@+id/rvDailyRoutine"
-        app:layout_constraintEnd_toEndOf="@+id/radioGroup"
-        app:layout_constraintHorizontal_bias="0.55"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/radioGroup"
         app:layout_constraintVertical_bias="0.0" />
 

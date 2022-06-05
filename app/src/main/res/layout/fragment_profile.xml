@@ -56,6 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/white"
+        android:drawableEnd="@drawable/ic_baseline_g_translate_24"
         android:text="@string/change_language"
         android:drawableEnd="@drawable/ic_baseline_g_translate_24"
         android:textColor="@color/blue"

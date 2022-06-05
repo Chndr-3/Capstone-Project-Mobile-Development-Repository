@@ -4,29 +4,20 @@
     <font color="@color/black">Your</font>
     <font color="#6ED2F0">Sk<font color="@color/black">in</font></font>
     <font color="@color/black">Sol<font color="#6ED2F0">ut</font>ion</font>
-
-
     </string>
     <string name="app_title">SKUT</string>
     <string name="splash_content_description">gambar_splash</string>
     <string-array name="data_question">
         <item>Acne</item>
-        <item>Cancer</item>
-        <item>Millia</item>
         <item>Rosacea</item>
         <item>Eczema</item>
     </string-array>
     <string-array name="data_answer">
         <item>Acne is a skin condition that occurs when your hair follicles become plugged with oil and dead skin cells. It causes whiteheads, blackheads or pimples. Acne is most common among teenagers, though it affects people of all ages.</item>
-        <item>Skin cancer is the out-of-control growth of abnormal cells in the epidermis, the outermost skin layer, caused by unrepaired DNA damage that triggers mutations. These mutations lead the skin cells to multiply rapidly and form malignant tumors.</item>
-        <item>Milia are small, dome-shaped bumps that are usually white or yellow. They’re usually not itchy or painful. However, they may cause discomfort for some people. Rough sheets or clothing may cause milia to appear irritated and red.</item>
         <item>Rosacea (roe-ZAY-she-uh) is a common skin condition that causes blushing or flushing and visible blood vessels in your face. It may also produce small, pus-filled bumps. </item>
         <item>Eczema is a term related to inflammation of the skin. This disorder is also known as dermatitis. When it occurs, an allergic skin reaction can be characterized by the appearance of redness, rash, and itching.</item>
     </string-array>
-    <string-array name="number">
-        <item>1</item>
-        <item>2</item>
-    </string-array>
+
 
     <string-array name="beautyTips">
         <item>Use multiple face masks to maximize your results.</item>
@@ -35,7 +26,24 @@
         <item>Cool-water cleanse</item>
         <item>Facial massage</item>
 
+
     </string-array>
+    <string-array name="acneDailyRoutine">
+        <item>Cleanse your face gently</item>
+        <item>Don\'t forget to apply your acne treatment medication</item>
+        <item>Apply an oil free moisturizer</item>
+        <item>Don\'t forget to use sunscreen </item>
+        <item>Cleanse again at night</item>
+        <item>Apply retinol product</item>
+    </string-array>
+    <integer-array name="acneDailyRoutineIcon">
+        <item>@drawable/foam</item>
+        <item>@drawable/facecleanser</item>
+        <item>@drawable/cream</item>
+        <item>@drawable/suncream</item>
+        <item>@drawable/night</item>
+        <item>@drawable/vitamin</item>
+    </integer-array>
     <string-array name="beautyDescription">
         <item>Skincare is not one-size-fits-all, so customizing your routine can help get you the best results for your complexion. "Multi-masking is when multiple facial masks are used or layered simultaneously on the skin to combat different skin concerns at one time," explains New York City aesthetician Cecilia Wong.</item>
         <item>"The best times to moisturize are right after you get out of the shower and right before you go to bed," explained Dr. Janet Prystowsky M.D., an NYC-based dermatologist. Avoid lotions with heavy fragrances and make sure you find a moisturizer gentle enough for every day use with zero irritation.</item>
@@ -54,28 +62,33 @@
     <string name="daily_treatment">Daily Treatment</string>
     <string name="disease_name">Disease Name</string>
     <string name="disease_description">Disease Description</string>
-
     <string name="password_error">Password minimum 6 characters</string>
     <string name="login">Login</string>
     <string name="does_not_have_an_account">Doesn\'t have an account?</string>
     <string name="register">Register</string>
-
     <string name="please_login_first">Please <font color="#63AAC5">login</font> first</string>
     <string name="fill_your_data_correctly">Fill your <font color="#63AAC5">data</font> correctly</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="name">Nama</string>
-
     <string name="account_created">Account created successfully</string>
     <string name="logout">Logout</string>
-
-    <string name="home">Halaman Utama</string>
-    <string name="camera">Kamera</string>
-    <string name="profile">Profil</string>
+    <string name="home">Home</string>
+    <string name="camera">Camera</string>
+    <string name="profile">Profile</string>
     <string name="change_language">Change Language</string>
     <string name="edit_profil">Edit Profile</string>
     <string name="choose_pictures">Choose Pictures</string>
     <string name="save">Save</string>
+    <string name="product_name">product name</string>
+    <string name="time">time</string>
+    <string name="create_your_own_daily_treatment_remainder_schedule">Create your own daily treatment remainder schedule</string>
+    <string name="product_name_input">Product Name</string>
+    <string name="time_input">Time</string>
+    <string name="add_image">add image</string>
+    <string name="button">tombol</string>
+    <string name="treatment_name_character">Treatment\'s Name character is too long</string>
+    <string name="time_format_doesnt_match">Time format doesn\'t match</string>
     <string name="capture_button">Capture button</string>
     <string name="switch_camera">switch camera</string>
     <string name="image_preview">image preview</string>

@@ -69,9 +69,9 @@
     <string name="account_created">Account created successfully</string>
     <string name="logout">Logout</string>
 
-    <string name="home">Halaman Utama</string>
-    <string name="camera">Kamera</string>
-    <string name="profile">Profil</string>
+    <string name="home">Home</string>
+    <string name="camera">Camera</string>
+    <string name="profile">Profile</string>
     <string name="change_language">Change Language</string>
     <string name="edit_profil">Edit Profile</string>
     <string name="choose_pictures">Choose Pictures</string>
@@ -87,4 +87,5 @@
     <string name="failed_take_photo">Failed to capture image</string>
     <string name="next">Next</string>
     <string name="confirm">Confirm</string>
+    <string name="store">Store</string>
 </resources>

@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bangkit.skutapplication">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
@@ -19,19 +22,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SkutApplication">
         <activity
+            android:name=".view.camera.PopUpActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.result.ResultActivity"
             android:exported="false" />
         <activity
             android:name=".view.confirm.ConfirmActivity"
             android:exported="false"
-            android:theme="@style/Theme.NoActionBar"/>
+            android:theme="@style/Theme.NoActionBar" />
         <activity
             android:name=".view.profile.editprofile.EditProfileActivity"
             android:exported="false" />
         <activity
             android:name=".view.register.RegisterActivity"
             android:exported="false"
-            android:theme="@style/Theme.NoActionBar"/>
+            android:theme="@style/Theme.NoActionBar" />
         <activity
             android:name=".view.login.LoginActivity"
             android:exported="false"

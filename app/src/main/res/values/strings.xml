@@ -112,7 +112,7 @@
     <string name="name">Nama</string>
     <string name="account_created">Akun berhasil dibuat</string>
     <string name="logout">Keluar</string>
-    <string name="home">"Halaman Utama "</string>
+    <string name="home">Halaman Utama</string>
     <string name="camera">Kamera</string>
     <string name="profile">Profil</string>
     <string name="change_language">Ganti Bahasa</string>
@@ -147,5 +147,5 @@
     <string name="failed_take_photo">Gagal menangkap gambar</string>
     <string name="next">Lanjut</string>
     <string name="confirm">Konfirmasi</string>
-
+    <string name="store">Toko</string>
 </resources>

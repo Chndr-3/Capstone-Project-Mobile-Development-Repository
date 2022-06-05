@@ -6,6 +6,7 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import com.bangkit.skutapplication.model.User
+import com.bangkit.skutapplication.model.response.LoginResponse
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import java.net.URI
@@ -20,6 +21,22 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
                 preferences[TOKEN] ?: "",
             preferences[IMG] ?: ""
             )
+        }
+    }
+
+    suspend fun login(token: String) {
+        dataStore.edit { preferences ->
+            preferences[TOKEN] = token
+        }
+    }
+
+    suspend fun logout() {
+        dataStore.edit { preferences ->
+            preferences[USER_NAME] = ""
+            preferences[EMAIL] = ""
+            preferences[PASSWORD] = ""
+            preferences[TOKEN] = ""
+            preferences[IMG] = ""
         }
     }
 

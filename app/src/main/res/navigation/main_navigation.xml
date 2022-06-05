@@ -23,4 +23,10 @@
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile"/>
 
+    <fragment
+        android:id="@+id/storeNav"
+        android:name="com.bangkit.skutapplication.view.store.StoreFragment"
+        android:label="StoreFragment"
+        tools:layout="@layout/fragment_store" />
+
 </navigation>

@@ -15,8 +15,6 @@ import com.bangkit.skutapplication.databinding.ActivityEditProfileBinding
 import com.bangkit.skutapplication.datastore.UserPreference
 import com.bangkit.skutapplication.datastore.ViewModelFactory
 
-
-
 class EditProfileActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditProfileBinding
     private val Context.dataStore by preferencesDataStore(name = "profile")

@@ -1,66 +1,146 @@
 package com.bangkit.skutapplication.view.confirm
 
+import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Base64
+import android.util.Log
+import android.view.View
+import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
+import androidx.lifecycle.ViewModelProvider
 import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.ActivityConfirmBinding
-import com.bangkit.skutapplication.view.camera.CameraFragment
+import com.bangkit.skutapplication.datastore.UserPreference
+import com.bangkit.skutapplication.datastore.ViewModelFactory
+import com.bangkit.skutapplication.helper.rotateImageIfRequired
+import com.bangkit.skutapplication.view.login.LoginActivity
+import com.bangkit.skutapplication.view.result.ResultActivity
 import com.google.android.material.appbar.MaterialToolbar
-import java.io.File
+import java.io.ByteArrayOutputStream
+
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
 class ConfirmActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityConfirmBinding
+    private val confirmViewModel: ConfirmViewModel by viewModels()
 
-    lateinit var imageUri: String
+    private lateinit var imageUri: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityConfirmBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val confirmViewModel = ViewModelProvider(
+            this,
+            ViewModelFactory(UserPreference.getInstance(dataStore))
+        )[ConfirmViewModel::class.java]
+
         val toolbar: MaterialToolbar = binding.toolbar
         setSupportActionBar(toolbar)
 
         supportActionBar?.title = getString(R.string.confirm)
-
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24)
-
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        binding.retakeButton.setOnClickListener {
-            val intent = Intent(this, CameraFragment::class.java)
-            startActivity(intent)
-        }
+        binding.retakeButton.setOnClickListener { onBackPressed() }
 
         imageUri = intent.extras?.getString(EXTRA_IMAGE_URI).toString()
-        binding.imgPreview.setImageURI(Uri.parse(imageUri))
+
+        val imageStream = contentResolver.openInputStream(Uri.parse(imageUri))
+        val bitmapImage = BitmapFactory.decodeStream(imageStream)
+        val rotatedBitmap = rotateImageIfRequired(bitmapImage, Uri.parse(imageUri))
 
 
+//        binding.imgPreview.setImageURI(Uri.parse(imageUri))
+        binding.imgPreview.setImageBitmap(rotatedBitmap)
+
+        Log.d("test", imageUri)
+
+        binding.uploadButton.setOnClickListener {
+            confirmViewModel.setImageBase64(bitmapToBase64(rotatedBitmap))
+            confirmViewModel.getUser().observe(this) { user ->
+                if (user.token.isNotEmpty()) {
+//                binding.nameTextView.text = getString(R.string.greeting, user.name)
+                    Log.d("token", user.token)
+
+                    uploadImage(user.token)
+
+//                mainViewModel.getUserStories(user.token)
+//
+//                mainViewModel.isError.observe(this) {
+//                    showMessage(it)
+//                }
+                } else {
+                    startActivity(Intent(this, LoginActivity::class.java))
+                    finish()
+                }
+            }
+        }
+
+        confirmViewModel.isLoading.observe(this) {
+            showLoading(it)
+        }
     }
 
-    private var getFile: File? = null
-//    private val launcherIntentCameraX = registerForActivityResult(
-//        ActivityResultContracts.StartActivityForResult()
-//    ) {
-//        if (it.resultCode == CAMERA_X_RESULT) {
-//            val myFile = it.data?.getSerializableExtra("picture") as File
-//            val isBackCamera = it.data?.getBooleanExtra("isBackCamera", true) as Boolean
-//            getFile = myFile
-//            val result = rotateBitmap(
-//                BitmapFactory.decodeFile(myFile.path),
-//                isBackCamera
-//            )
-//
-//            binding.imgPreview.setImageBitmap(result)
-//        }
-//    }
+    private fun bitmapToBase64(bitmap: Bitmap): String {
+        val stream = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 50, stream)
+        val byteArray: ByteArray = stream.toByteArray()
+
+        return Base64.encodeToString(byteArray, Base64.DEFAULT)
+    }
+
+    private fun uploadImage(token: String) {
+
+        confirmViewModel.uploadImage(token)
+
+        confirmViewModel.isError.observe(this) {
+            showMessage(it)
+        }
+
+    }
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return super.onSupportNavigateUp()
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        if (isLoading) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
+        }
+    }
+
+    private fun showMessage(isError: Boolean) {
+        if (isError) {
+            Toast.makeText(this@ConfirmActivity, "error", Toast.LENGTH_SHORT).show()
+        } else {
+            AlertDialog.Builder(this).apply {
+                setTitle("Berhasil!")
+                setMessage("Silahkan Lanjut")
+                setPositiveButton("Lanjut") { _, _ ->
+                    val intent = Intent(context, ResultActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                    startActivity(intent)
+                    finish()
+                }
+                create()
+                show()
+            }
+        }
     }
 
     companion object {

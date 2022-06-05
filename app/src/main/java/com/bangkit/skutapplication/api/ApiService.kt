@@ -3,6 +3,7 @@ package com.bangkit.skutapplication.api
 import com.bangkit.skutapplication.model.response.LoginResponse
 import com.bangkit.skutapplication.model.response.UploadResponse
 import com.bangkit.skutapplication.model.user.LoginModel
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -12,11 +13,11 @@ interface ApiService {
 
     )
 
-    @FormUrlEncoded
     @POST("upload")
     fun uploadImage(
         @Header("Authorization") token: String,
-        @Field("image") image: String
+//        @Field("image") image: String
+        @Body json: RequestBody
     ): Call<UploadResponse>
 
     @POST("login")
@@ -25,4 +26,9 @@ interface ApiService {
 //        @Field("password") password: String
         @Body loginModel: LoginModel
     ): Call<LoginResponse>
+
+    @GET("dashboard")
+    fun getDashboard(
+        @Header("Authorization") token: String,
+    )
 }

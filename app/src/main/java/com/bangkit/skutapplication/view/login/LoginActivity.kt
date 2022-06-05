@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -62,23 +64,35 @@ class LoginActivity : AppCompatActivity() {
             showLoading(it)
         }
 
-        loginViewModel.loginResult.observe(this) {
-            loginViewModel.login(it.token.toString())
-        }
+        loginViewModel.loginResult.observe(this) { result ->
+            loginViewModel.login(result.token.toString())
 
-        loginViewModel.isSuccess.observe(this) {
-            AlertDialog.Builder(this).apply {
-                setTitle("Hore!")
-                setMessage("Anda berhasil login")
-                setPositiveButton("Lanjut") { _, _ ->
-                    val intent = Intent(context, MainActivity::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                    startActivity(intent)
-                    finish()
+            Log.d("token", result.token.toString())
+
+            if (result.message == "Password incorrect") {
+                Toast.makeText(this, result.message, Toast.LENGTH_SHORT).show()
+            } else {
+                AlertDialog.Builder(this).apply {
+                    setTitle("Hore!")
+                    setMessage("Anda berhasil login")
+                    setPositiveButton("Lanjut") { _, _ ->
+                        val intent = Intent(context, MainActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                        startActivity(intent)
+                        finish()
+                    }
+                    create()
+                    show()
                 }
-                create()
-                show()
             }
+
+//            loginViewModel.isSuccess.observe(this) { isSuccess ->
+//                if (isSuccess) {
+
+//                } else {
+//                    Toast.makeText(this, result.message, Toast.LENGTH_SHORT).show()
+//                }
+
         }
     }
 

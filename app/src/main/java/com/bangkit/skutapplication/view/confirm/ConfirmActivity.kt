@@ -22,6 +22,7 @@ import com.bangkit.skutapplication.databinding.ActivityConfirmBinding
 import com.bangkit.skutapplication.datastore.UserPreference
 import com.bangkit.skutapplication.datastore.ViewModelFactory
 import com.bangkit.skutapplication.helper.rotateImageIfRequired
+import com.bangkit.skutapplication.view.login.LoginActivity
 import com.bangkit.skutapplication.view.result.ResultActivity
 import com.google.android.material.appbar.MaterialToolbar
 import java.io.ByteArrayOutputStream
@@ -68,7 +69,23 @@ class ConfirmActivity : AppCompatActivity() {
 
         binding.uploadButton.setOnClickListener {
             confirmViewModel.setImageBase64(bitmapToBase64(rotatedBitmap))
-            uploadImage()
+            confirmViewModel.getUser().observe(this) { user ->
+                if (user.token.isNotEmpty()) {
+//                binding.nameTextView.text = getString(R.string.greeting, user.name)
+                    Log.d("token", user.token)
+
+                    uploadImage(user.token)
+
+//                mainViewModel.getUserStories(user.token)
+//
+//                mainViewModel.isError.observe(this) {
+//                    showMessage(it)
+//                }
+                } else {
+                    startActivity(Intent(this, LoginActivity::class.java))
+                    finish()
+                }
+            }
         }
 
         confirmViewModel.isLoading.observe(this) {
@@ -84,9 +101,9 @@ class ConfirmActivity : AppCompatActivity() {
         return Base64.encodeToString(byteArray, Base64.DEFAULT)
     }
 
-    private fun uploadImage() {
+    private fun uploadImage(token: String) {
 
-        confirmViewModel.uploadImage("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJuYW1lIjoiQWJpeXl1IiwiZW1haWwiOiJtaG1kYWJpeXl1MTlAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkSnhDYVRlOHVZaC5aVGtkUS5hc1p0dVRJdFFCamw2MjEwTmlUZ3NoRnguUTh4VE16YVZVZHkiLCJpYXQiOjE2NTQzNDI3NTYsImV4cCI6MTY1NjkzNDc1Nn0.2mg1uNRg8LDJ6QptaA4beCPI8i0d7kGErsa25DAxk9Q")
+        confirmViewModel.uploadImage(token)
 
         confirmViewModel.isError.observe(this) {
             showMessage(it)

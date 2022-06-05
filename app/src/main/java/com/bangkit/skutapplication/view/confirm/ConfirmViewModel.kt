@@ -12,6 +12,7 @@ import com.bangkit.skutapplication.model.response.UploadResponse
 import com.bangkit.skutapplication.model.User
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody.Companion.toRequestBody
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -36,8 +37,11 @@ class ConfirmViewModel(private val pref: UserPreference) : ViewModel() {
 
     fun uploadImage(token: String) {
 
+        val body = getImageBase64Json(imageBase64.value.toString())
+            .trimIndent().toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
+
         _isLoading.value = true
-        val client = ApiConfig.getApiService().uploadImage("Bearer $token", imageBase64.toString())
+        val client = ApiConfig.getApiService().uploadImage("Bearer $token", body)
         client.enqueue(object : Callback<UploadResponse> {
             override fun onResponse(
                 call: Call<UploadResponse>,
@@ -60,5 +64,11 @@ class ConfirmViewModel(private val pref: UserPreference) : ViewModel() {
                 Log.d(ContentValues.TAG, "onFailure: ${t.message}")
             }
         })
+    }
+
+    private fun getImageBase64Json(imageData: String): String{
+        val json = JSONObject()
+        json.put("image", imageData)
+        return json.toString(4)
     }
 }

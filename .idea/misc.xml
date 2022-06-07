@@ -4,40 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/drawable-v24/ic_baseline_calendar_month_24.xml" value="0.1375" />
-        <entry key="..\:/SkutApplication/app/src/main/res/drawable-v24/ic_baseline_calendar_month_24.xml" value="0.1" />
-        <entry key="..\:/SkutApplication/app/src/main/res/drawable-v24/ic_baseline_face_retouching_natural_24.xml" value="0.1" />
-        <entry key="..\:/SkutApplication/app/src/main/res/drawable/bg_button_disabled.xml" value="0.1" />
-        <entry key="..\:/SkutApplication/app/src/main/res/drawable/ic_baseline_access_time_24.xml" value="0.124" />
-        <entry key="..\:/SkutApplication/app/src/main/res/drawable/ic_baseline_arrow_drop_down_24.xml" value="0.124" />
-        <entry key="..\:/SkutApplication/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.105" />
-        <entry key="..\:/SkutApplication/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.1" />
-        <entry key="..\:/SkutApplication/app/src/main/res/drawable/ic_baseline_g_translate_24.xml" value="0.1" />
-        <entry key="..\:/SkutApplication/app/src/main/res/drawable/ic_baseline_image_24.xml" value="0.1265" />
-        <entry key="..\:/SkutApplication/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.148" />
-        <entry key="..\:/SkutApplication/app/src/main/res/drawable/radio_normal.xml" value="0.125" />
-        <entry key="..\:/SkutApplication/app/src/main/res/drawable/radio_selected.xml" value="0.1" />
-        <entry key="..\:/SkutApplication/app/src/main/res/drawable/radio_selector.xml" value="0.1" />
-        <entry key="..\:/SkutApplication/app/src/main/res/drawable/text_color.xml" value="0.1" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/activity_add_daily_treatment.xml" value="0.33" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/activity_beauty_tips.xml" value="0.18" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/activity_daily_treatment.xml" value="0.25" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/activity_edit_profile.xml" value="0.1956521739130435" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/activity_login.xml" value="0.13272543059777103" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/activity_main.xml" value="0.1956521739130435" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/activity_register.xml" value="0.1897644927536232" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/beauty_tips_item.xml" value="0.1" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/daily_routine_item.xml" value="0.25" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/daily_treatment_item.xml" value="0.3251833740831296" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/fragment_camera.xml" value="0.1" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/fragment_daily_treatment.xml" value="0.31296296296296294" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/fragment_home.xml" value="0.1956521739130435" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/fragment_profile.xml" value="0.13272543059777103" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/fragment_skincare_treatment.xml" value="0.28125" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/radio_normal.xml" value="0.1" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/view_pager_item.xml" value="0.1" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/drawable/bg_button.xml" value="0.1725" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/drawable/bg_button_disabled.xml" value="0.1525" />
+        <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/drawable/ic_baseline_access_time_24.xml" value="0.195" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1375" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/drawable/ic_baseline_arrow_drop_down_24.xml" value="0.1375" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/drawable/ic_baseline_arrow_drop_up_24.xml" value="0.1375" />
@@ -57,11 +26,18 @@
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/activity_result.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/activity_upload.xml" value="0.5" />
+        <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/beauty_tips_item.xml" value="0.2975630611372381" />
+        <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/category_item.xml" value="0.33" />
+        <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/daily_routine_item.xml" value="0.2975630611372381" />
+        <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/daily_treatment_item.xml" value="0.2975630611372381" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/fragment_camera.xml" value="0.2" />
+        <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/fragment_daily_treatment.xml" value="0.2975630611372381" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/fragment_store.xml" value="0.2975630611372381" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/ic_capture.xml" value="0.20521590423257802" />
+        <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/item.xml" value="0.2967079948696024" />
+        <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/product_item.xml" value="0.33" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/toolbar_title_layout.xml" value="0.2967079948696024" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/SkutApplication/app/src/main/res/drawable-v24/ic_baseline_calendar_month_24.xml" value="0.1605" />

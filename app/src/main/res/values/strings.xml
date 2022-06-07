@@ -55,6 +55,24 @@
         <item>@drawable/vitamin</item>
     </integer-array>
 
+    <string-array name="acneProduct">
+        <item>COSRX AC Collection Acne Hero Kit Intensive Skin Care (Untuk kulit berjerawat)</item>
+
+    </string-array>
+
+    <string-array name="acneProductPrice">
+        <item>Rp279.650</item>
+    </string-array>
+
+    <integer-array name="acneProductImg">
+        <item>@drawable/cosrx_ac_collection</item>
+
+    </integer-array>
+
+    <string-array name="acneProductUrl">
+        <item>https://shopee.co.id/cosrxindonesia/9053402951</item>
+    </string-array>
+
     <string-array name="rosaceaDailyRoutine">
         <item>Wash your face with a mild cleanser</item>
         <item>Apply a hydrating moisturizer</item>
@@ -73,6 +91,24 @@
         <item>@drawable/dermatologist</item>
     </integer-array>
 
+    <string-array name="rosaceaProduct">
+        <item>Natural Oud Sabun Muka Untuk Rosacea / Sabun Pelembab Untuk Kulit Rosacea</item>
+
+    </string-array>
+
+    <string-array name="rosaceaProductPrice">
+        <item>Rp95.000</item>
+    </string-array>
+
+    <integer-array name="rosaceaProductImg">
+        <item>@drawable/natural_oud_sabun_untuk_kulit_rosacea</item>
+
+    </integer-array>
+
+    <string-array name="rosaceaProductUrl">
+        <item>https://shopee.co.id/naturaloud.store/13242264554</item>
+    </string-array>
+
     <string-array name="eczemaDailyRoutine">
         <item>In the morning, wash your face with water only</item>
         <item>Moisturize your skin 2 to 3 times per day</item>
@@ -90,6 +126,25 @@
         <item>@drawable/clothes</item>
         <item>@drawable/night</item>
     </integer-array>
+
+    <string-array name="eczemaProduct">
+        <item>Obat Salep Eksim Kering Ampuh Basah Gatal Gatel Kulit Panu Kurap Kutu Air Jamur Kadas Luka Diabetes</item>
+
+    </string-array>
+
+    <string-array name="eczemaProductPrice">
+        <item>Rp49.000</item>
+    </string-array>
+
+    <integer-array name="eczemaProductImg">
+        <item>@drawable/obat_salep_eksim_kering</item>
+
+    </integer-array>
+
+    <string-array name="eczemaProductUrl">
+        <item>https://shopee.co.id/clarissastoreid/7855136704</item>
+    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="daily_trivia">Trivia Harian</string>
@@ -119,21 +174,21 @@
     <string name="edit_profil">Edit Profil</string>
     <string name="choose_pictures">Pilih Gambar</string>
     <string name="save">simpan</string>
-    <string name="product_name">product name</string>
+    <string name="product_name">Nama produk</string>
     <string name="time">time</string>
     <string name="create_your_own_daily_treatment_remainder_schedule">Create your own daily treatment remainder schedule</string>
-    <string name="button">button</string>
-    <string name="create">Create</string>
-    <string name="treatment_name_input">Treatment Name</string>
-    <string name="time_input">Time</string>
+    <string name="button">tombol</string>
+    <string name="create">Membuat</string>
+    <string name="treatment_name_input">Nama perawatan</string>
+    <string name="time_input">Waktu</string>
     <string name="add_image">add image</string>
     <string name="tab_text_1" translatable="false">Daily Routine</string>
     <string name="tab_text_2" translatable="false">Skincare Routine</string>
-    <string name="create_new_daily_skincare_routine">Create New Daily Skincare Routine</string>
-    <string name="set_time">Set time</string>
-    <string name="example_20_30">Example: 20:30</string>
-    <string name="new_treatment_name">New Treatment Name</string>
-    <string name="example_apply_moisturizer">Example: Apply Moisturizer</string>
+    <string name="create_new_daily_skincare_routine">Membuat skincare rutin baru</string>
+    <string name="set_time">Atur waktu</string>
+    <string name="example_20_30">Contoh: 20:30</string>
+    <string name="new_treatment_name">Nama Perawatan Baru</string>
+    <string name="example_apply_moisturizer">Contoh: Terapkan Moisturizer</string>
     <string name="treatment_name_character">Treatment\'s Name character is too long</string>
     <string name="time_format_doesnt_match">Time format doesn\'t match</string>
     <string name="capture_button">Tombol ambil gambar</string>
@@ -148,4 +203,8 @@
     <string name="next">Lanjut</string>
     <string name="confirm">Konfirmasi</string>
     <string name="store">Toko</string>
+    <string name="acne">Acne</string>
+    <string name="rosacea">Rosacea</string>
+    <string name="eczema">Eczema</string>
+    <string name="price">Harga</string>
 </resources>

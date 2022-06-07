@@ -14,9 +14,11 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/materialCardView"
-            android:layout_width="350dp"
+            android:layout_width="0dp"
             android:layout_height="125dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
             app:cardCornerRadius="10dp"
             app:cardElevation="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +56,7 @@
                     android:layout_marginBottom="16dp"
                     android:fontFamily="@font/open_sans"
                     android:text="@string/do_you_know_that_moisturizer_is_the_best_defense_against_dry_skin"
-                    android:textColor="#000000"
+                    android:textColor="?android:textColorPrimary"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -65,14 +67,14 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonBeautyTips"
-            android:layout_width="160dp"
+            android:layout_width="170dp"
             android:layout_height="110dp"
             android:layout_marginTop="8dp"
             android:backgroundTint="@color/blue"
             android:fontFamily="@font/open_sans_bold"
             android:paddingBottom="0dp"
             android:text="@string/beauty_tips"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:textSize="12sp"
             android:textStyle="bold"
             app:cornerRadius="10dp"
@@ -84,14 +86,14 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonDailyTreatment"
-            android:layout_width="160dp"
+            android:layout_width="170dp"
             android:layout_height="110dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="8dp"
             android:backgroundTint="@color/blue"
             android:fontFamily="@font/open_sans_bold"
             android:paddingBottom="0dp"
             android:text="@string/daily_treatment"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:textSize="12sp"
             android:textStyle="bold"
             app:cornerRadius="10dp"
@@ -103,16 +105,16 @@
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPager"
-            android:layout_width="350dp"
+            android:layout_width="0dp"
             android:layout_height="150dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cardView"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/cardView"
             app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
         <me.relex.circleindicator.CircleIndicator3
             android:id="@+id/circleIndicator"
-            android:layout_width="350dp"
+            android:layout_width="0dp"
             android:layout_height="20dp"
             android:background="@color/blue"
             app:layout_constraintEnd_toEndOf="@+id/viewPager"
@@ -158,13 +160,13 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
-            android:layout_width="350dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/blue"
             app:cardCornerRadius="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/buttonBeautyTips"
+            app:layout_constraintStart_toStartOf="@+id/buttonDailyTreatment"
             app:layout_constraintTop_toBottomOf="@+id/buttonDailyTreatment">
 
             <androidx.constraintlayout.widget.ConstraintLayout

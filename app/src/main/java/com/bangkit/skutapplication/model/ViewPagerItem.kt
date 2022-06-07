@@ -7,4 +7,5 @@ import kotlinx.parcelize.Parcelize
 data class ViewPagerItem(
     var diseaseName: String,
     var diseaseDescription: String,
+    var diseaseIcon: Int
 ) : Parcelable

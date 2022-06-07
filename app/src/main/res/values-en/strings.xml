@@ -17,16 +17,21 @@
         <item>Do you know that over moisturizing can leads to breakout?</item>
         <item>Do you know that caffeine leads to dry skin?</item>
     </string-array>
-    <string-array name="data_question">
+    <string-array name="skinDisease">
         <item>Acne</item>
         <item>Rosacea</item>
         <item>Eczema</item>
     </string-array>
-    <string-array name="data_answer">
+    <string-array name="skinDiseaseDescription">
         <item>Acne is a skin condition that occurs when your hair follicles become plugged with oil and dead skin cells. It causes whiteheads, blackheads or pimples. Acne is most common among teenagers, though it affects people of all ages.</item>
         <item>Rosacea (roe-ZAY-she-uh) is a common skin condition that causes blushing or flushing and visible blood vessels in your face. It may also produce small, pus-filled bumps. </item>
         <item>Eczema is a term related to inflammation of the skin. This disorder is also known as dermatitis. When it occurs, an allergic skin reaction can be characterized by the appearance of redness, rash, and itching.</item>
     </string-array>
+    <integer-array name="skinDiseaseIcon">
+        <item>@drawable/acne</item>
+        <item>@drawable/rosacea</item>
+        <item>@drawable/dermatitis</item>
+    </integer-array>
 
 
     <string-array name="beautyTips">
@@ -122,4 +127,5 @@
     <string name="example_apply_moisturizer">Example: Apply Moisturizer</string>
     <string name="minute">Minute</string>
     <string name="hour">Hour</string>
+    <string name="skin_disease">Common Facial Skin Disease</string>
 </resources>

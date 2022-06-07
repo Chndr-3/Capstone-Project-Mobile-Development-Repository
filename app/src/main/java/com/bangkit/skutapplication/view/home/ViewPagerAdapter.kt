@@ -5,6 +5,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.util.Pair
@@ -19,18 +20,19 @@ class ViewPagerAdapter(private val listDisease: List<ViewPagerItem>) :
     inner class Pager2ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val itemDiseaseName : TextView = itemView.findViewById(R.id.beautyTips)
         val itemDiseaseDescription: TextView = itemView.findViewById(R.id.beautyDescription)
+        val itemDiseaseIcon: ImageView = itemView.findViewById(R.id.diseaseIcon)
         fun bind(list: ViewPagerItem) {
             itemDiseaseName.text = list.diseaseName
             itemDiseaseDescription.text = list.diseaseDescription
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, DiseaseActivity::class.java)
                 intent.putExtra("LIST", list)
-
                 val optionsCompat: ActivityOptionsCompat =
                     ActivityOptionsCompat.makeSceneTransitionAnimation(
                         itemView.context as Activity,
                         Pair(itemDiseaseName, "name"),
                         Pair(itemDiseaseDescription, "description"),
+                        Pair(itemDiseaseIcon,"image")
                     )
                 itemView.context.startActivity(intent, optionsCompat.toBundle())
             }
@@ -47,6 +49,7 @@ class ViewPagerAdapter(private val listDisease: List<ViewPagerItem>) :
         val list = listDisease[position]
         holder.itemDiseaseName.text = list.diseaseName
         holder.itemDiseaseDescription.text = list.diseaseDescription
+        holder.itemDiseaseIcon.setImageResource(list.diseaseIcon)
         holder.bind(listDisease[position])
     }
 

@@ -55,7 +55,8 @@
             android:label = "Beauty Tips"/>
         <activity
             android:name=".view.disease.DiseaseActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/common_facial_skin_disease"/>
         <activity
             android:name=".view.main.SplashScreenActivity"
             android:exported="true"

@@ -1,41 +1,32 @@
 package com.bangkit.skutapplication.view.dailytreatment
 
-import android.app.AlarmManager
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.PendingIntent
-import android.content.Intent
-import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.bangkit.skutapplication.R
-import com.bangkit.skutapplication.databinding.ActivityDailyTreatmentBinding
-import com.bangkit.skutapplication.helper.ItemViewModelFactory
-import com.bangkit.skutapplication.model.DailyTreatmentItem
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import java.text.SimpleDateFormat
-import java.util.*
 
 
 class DailyTreatmentActivity : AppCompatActivity() {
+    private lateinit var tabs: TabLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_daily_treatment)
         val sectionsPagerAdapter = SectionsPageAdapter(this)
         val viewPager: ViewPager2 = findViewById(R.id.viewPager)
         viewPager.adapter = sectionsPagerAdapter
-        val tabs: TabLayout = findViewById(R.id.tabLayout)
+        tabs = findViewById(R.id.tabLayout)
+        val getData = intent.getStringExtra("tab")
+        val getData2 = intent.getStringExtra("tab2")
         TabLayoutMediator(tabs, viewPager) { tab, position ->
             tab.text = resources.getString(TAB_TITLES[position])
         }.attach()
-        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true);
+        selectTab(getData.toString())
+        selectTab(getData2.toString())
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -43,6 +34,11 @@ class DailyTreatmentActivity : AppCompatActivity() {
             finish()
         }
         return super.onOptionsItemSelected(item)
+    }
+    private fun selectTab(data: String){
+        if(data == "1"){
+            tabs.getTabAt(1)?.select()
+        }
     }
 
     companion object {

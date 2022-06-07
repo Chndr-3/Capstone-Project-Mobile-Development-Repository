@@ -18,6 +18,7 @@ class AlarmReceiver : BroadcastReceiver() {
         val repeatingIntent = Intent(context, DailyTreatmentActivity::class.java)
         repeatingIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         val name = intent?.getStringExtra("name")
+        repeatingIntent.putExtra("tab2", "1")
         val pendingIntent = PendingIntent.getActivity(
             context,
             0,

@@ -10,6 +10,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.FragmentDailyTreatmentBinding
@@ -20,7 +23,7 @@ import java.util.*
 
 
 class DailyTreatmentFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+
     private lateinit var binding: FragmentDailyTreatmentBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -121,9 +124,10 @@ class DailyTreatmentFragment : Fragment() {
         val date2: Date = df.parse("10:00") as Date
         if (!(date1.after(date2))) {
             setCalendar()
-            if (date1 != date2) {
+            if(!(date1.equals(date2))){
                 setCalendar()
             }
         }
     }
+
 }

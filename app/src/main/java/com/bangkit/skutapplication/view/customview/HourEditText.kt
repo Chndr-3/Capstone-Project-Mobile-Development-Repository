@@ -32,11 +32,9 @@ class HourEditText : AppCompatEditText {
             }
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                try {
                     if (s.length != 2) {
                        error = resources.getString(R.string.time_format_doesnt_match)
                     }
-                } catch (nfe:NumberFormatException) {}
             }
 
             override fun afterTextChanged(s: Editable) {

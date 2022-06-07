@@ -7,6 +7,16 @@
     </string>
     <string name="app_title">SKUT</string>
     <string name="splash_content_description">gambar_splash</string>
+    <string-array name="daily_trivia">
+        <item>Do you know that moisturizer is the best defense against dry skin?</item>
+        <item>Do you know that wearing sunscreen daily is actually protect you against aging?</item>
+        <item>Do you know that exfoliating leaves skin smooth?</item>
+        <item>Do you know that dancing makes your skin glow?</item>
+        <item>Do you know that a lack of sleep can affect your skin?</item>
+        <item>Do you know that eating fish is great for your skin?</item>
+        <item>Do you know that over moisturizing can leads to breakout?</item>
+        <item>Do you know that caffeine leads to dry skin?</item>
+    </string-array>
     <string-array name="data_question">
         <item>Acne</item>
         <item>Rosacea</item>
@@ -101,4 +111,15 @@
     <string name="next">Next</string>
     <string name="confirm">Confirm</string>
     <string name="store">Store</string>
+    <string name="create">Create</string>
+    <string name="treatment_name_input">Treatment Name</string>
+    <string name="tab_text_1" translatable="false">Daily Routine</string>
+    <string name="tab_text_2">Skincare Routine</string>
+    <string name="create_new_daily_skincare_routine">Create New Daily Skincare Routine</string>
+    <string name="set_time">Set time</string>
+    <string name="example_20_30">Example: 20:30, 09:30</string>
+    <string name="new_treatment_name">New Treatment Name</string>
+    <string name="example_apply_moisturizer">Example: Apply Moisturizer</string>
+    <string name="minute">Minute</string>
+    <string name="hour">Hour</string>
 </resources>

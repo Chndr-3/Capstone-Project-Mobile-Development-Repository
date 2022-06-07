@@ -7,8 +7,8 @@ import com.bangkit.skutapplication.model.DailyTreatmentItem
 
 @Dao
 interface DailyTreatmentDao {
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insert(item: DailyTreatmentItem)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insert(item: List<DailyTreatmentItem>)
     @Update
     fun update(item: DailyTreatmentItem)
     @Query("DELETE FROM item WHERE id = :id ")

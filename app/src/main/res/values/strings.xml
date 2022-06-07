@@ -131,7 +131,7 @@
     <string name="tab_text_2" translatable="false">Skincare Routine</string>
     <string name="create_new_daily_skincare_routine">Create New Daily Skincare Routine</string>
     <string name="set_time">Set time</string>
-    <string name="example_20_30">Example: 20:30</string>
+    <string name="example_20_30">Example: 20:30, 09:30</string>
     <string name="new_treatment_name">New Treatment Name</string>
     <string name="example_apply_moisturizer">Example: Apply Moisturizer</string>
     <string name="treatment_name_character">Treatment\'s Name character is too long</string>
@@ -148,4 +148,7 @@
     <string name="next">Lanjut</string>
     <string name="confirm">Konfirmasi</string>
     <string name="store">Toko</string>
+    <string name="time_format">:</string>
+    <string name="minute">Minute</string>
+    <string name="hour">Hour</string>
 </resources>

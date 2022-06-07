@@ -19,7 +19,7 @@ class DailyTreatmentRepository(application: Application) {
 
     fun getAllItem(): LiveData<List<DailyTreatmentItem>> = mDailyTreatmentDao.getAllItem()
 
-    fun insert(dailyTreatmentItem: DailyTreatmentItem) {
+    fun insert(dailyTreatmentItem: List<DailyTreatmentItem>) {
         executorService.execute { mDailyTreatmentDao.insert(dailyTreatmentItem) }
     }
 

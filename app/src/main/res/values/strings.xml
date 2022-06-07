@@ -18,17 +18,22 @@
         <item>Tahukah Anda bahwa pelembap yang berlebihan dapat menyebabkan breakout?</item>
         <item>Tahukah Anda bahwa kafein menyebabkan kulit kering?</item>
     </string-array>
-    <string-array name="data_question">
+    <string-array name="skinDisease">
         <item>Jerawat</item>
         <item>Rosacea</item>
         <item>Eksim</item>
     </string-array>
 
-    <string-array name="data_answer">
+    <string-array name="skinDiseaseDescription">
         <item>Jerawat adalah kondisi kulit yang terjadi ketika folikel rambut tersumbat oleh minyak dan sel kulit mati. Ini menyebabkan whiteheads, komedo atau jerawat. Jerawat paling umum di kalangan remaja, meskipun itu mempengaruhi orang-orang dari segala usia.</item>
         <item>Rosacea (roe-ZAY-she-uh) adalah kondisi kulit umum yang menyebabkan merona atau kemerahan dan pembuluh darah terlihat di wajah Anda. Ini juga dapat menghasilkan benjolan kecil berisi nanah.</item>
         <item>Eksim adalah istilah yang berhubungan dengan peradangan pada kulit. Gangguan ini juga dikenal sebagai dermatitis. Ketika terjadi, reaksi alergi pada kulit bisa ditandai dengan munculnya kemerahan, ruam, dan gatal-gatal.</item>
     </string-array>
+    <integer-array name="skinDiseaseIcon">
+        <item>@drawable/acne</item>
+        <item>@drawable/rosacea</item>
+        <item>@drawable/dermatitis</item>
+    </integer-array>
 
 
     <string-array name="beautyTips">
@@ -162,4 +167,5 @@
     <string name="minute">Menit</string>
     <string name="hour">Jam</string>
     <string name="product_name_input">Nama Product</string>
+    <string name="skin_disease">Penyakit Kulit Umum Wajah</string>
 </resources>

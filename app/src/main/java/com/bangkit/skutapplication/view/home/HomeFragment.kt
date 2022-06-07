@@ -37,11 +37,12 @@ class HomeFragment : Fragment() {
     }
     private val listViewPagerItem: ArrayList<ViewPagerItem>
         get() {
-            val dataQuestion = resources.getStringArray(R.array.data_question)
-            val dataAnswer = resources.getStringArray(R.array.data_answer)
+            val skinDisease = resources.getStringArray(R.array.skinDisease)
+            val skinDiseaseDescription = resources.getStringArray(R.array.skinDiseaseDescription)
+            val skinDiseaseIcon = resources.obtainTypedArray(R.array.skinDiseaseIcon)
             val listTanyaJawab = ArrayList<ViewPagerItem>()
-            for (i in dataQuestion.indices) {
-                val hero = ViewPagerItem(dataQuestion[i],dataAnswer[i])
+            for (i in skinDisease.indices) {
+                val hero = ViewPagerItem(skinDisease[i],skinDiseaseDescription[i],skinDiseaseIcon.getResourceId(i, -1))
                 listTanyaJawab.add(hero)
             }
             return listTanyaJawab

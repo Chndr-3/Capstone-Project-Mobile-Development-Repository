@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.bangkit.skutapplication.R
-import com.bangkit.skutapplication.view.login.LoginActivity
 
 class SplashScreenActivity : AppCompatActivity() {
     private val duration : Long = 3000

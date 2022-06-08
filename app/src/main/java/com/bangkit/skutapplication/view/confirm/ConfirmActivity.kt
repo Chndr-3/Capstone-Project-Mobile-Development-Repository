@@ -5,12 +5,14 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.util.Base64
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
@@ -36,6 +38,7 @@ class ConfirmActivity : AppCompatActivity() {
 
     private lateinit var imageUri: String
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityConfirmBinding.inflate(layoutInflater)
@@ -59,11 +62,15 @@ class ConfirmActivity : AppCompatActivity() {
 
         val imageStream = contentResolver.openInputStream(Uri.parse(imageUri))
         val bitmapImage = BitmapFactory.decodeStream(imageStream)
-        val rotatedBitmap = rotateImageIfRequired(bitmapImage, Uri.parse(imageUri))
+
+        Log.d("imaggeeee", imageUri)
+        Log.d("imaggeeee2", bitmapImage.toString())
+
+        val rotatedBitmap = imageStream?.let { rotateImageIfRequired(bitmapImage, it) }
 
 
 //        binding.imgPreview.setImageURI(Uri.parse(imageUri))
-        binding.imgPreview.setImageBitmap(rotatedBitmap)
+        binding.imgPreview.setImageBitmap(bitmapImage)
 
         Log.d("test", imageUri)
 
@@ -93,9 +100,9 @@ class ConfirmActivity : AppCompatActivity() {
         }
     }
 
-    private fun bitmapToBase64(bitmap: Bitmap): String {
+    private fun bitmapToBase64(bitmap: Bitmap?): String {
         val stream = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 50, stream)
+        bitmap?.compress(Bitmap.CompressFormat.JPEG, 50, stream)
         val byteArray: ByteArray = stream.toByteArray()
 
         return Base64.encodeToString(byteArray, Base64.DEFAULT)

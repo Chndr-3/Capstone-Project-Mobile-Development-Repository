@@ -22,19 +22,19 @@
             android:id="@+id/acne"
             style="@style/RadioButton"
             android:layout_width="100dp"
-            android:text="Acne" />
+            android:text="@string/acne" />
 
         <RadioButton
             android:id="@+id/rosacea"
             style="@style/RadioButton"
             android:layout_width="100dp"
-            android:text="Rosacea" />
+            android:text="@string/rosacea" />
 
         <RadioButton
             android:id="@+id/eczema"
             style="@style/RadioButton"
             android:layout_width="100dp"
-            android:text="Eczema" />
+            android:text="@string/eczema" />
 
     </RadioGroup>
 

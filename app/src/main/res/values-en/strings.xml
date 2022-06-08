@@ -95,13 +95,12 @@
     <string name="edit_profil">Edit Profile</string>
     <string name="choose_pictures">Choose Pictures</string>
     <string name="save">Save</string>
-    <string name="product_name">product name</string>
+    <string name="product_name">Product name</string>
     <string name="time">time</string>
     <string name="create_your_own_daily_treatment_remainder_schedule">Create your own daily treatment remainder schedule</string>
-    <string name="product_name_input">Product Name</string>
     <string name="time_input">Time</string>
     <string name="add_image">add image</string>
-    <string name="button">tombol</string>
+    <string name="button">button</string>
     <string name="treatment_name_character">Treatment\'s Name character is too long</string>
     <string name="time_format_doesnt_match">Time format doesn\'t match</string>
     <string name="capture_button">Capture button</string>
@@ -117,6 +116,11 @@
     <string name="confirm">Confirm</string>
     <string name="store">Store</string>
     <string name="create">Create</string>
+    <string name="acne">Acne</string>
+    <string name="rosacea">Rosacea</string>
+    <string name="eczema">Eczema</string>
+    <string name="price">Price</string>
+    <string name="re_type_password">Re-type Password</string>
     <string name="treatment_name_input">Treatment Name</string>
     <string name="tab_text_1" translatable="false">Daily Routine</string>
     <string name="tab_text_2">Skincare Routine</string>

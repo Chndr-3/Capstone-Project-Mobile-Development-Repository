@@ -209,12 +209,29 @@ class CameraFragment : Fragment() {
 
             val selectedImg: Uri = result.data?.data as Uri
 
+            val takeFlags: Int = Intent.FLAG_GRANT_READ_URI_PERMISSION or
+                    Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+
+            selectedImg.let { activity?.contentResolver?.takePersistableUriPermission(it, takeFlags) }
+
             val intent = Intent(activity, ConfirmActivity::class.java)
             intent.putExtra(EXTRA_IMAGE_URI, selectedImg.toString())
             startActivity(intent)
-            Log.d("tes", selectedImg.toString())
+            Log.d("imageeeeee", selectedImg.toString())
         }
     }
+
+//    private val launcherIntentGallery = registerForActivityResult(
+//        ActivityResultContracts.StartActivityForResult()
+//    ) { result ->
+//        if (result.resultCode == AppCompatActivity.RESULT_OK) {
+//            selectedImg = result.data?.data as Uri
+//            val takeFlags: Int = Intent.FLAG_GRANT_READ_URI_PERMISSION or
+//                    Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+//            selectedImg.let { contentResolver.takePersistableUriPermission(it, takeFlags) }
+//            binding.imageView.setImageURI(selectedImg)
+//        }
+//    }
 
     @SuppressLint("ClickableViewAccessibility")
     private fun zoomCamera(cameraLifecycle: Camera, viewFinder: PreviewView) {

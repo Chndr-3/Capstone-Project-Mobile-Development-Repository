@@ -1,22 +1,16 @@
 package com.bangkit.skutapplication.helper
 
-import android.app.Application
-import android.content.ContentResolver
-import android.content.Context
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.graphics.Matrix
 import android.media.ExifInterface
-import android.net.Uri
-import android.os.Environment
-import com.bangkit.skutapplication.R
+import android.os.Build
+import androidx.annotation.RequiresApi
 import java.io.*
-import java.text.SimpleDateFormat
-import java.util.*
 
+@RequiresApi(Build.VERSION_CODES.N)
 @Throws(IOException::class)
-fun rotateImageIfRequired(img: Bitmap, selectedImage: Uri): Bitmap {
-    val ei = ExifInterface(selectedImage.path!!)
+fun rotateImageIfRequired(img: Bitmap, inputStream: InputStream): Bitmap {
+    val ei = ExifInterface(inputStream)
     return when (ei.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL)) {
         ExifInterface.ORIENTATION_ROTATE_90 -> rotateImage(img, 90)
         ExifInterface.ORIENTATION_ROTATE_180 -> rotateImage(img, 180)

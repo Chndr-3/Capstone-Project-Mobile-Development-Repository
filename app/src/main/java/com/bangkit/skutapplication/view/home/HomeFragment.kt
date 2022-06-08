@@ -1,6 +1,8 @@
 package com.bangkit.skutapplication.view.home
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.*
 import android.view.LayoutInflater
@@ -10,11 +12,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.bangkit.skutapplication.R
-import java.util.ArrayList
 import com.bangkit.skutapplication.databinding.FragmentHomeBinding
 import com.bangkit.skutapplication.model.ViewPagerItem
 import com.bangkit.skutapplication.view.beautytips.BeautyTipsActivity
 import com.bangkit.skutapplication.view.dailytreatment.DailyTreatmentActivity
+import java.time.LocalDate
+import java.util.*
 
 
 class HomeFragment : Fragment() {
@@ -34,11 +37,12 @@ class HomeFragment : Fragment() {
     }
     private val listViewPagerItem: ArrayList<ViewPagerItem>
         get() {
-            val dataQuestion = resources.getStringArray(R.array.data_question)
-            val dataAnswer = resources.getStringArray(R.array.data_answer)
+            val skinDisease = resources.getStringArray(R.array.skinDisease)
+            val skinDiseaseDescription = resources.getStringArray(R.array.skinDiseaseDescription)
+            val skinDiseaseIcon = resources.obtainTypedArray(R.array.skinDiseaseIcon)
             val listTanyaJawab = ArrayList<ViewPagerItem>()
-            for (i in dataQuestion.indices) {
-                val hero = ViewPagerItem(dataQuestion[i],dataAnswer[i])
+            for (i in skinDisease.indices) {
+                val hero = ViewPagerItem(skinDisease[i],skinDiseaseDescription[i],skinDiseaseIcon.getResourceId(i, -1))
                 listTanyaJawab.add(hero)
             }
             return listTanyaJawab
@@ -57,6 +61,7 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.getRoot();
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         showViewPager()
@@ -68,9 +73,14 @@ class HomeFragment : Fragment() {
             val intent = Intent(activity, DailyTreatmentActivity::class.java)
             startActivity(intent)
         }
+        val trivia = resources.getStringArray(R.array.daily_trivia)
+        val daysSinceEpoch = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            LocalDate.now().toEpochDay()
+        } else {
+            TODO("VERSION.SDK_INT < O")
+        }
+        val random = Random(daysSinceEpoch)
+        binding.dailyTriviaValue.text = trivia[random.nextInt(trivia.size)]
     }
 
-    companion object {
-
-    }
 }

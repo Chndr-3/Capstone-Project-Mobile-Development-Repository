@@ -31,7 +31,7 @@
         android:id="@+id/textInputLayout2"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="wrap_content"
-        android:hint="Hour"
+        android:hint="@string/hour"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         app:endIconDrawable="@drawable/ic_baseline_access_time_24"
@@ -40,7 +40,7 @@
         app:layout_constraintStart_toStartOf="@+id/textInputLayout"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
-        <com.bangkit.skutapplication.view.customview.HourEditText
+        <EditText
             android:id="@+id/timeReminderHours"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout3"
-        android:hint="Minute"
+        android:hint="@string/minute"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,7 +65,7 @@
         app:layout_constraintStart_toEndOf="@+id/textInputLayout2"
         app:layout_constraintTop_toTopOf="@+id/textInputLayout2">
 
-        <com.bangkit.skutapplication.view.customview.HourEditText
+        <EditText
             android:id="@+id/timeReminderMinutes"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
@@ -141,10 +141,21 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginBottom="4dp"
-        android:text=":"
+        android:text="@string/time_format"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintStart_toEndOf="@+id/textInputLayout2"
         app:layout_constraintTop_toTopOf="@+id/textInputLayout2"
         app:layout_constraintVertical_bias="0.0" />
+
+    <ProgressBar
+        android:id="@+id/progressBarAddSkincareRoutine"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

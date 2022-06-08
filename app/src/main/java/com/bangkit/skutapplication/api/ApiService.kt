@@ -1,7 +1,12 @@
 package com.bangkit.skutapplication.api
 
+import com.bangkit.skutapplication.model.DailyTreatmentItem
+import com.bangkit.skutapplication.model.DeleteTreatment
+import com.bangkit.skutapplication.model.PostTreatment
+import com.bangkit.skutapplication.model.response.Dashboard
 import com.bangkit.skutapplication.model.response.LoginResponse
 import com.bangkit.skutapplication.model.response.RegisterResponse
+import com.bangkit.skutapplication.model.response.TreatmentResponse
 import com.bangkit.skutapplication.model.response.UploadResponse
 import com.bangkit.skutapplication.model.user.LoginModel
 import com.bangkit.skutapplication.model.user.RegisterModel
@@ -37,5 +42,18 @@ interface ApiService {
     @GET("dashboard")
     fun getDashboard(
         @Header("Authorization") token: String,
-    )
+    ): Call<Dashboard>
+
+
+    @POST("treatment")
+    fun postTreatment(
+        @Header("Authorization") token: String,
+        @Body postTreatment: PostTreatment
+    ) : Call<TreatmentResponse>
+
+    @HTTP(method = "DELETE", path = "treatment", hasBody = true)
+    fun deleteTreatment(
+        @Header("Authorization") token: String,
+        @Body treatment_id: DeleteTreatment
+    ) : Call<String>
 }

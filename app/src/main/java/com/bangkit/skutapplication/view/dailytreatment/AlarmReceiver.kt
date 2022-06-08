@@ -8,6 +8,8 @@ import android.content.Context
 import android.content.Intent
 import android.content.res.Resources
 import android.graphics.BitmapFactory
+import android.media.RingtoneManager
+import android.net.Uri
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.bangkit.skutapplication.R
@@ -18,6 +20,8 @@ class AlarmReceiver : BroadcastReceiver() {
         val repeatingIntent = Intent(context, DailyTreatmentActivity::class.java)
         repeatingIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         val name = intent?.getStringExtra("name")
+        val uri: Uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+        repeatingIntent.putExtra("tab2", "1")
         val pendingIntent = PendingIntent.getActivity(
             context,
             0,
@@ -33,6 +37,7 @@ class AlarmReceiver : BroadcastReceiver() {
                 .setContentText(contentTextChecker(name))
                 .setPriority(Notification.PRIORITY_DEFAULT)
                 .setAutoCancel(true)
+                .setSound(uri)
         val notificationManager = NotificationManagerCompat.from(context)
         notificationManager.notify(200, builder.build())
     }

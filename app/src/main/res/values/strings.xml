@@ -207,4 +207,5 @@
     <string name="rosacea">Rosacea</string>
     <string name="eczema">Eczema</string>
     <string name="price">Harga</string>
+    <string name="re_type_password">Ketik Ulang Password</string>
 </resources>

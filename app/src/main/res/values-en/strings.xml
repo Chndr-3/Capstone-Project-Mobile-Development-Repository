@@ -111,4 +111,5 @@
     <string name="rosacea">Rosacea</string>
     <string name="eczema">Eczema</string>
     <string name="price">Price</string>
+    <string name="re_type_password">Re-type Password</string>
 </resources>

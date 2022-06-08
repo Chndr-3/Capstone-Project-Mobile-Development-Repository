@@ -4,19 +4,25 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
+import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.ActivityRegisterBinding
+import com.bangkit.skutapplication.model.user.RegisterModel
 import com.bangkit.skutapplication.view.customview.MyButton
 import com.bangkit.skutapplication.view.customview.MyEditText
 import com.google.android.material.appbar.MaterialToolbar
+import java.util.*
 
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var myButton: MyButton
     private lateinit var myEditText: MyEditText
+    private val registerViewModel: RegisterViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +54,37 @@ class RegisterActivity : AppCompatActivity() {
 
             }
         })
+
+        registerViewModel.isLoading.observe(this) {
+            showLoading(it)
+        }
+
+        registerViewModel.registerResult.observe(this) { result ->
+            registerViewModel.registerError.observe(this) { error ->
+                if (result.message?.isNotEmpty() == true) {
+                    AlertDialog.Builder(this).apply {
+                        setTitle("Hore!")
+                        setMessage(getString(R.string.account_created))
+                        setPositiveButton(getString(R.string.next)) { _, _ ->
+                            finish()
+                        }
+                        create()
+                        show()
+                    }
+                } else {
+                    Toast.makeText(this, result.errors.toString(), Toast.LENGTH_SHORT).show()
+                    if (error != null) {
+                        for (i in 0 until error.count()) {
+                            // Message
+                            val message = error[i].message ?: "N/A"
+                            Log.d("error2: ", message)
+                        }
+//                        Log.d("errorr", message)
+                    }
+
+                }
+            }
+        }
     }
 
     private fun setupAction() {
@@ -55,6 +92,7 @@ class RegisterActivity : AppCompatActivity() {
             val name = binding.nameEditText.text.toString()
             val email = binding.emailEditText.text.toString()
             val password = myEditText.text.toString()
+            val password2 = binding.passwordEditText2.text.toString()
             when {
                 name.isEmpty() -> {
                     binding.nameEditTextLayout.error = "Masukkan email"
@@ -65,16 +103,14 @@ class RegisterActivity : AppCompatActivity() {
                 password.isEmpty() -> {
                     binding.passwordEditTextLayout.error = "Masukkan password"
                 }
+                password2.isEmpty() -> {
+                    binding.passwordEditTextLayout.error = "Masukkan password"
+                }
+                password2 != password -> {
+                    binding.passwordEditTextLayout2.error = "Password tidak sesuai"
+                }
                 else -> {
-                    AlertDialog.Builder(this).apply {
-                        setTitle("Hore!")
-                        setMessage(getString(R.string.account_created))
-                        setPositiveButton(getString(R.string.next)) { _, _ ->
-                            finish()
-                        }
-                        create()
-                        show()
-                    }
+                    registerViewModel.registerUser(RegisterModel(name, email, password, password2))
                 }
             }
         }

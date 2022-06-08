@@ -38,9 +38,9 @@ class ProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
-        return binding.getRoot();
+        return binding.root;
 
     }
 
@@ -53,11 +53,11 @@ class ProfileFragment : Fragment() {
             val intent = Intent(activity, EditProfileActivity::class.java)
             startActivity(intent)
         }
-        viewModel.getUser().observe(getViewLifecycleOwner()) {
+        viewModel.getUser().observe(viewLifecycleOwner) {
             if(it.username.isNotEmpty()){
                 binding.userName.text = it.username
             } else{
-                binding.userName.setText("guest")
+                binding.userName.text = getString(R.string.guest)
             }
 
             if(it.image.isNotEmpty()) {
@@ -65,6 +65,10 @@ class ProfileFragment : Fragment() {
             }else{
                 binding.circleImageView.setImageResource(R.drawable.ic_baseline_image_24)
             }
+        }
+
+        binding.buttonLogout.setOnClickListener {
+            viewModel.logout()
         }
 
     }

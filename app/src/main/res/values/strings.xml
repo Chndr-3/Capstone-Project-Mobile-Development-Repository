@@ -228,4 +228,6 @@
     <string name="hour">Jam</string>
     <string name="product_name_input">Nama Product</string>
     <string name="skin_disease">Penyakit Kulit Umum Wajah</string>
+    <string name="email_already_registered">Email sudah terdaftar</string>
+    <string name="guest" translatable="false">guest</string>
 </resources>

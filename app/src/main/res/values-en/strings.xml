@@ -132,4 +132,6 @@
     <string name="minute">Minute</string>
     <string name="hour">Hour</string>
     <string name="skin_disease">Common Facial Skin Disease</string>
+    <string name="product_name_input">Product Name</string>
+    <string name="email_already_registered">Email already registered</string>
 </resources>

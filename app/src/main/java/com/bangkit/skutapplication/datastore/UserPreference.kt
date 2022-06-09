@@ -19,7 +19,7 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
                 preferences[EMAIL]?: "",
                 preferences[PASSWORD] ?: "",
                 preferences[TOKEN] ?: "",
-            preferences[IMG] ?: ""
+                preferences[CALENDAR] ?: ""
             )
         }
     }
@@ -36,14 +36,19 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
             preferences[EMAIL] = ""
             preferences[PASSWORD] = ""
             preferences[TOKEN] = ""
-            preferences[IMG] = ""
+            preferences[CALENDAR] = ""
         }
     }
 
-    suspend fun saveUsername(username: String, image: String) {
+    suspend fun saveUsername(username: String) {
         dataStore.edit { preferences ->
             preferences[USER_NAME] = username
-            preferences[IMG] =  image
+        }
+    }
+
+    suspend fun setFirstCalendar(){
+        dataStore.edit { prefences ->
+            prefences[CALENDAR] = "set"
         }
     }
 
@@ -54,7 +59,7 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
         private val EMAIL = stringPreferencesKey("email")
         private val PASSWORD = stringPreferencesKey("password")
         private val TOKEN = stringPreferencesKey("token")
-        private val IMG = stringPreferencesKey("image")
+        private val CALENDAR = stringPreferencesKey("calendar")
         fun getInstance(dataStore: DataStore<Preferences>): UserPreference {
             return INSTANCE ?: synchronized(this) {
                 val instance = UserPreference(dataStore)

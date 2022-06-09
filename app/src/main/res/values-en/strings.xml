@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SkutApplication</string>
+    <string name="app_name">SKUT</string>
     <string name="my_formatted_text">
     <font color="@color/black">Your</font>
     <font color="#6ED2F0">Sk<font color="@color/black">in</font></font>
@@ -143,5 +143,16 @@
     <string name="email_already_registered">Email already registered</string>
     <string name="solution_text">Here are some product recommendations for</string>
     <string name="upload_failed">Upload Failed</string>
+  
+    <string name="app_description">SKUT (Solusi Kulit) comes in the form of an APP that provide AI that can detect facial skin-disease and give treatment and product recommendation.  Our product can detect skin diseases on the face that are often experienced by people including acne, eczema, and rosacea</string>
+    <string name="tips_kecantikan">Beauty Tips</string>
+    <string name="mulai_rawat_kulitmu_setiap_hari">Start taking care of your skin every day</string>
+    <string name="cari_tahu_tips_tips_untuk_merawat_kulitmu">Find out tips for taking care of your skin</string>
+    <string name="mulai_peduli_dengan_kulitmu_untuk_mendapatkan_hasil_maksimal">Start caring about your skin to get maximum results</string>
+    <string name="lihat_perkembangan_kulitmu_lewat_riwayat_scan_wajah">See the progress of your skin through the history of facial scans</string>
+    <string name="riwayat_scan_wajah">Face Scan History</string>
+    <string name="scan_wajah">Take Picture</string>
+    <string name="lakukan_scan_pada_wajah_untuk_mengenal_wajahmu_lebih_lanjut">Do a facial scan to get to know your face more</string>
+
 
 </resources>

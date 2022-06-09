@@ -13,11 +13,15 @@ import android.view.ViewGroup
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.FragmentDailyTreatmentBinding
+import com.bangkit.skutapplication.datastore.UserPreference
+import com.bangkit.skutapplication.datastore.ViewModelFactory
 import com.bangkit.skutapplication.model.DailyRoutine
 import com.bangkit.skutapplication.model.DailyTreatmentItem
+import com.bangkit.skutapplication.view.profile.ProfileViewModel
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -25,6 +29,12 @@ import java.util.*
 class DailyTreatmentFragment : Fragment() {
 
     private lateinit var binding: FragmentDailyTreatmentBinding
+    private lateinit var userViewModel : ProfileViewModel
+    private val Context.dataStore by preferencesDataStore(name = "profile")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        userViewModel.setCalendar()
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -46,6 +56,7 @@ class DailyTreatmentFragment : Fragment() {
         binding.eczema.setOnClickListener{
             setData(listEczemaDailyRoutine)
         }
+
     }
 
     private fun setData(item: ArrayList<DailyRoutine>){
@@ -91,7 +102,7 @@ class DailyTreatmentFragment : Fragment() {
         }
     private fun setCalendar() {
         val calendar: Calendar = Calendar.getInstance()
-        calendar.set(Calendar.HOUR_OF_DAY, 10)
+        calendar.set(Calendar.HOUR_OF_DAY, 8)
         calendar.set(Calendar.MINUTE, 0)
         val intent = Intent(context, AlarmReceiver::class.java)
         val pendingIntent = PendingIntent.getBroadcast(
@@ -117,17 +128,19 @@ class DailyTreatmentFragment : Fragment() {
         }
     }
     private fun checkTime(){
-        val c = Calendar.getInstance()
-        val df = SimpleDateFormat("HH:mm")
-        val formattedDate = df.format(c.time)
-        val date1: Date = df.parse(formattedDate) as Date
-        val date2: Date = df.parse("10:00") as Date
-        if (!(date1.after(date2))) {
-            setCalendar()
-            if(!(date1.equals(date2))){
+        userViewModel.getUser().observe(viewLifecycleOwner){
+            if(it.calendar.isEmpty()){
                 setCalendar()
             }
         }
+    }
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        userViewModel = ViewModelProvider(
+            this,
+            ViewModelFactory(UserPreference.getInstance(context.dataStore))
+        )[ProfileViewModel::class.java]
+
     }
 
 }

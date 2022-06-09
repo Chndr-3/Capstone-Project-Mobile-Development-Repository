@@ -13,7 +13,13 @@ class ProfileViewModel(private val pref: UserPreference): ViewModel() {
         return pref.getUser().asLiveData()
     }
 
-    fun logout() {
+    fun setCalendar(){
+        viewModelScope.launch{
+            pref.setFirstCalendar()
+        }
+    }
+
+    fun logout(){
         viewModelScope.launch {
             pref.logout()
         }

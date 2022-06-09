@@ -30,6 +30,9 @@
             android:exported="false"
             android:theme="@style/Theme.NoActionBar" />
         <activity
+            android:name=".view.history.FaceScanHistoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.dailytreatment.NotificationActivity"
             android:exported="false" />
         <activity
@@ -48,8 +51,9 @@
             android:exported="false"
             android:theme="@style/Theme.NoActionBar" />
         <activity
-            android:name=".view.profile.editprofile.EditProfileActivity"
-            android:exported="false" />
+            android:name=".view.profile.editprofile.AboutActivity"
+            android:exported="false"
+            android:label="About" />
         <activity
             android:name=".view.register.RegisterActivity"
             android:exported="false"
@@ -69,7 +73,7 @@
         <activity
             android:name=".view.main.SplashScreenActivity"
             android:exported="true"
-            android:theme="@style/SplashScreen">
+            android:theme="@style/SplashScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -84,7 +88,7 @@
             android:name=".view.dailytreatment.AlarmReceiver"
             android:enabled="true"
             android:exported="false" />
-
+      
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

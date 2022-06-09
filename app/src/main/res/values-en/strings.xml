@@ -133,5 +133,8 @@
     <string name="hour">Hour</string>
     <string name="skin_disease">Common Facial Skin Disease</string>
     <string name="app_description">SKUT (Solusi Kulit) comes in the form of an APP that provide AI that can detect facial skin-disease and give treatment and product recommendation.  Our product can detect skin diseases on the face that are often experienced by people including acne, eczema, and rosacea</string>
+    <string name="tips_kecantikan">Beauty Tips</string>
+    <string name="mulai_rawat_kulitmu_setiap_hari">Start taking care of your skin every day</string>
+    <string name="cari_tahu_tips_tips_untuk_merawat_kulitmu">Find out tips for taking care of your skin</string>
 
 </resources>

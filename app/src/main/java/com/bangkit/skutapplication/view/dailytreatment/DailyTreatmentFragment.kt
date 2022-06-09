@@ -31,6 +31,10 @@ class DailyTreatmentFragment : Fragment() {
     private lateinit var binding: FragmentDailyTreatmentBinding
     private lateinit var userViewModel : ProfileViewModel
     private val Context.dataStore by preferencesDataStore(name = "profile")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        userViewModel.setCalendar()
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -125,11 +129,10 @@ class DailyTreatmentFragment : Fragment() {
     }
     private fun checkTime(){
         userViewModel.getUser().observe(viewLifecycleOwner){
-            if(it.calendar.equals("set")){
+            if(it.calendar.isEmpty()){
                 setCalendar()
             }
         }
-        userViewModel.setCalendar()
     }
     override fun onAttach(context: Context) {
         super.onAttach(context)

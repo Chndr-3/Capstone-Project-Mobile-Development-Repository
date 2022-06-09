@@ -1,16 +1,23 @@
 package com.bangkit.skutapplication.model.response
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class UploadResponse(
 
 	@field:SerializedName("imgLink")
 	val imgLink: String? = null,
 
 	@field:SerializedName("user")
-	val user: User? = null
-)
+	val user: User? = null,
 
+	@field:SerializedName("scan_result")
+	val scanResult: ScanResult? = null
+): Parcelable
+
+@Parcelize
 data class User(
 
 	@field:SerializedName("password")
@@ -30,4 +37,20 @@ data class User(
 
 	@field:SerializedName("email")
 	val email: String? = null
-)
+): Parcelable
+
+@Parcelize
+data class ScanResult(
+
+	@field:SerializedName("eksim")
+	val eksim: Double? = null,
+
+	@field:SerializedName("normal")
+	val normal: Double? = null,
+
+	@field:SerializedName("acne")
+	val acne: Double? = null,
+
+	@field:SerializedName("rosacea")
+	val rosacea: Double? = null
+): Parcelable

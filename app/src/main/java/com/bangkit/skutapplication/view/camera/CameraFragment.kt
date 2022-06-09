@@ -6,12 +6,13 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AppCompatActivity
+import androidx.annotation.RequiresApi
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
@@ -28,6 +29,7 @@ import java.util.*
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
+
 class CameraFragment : Fragment() {
 
     private lateinit var binding: FragmentCameraBinding
@@ -38,6 +40,8 @@ class CameraFragment : Fragment() {
 
     private lateinit var outputDirectory: File
     private lateinit var cameraExecutor: ExecutorService
+    lateinit var cameraLifecycle: Camera
+//    lateinit var rotatedBitmap: Bitmap
 
     companion object {
         private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
@@ -85,7 +89,7 @@ class CameraFragment : Fragment() {
         }
 
         binding.galleryBtn.setOnClickListener {
-            startGallery()
+            launcherIntentGallery.launch("image/*")
         }
 
         binding.switchCamera.setOnClickListener {
@@ -98,6 +102,7 @@ class CameraFragment : Fragment() {
         binding.backButton.setOnClickListener {
             val intent = Intent(activity, MainActivity::class.java)
             startActivity(intent)
+            activity?.finish()
         }
 
         outputDirectory = getOutputDirectory()
@@ -125,6 +130,7 @@ class CameraFragment : Fragment() {
                         Toast.LENGTH_SHORT
                     ).show()
                 }
+                @RequiresApi(Build.VERSION_CODES.N)
                 override fun onImageSaved(output: ImageCapture.OutputFileResults) {
                     val savedUri = Uri.fromFile(photoFile)
                     val msg = "Photo capture succeeded: $savedUri"
@@ -143,8 +149,6 @@ class CameraFragment : Fragment() {
     private fun startCamera() {
 
         val cameraProviderFuture = ProcessCameraProvider.getInstance(requireContext())
-
-        lateinit var cameraLifecycle: Camera
 
         cameraProviderFuture.addListener({
             val cameraProvider: ProcessCameraProvider = cameraProviderFuture.get()
@@ -165,8 +169,8 @@ class CameraFragment : Fragment() {
                     preview,
                     imageCapture
                 )
-
                 zoomCamera(cameraLifecycle, binding.viewFinder)
+
             } catch (exc: Exception) {
                 Toast.makeText(
                     requireContext(),
@@ -194,25 +198,13 @@ class CameraFragment : Fragment() {
         return if (mediaDir != null && mediaDir.exists()) mediaDir else activity?.filesDir!!
     }
 
-    private fun startGallery(){
-        val intent = Intent()
-        intent.action = Intent.ACTION_OPEN_DOCUMENT
-        intent.type = "image/*"
-        val chooser = Intent.createChooser(intent, getString(R.string.choose_pictures))
-        launcherIntentGallery.launch(chooser)
-    }
 
     private val launcherIntentGallery = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
+        ActivityResultContracts.GetContent()
     ) { result ->
-        if (result.resultCode == AppCompatActivity.RESULT_OK) {
+        if (result != null) {
 
-            val selectedImg: Uri = result.data?.data as Uri
-
-            val takeFlags: Int = Intent.FLAG_GRANT_READ_URI_PERMISSION or
-                    Intent.FLAG_GRANT_WRITE_URI_PERMISSION
-
-            selectedImg.let { activity?.contentResolver?.takePersistableUriPermission(it, takeFlags) }
+            val selectedImg: Uri = result
 
             val intent = Intent(activity, ConfirmActivity::class.java)
             intent.putExtra(EXTRA_IMAGE_URI, selectedImg.toString())
@@ -220,18 +212,6 @@ class CameraFragment : Fragment() {
             Log.d("imageeeeee", selectedImg.toString())
         }
     }
-
-//    private val launcherIntentGallery = registerForActivityResult(
-//        ActivityResultContracts.StartActivityForResult()
-//    ) { result ->
-//        if (result.resultCode == AppCompatActivity.RESULT_OK) {
-//            selectedImg = result.data?.data as Uri
-//            val takeFlags: Int = Intent.FLAG_GRANT_READ_URI_PERMISSION or
-//                    Intent.FLAG_GRANT_WRITE_URI_PERMISSION
-//            selectedImg.let { contentResolver.takePersistableUriPermission(it, takeFlags) }
-//            binding.imageView.setImageURI(selectedImg)
-//        }
-//    }
 
     @SuppressLint("ClickableViewAccessibility")
     private fun zoomCamera(cameraLifecycle: Camera, viewFinder: PreviewView) {
@@ -270,6 +250,32 @@ class CameraFragment : Fragment() {
                 else -> return@setOnTouchListener false
             }
         }
-
     }
+
+//    @SuppressLint("ClickableViewAccessibility")
+//    private fun setupZoomAndTapToFocus(camera: Camera, viewFinder: PreviewView) {
+//        val listener = object : ScaleGestureDetector.SimpleOnScaleGestureListener() {
+//            override fun onScale(detector: ScaleGestureDetector): Boolean {
+//                val currentZoomRatio: Float = camera.cameraInfo.zoomState.value?.zoomRatio ?: 1F
+//                val delta = detector.scaleFactor
+//                camera.cameraControl.setZoomRatio(currentZoomRatio * delta)
+//                return true
+//            }
+//        }
+//
+//        val scaleGestureDetector = ScaleGestureDetector(viewFinder.context, listener)
+//
+//        viewFinder.setOnTouchListener { _, event ->
+//            scaleGestureDetector.onTouchEvent(event)
+//            if (event.action == MotionEvent.ACTION_DOWN) {
+//                val factory = viewFinder.createMeteringPointFactory(cameraSelector)
+//                val point = factory.createPoint(event.x, event.y)
+//                val action = FocusMeteringAction.Builder(point, FocusMeteringAction.FLAG_AF)
+//                    .setAutoCancelDuration(5, TimeUnit.SECONDS)
+//                    .build()
+//                cameraControl.startFocusAndMetering(action)
+//            }
+//            true
+//        }
+//    }
 }

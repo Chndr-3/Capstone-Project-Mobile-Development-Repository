@@ -201,18 +201,26 @@
     <string name="capture_button">Tombol ambil gambar</string>
     <string name="switch_camera">Ganti kamera</string>
     <string name="image_preview">Pratinjau gambar</string>
-    <string name="upload">Unggah</string>
-    <string name="re_take">Ambil Ulang?</string>
-    <string name="result">Hasil</string>
+    <string name="scan">Pindai</string>
+    <string name="mirror">Balik Gambar</string>
+    <string name="result_title">Hasil</string>
     <string name="failed_to_load_camera">Gagal menampilkan Kamera</string>
     <string name="permission_not_granted">Tidak mendapatkan permission.</string>
     <string name="failed_take_photo">Gagal menangkap gambar</string>
     <string name="next">Lanjut</string>
     <string name="confirm">Konfirmasi</string>
     <string name="store">Toko</string>
-    <string name="acne">Acne</string>
+
+    <string name="acne">Jerawat</string>
     <string name="rosacea">Rosacea</string>
-    <string name="eczema">Eczema</string>
+    <string name="eczema">Eksim</string>
+    <string name="normal" translatable="false">Normal</string>
+
+    <string name="acne_description">Jerawat adalah kondisi kulit yang terjadi ketika folikel rambut tersumbat oleh minyak dan sel kulit mati. Ini menyebabkan whiteheads, komedo atau jerawat. Jerawat paling umum di kalangan remaja, meskipun itu mempengaruhi orang-orang dari segala usia.</string>
+    <string name="rosacea_description">Rosacea (roe-ZAY-she-uh) adalah kondisi kulit umum yang menyebabkan merona atau kemerahan dan pembuluh darah terlihat di wajah Anda. Ini juga dapat menghasilkan benjolan kecil berisi nanah.</string>
+    <string name="eczema_description">Eksim adalah istilah yang berhubungan dengan peradangan pada kulit. Gangguan ini juga dikenal sebagai dermatitis. Ketika terjadi, reaksi alergi pada kulit bisa ditandai dengan munculnya kemerahan, ruam, dan gatal-gatal.</string>
+    <string name="normal_description">Kulit anda normal, berbahagialah :).</string>
+
     <string name="price">Harga</string>
     <string name="re_type_password">Ketik Ulang Password</string>
     <string name="time_format" translatable="false">:</string>
@@ -230,4 +238,7 @@
     <string name="skin_disease">Penyakit Kulit Umum Wajah</string>
     <string name="email_already_registered">Email sudah terdaftar</string>
     <string name="guest" translatable="false">guest</string>
+    <string name="solution_text">Berikut Adalah Beberapa Rekomendasi Produk untuk</string>
+    <string name="upload_failed">Unggah Gagal</string>
+    <string name="percentage" translatable="false">%1$s %%</string>
 </resources>

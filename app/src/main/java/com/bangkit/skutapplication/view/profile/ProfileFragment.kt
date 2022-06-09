@@ -1,6 +1,5 @@
 package com.bangkit.skutapplication.view.profile
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -10,14 +9,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.net.toUri
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
-import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.FragmentProfileBinding
 import com.bangkit.skutapplication.datastore.UserPreference
 import com.bangkit.skutapplication.datastore.ViewModelFactory
-import com.bangkit.skutapplication.view.profile.editprofile.EditProfileActivity
+import com.bangkit.skutapplication.view.profile.editprofile.AboutActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -51,7 +48,7 @@ class ProfileFragment : Fragment() {
             startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
         }
         binding.buttonEdit.setOnClickListener {
-            val intent = Intent(activity, EditProfileActivity::class.java)
+            val intent = Intent(activity, AboutActivity::class.java)
             startActivity(intent)
         }
         viewModel.getUser().observe(getViewLifecycleOwner()) {
@@ -59,6 +56,10 @@ class ProfileFragment : Fragment() {
             binding.imageProfileText.text = it.username[0].toString()
             Toast.makeText(context, it.username, Toast.LENGTH_SHORT).show()
         }
+        binding.buttonLogout.setOnClickListener {
+            viewModel.logout()
+        }
+
 
     }
 

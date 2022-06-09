@@ -228,4 +228,5 @@
     <string name="hour">Jam</string>
     <string name="product_name_input">Nama Product</string>
     <string name="skin_disease">Penyakit Kulit Umum Wajah</string>
+    <string name="app_description">SKUT (Solusi Kulit) hadir dalam bentuk APP yang menyediakan AI yang dapat mendeteksi penyakit kulit wajah dan memberikan rekomendasi perawatan dan produk. Produk kami dapat mendeteksi penyakit kulit pada wajah yang sering dialami oleh masyarakat antara lain jerawat, eksim, dan rosacea</string>
 </resources>

@@ -18,4 +18,10 @@ class ProfileViewModel(private val pref: UserPreference): ViewModel() {
             pref.setFirstCalendar()
         }
     }
+
+    fun logout(){
+        viewModelScope.launch {
+            pref.logout()
+        }
+    }
 }

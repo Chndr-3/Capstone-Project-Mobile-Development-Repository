@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.net.toUri
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
@@ -54,17 +55,9 @@ class ProfileFragment : Fragment() {
             startActivity(intent)
         }
         viewModel.getUser().observe(getViewLifecycleOwner()) {
-            if(it.username.isNotEmpty()){
                 binding.userName.text = it.username
-            } else{
-                binding.userName.setText("guest")
-            }
-
-            if(it.image.isNotEmpty()) {
-                binding.circleImageView.setImageURI(it.image.toUri())
-            }else{
-                binding.circleImageView.setImageResource(R.drawable.ic_baseline_image_24)
-            }
+            binding.imageProfileText.text = it.username[0].toString()
+            Toast.makeText(context, it.username, Toast.LENGTH_SHORT).show()
         }
 
     }

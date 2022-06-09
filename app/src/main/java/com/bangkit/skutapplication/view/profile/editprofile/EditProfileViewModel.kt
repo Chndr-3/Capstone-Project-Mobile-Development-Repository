@@ -9,9 +9,9 @@ import com.bangkit.skutapplication.model.User
 import kotlinx.coroutines.launch
 
 class EditProfileViewModel(private val pref: UserPreference) : ViewModel() {
-    fun saveUser(user: String, image: String) {
+    fun saveUser(user: String) {
         viewModelScope.launch {
-            pref.saveUsername(user, image)
+            pref.saveUsername(user)
         }
     }
     fun getUser(): LiveData<User> {

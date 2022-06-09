@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -50,6 +51,12 @@ class MainActivity : AppCompatActivity() {
                R.id.homeNav, R.id.cameraNav, R.id.storeNav, R.id.profileNav
             )
         )
+        mainViewModel.getUser().observe(this){
+            mainViewModel.getItem("Bearer ${it.token}")
+        }
+        mainViewModel.name.observe(this){
+            mainViewModel.saveUser(it)
+        }
 
         setupViewModel()
 

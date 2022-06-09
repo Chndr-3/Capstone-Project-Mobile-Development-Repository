@@ -35,17 +35,11 @@ class EditProfileActivity : AppCompatActivity() {
         }
         viewModel.getUser().observe(this) {
             binding.nameEditText.setText(it.username)
-            if(it.image.isNotEmpty()) {
-                binding.imageView.setImageURI(it.image.toUri())
-            }else{
-                binding.imageView.setImageResource(R.drawable.ic_baseline_image_24)
-            }
-            selectedImg = it.image.toUri()
         }
 
         binding.buttonSave.setOnClickListener {
             val username = binding.nameEditText.text.toString()
-            viewModel.saveUser(username, selectedImg.toString())
+            viewModel.saveUser(username)
             Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
             finish()
         }

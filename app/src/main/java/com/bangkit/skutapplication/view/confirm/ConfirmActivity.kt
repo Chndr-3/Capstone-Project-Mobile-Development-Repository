@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Matrix
+import android.media.ExifInterface
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -15,6 +17,7 @@ import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.camera.core.CameraSelector
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -23,7 +26,7 @@ import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.ActivityConfirmBinding
 import com.bangkit.skutapplication.datastore.UserPreference
 import com.bangkit.skutapplication.datastore.ViewModelFactory
-import com.bangkit.skutapplication.helper.rotateImageIfRequired
+import com.bangkit.skutapplication.model.response.UploadResponse
 import com.bangkit.skutapplication.view.login.LoginActivity
 import com.bangkit.skutapplication.view.result.ResultActivity
 import com.google.android.material.appbar.MaterialToolbar
@@ -37,6 +40,10 @@ class ConfirmActivity : AppCompatActivity() {
     private val confirmViewModel: ConfirmViewModel by viewModels()
 
     private lateinit var imageUri: String
+
+    private var pressed = false
+
+    private lateinit var scanResult: UploadResponse
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,7 +63,8 @@ class ConfirmActivity : AppCompatActivity() {
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        binding.retakeButton.setOnClickListener { onBackPressed() }
+//        val byteArray: ByteArray = getArgument().getByteArrayExtra("image")
+//        val bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
 
         imageUri = intent.extras?.getString(EXTRA_IMAGE_URI).toString()
 
@@ -66,23 +74,32 @@ class ConfirmActivity : AppCompatActivity() {
         Log.d("imaggeeee", imageUri)
         Log.d("imaggeeee2", bitmapImage.toString())
 
-        val rotatedBitmap = imageStream?.let { rotateImageIfRequired(bitmapImage, it) }
-
+        val rotatedBitmap = rotateImageIfRequired(bitmapImage)
+        val flipBitmap = flip(rotatedBitmap)
 
 //        binding.imgPreview.setImageURI(Uri.parse(imageUri))
-        binding.imgPreview.setImageBitmap(bitmapImage)
+        binding.imgPreview.setImageBitmap(rotatedBitmap)
 
         Log.d("test", imageUri)
 
+        binding.mirrorButton.setOnClickListener {
+            binding.imgPreview.setImageBitmap(flipBitmap)
+            pressed = true
+        }
+
         binding.uploadButton.setOnClickListener {
-            confirmViewModel.setImageBase64(bitmapToBase64(rotatedBitmap))
+            if (pressed) {
+                confirmViewModel.setImageBase64(bitmapToBase64(flipBitmap))
+            } else {
+                confirmViewModel.setImageBase64(bitmapToBase64(rotatedBitmap))
+            }
             confirmViewModel.getUser().observe(this) { user ->
+
                 if (user.token.isNotEmpty()) {
 //                binding.nameTextView.text = getString(R.string.greeting, user.name)
                     Log.d("token", user.token)
 
                     uploadImage(user.token)
-
 //                mainViewModel.getUserStories(user.token)
 //
 //                mainViewModel.isError.observe(this) {
@@ -98,6 +115,14 @@ class ConfirmActivity : AppCompatActivity() {
         confirmViewModel.isLoading.observe(this) {
             showLoading(it)
         }
+
+        confirmViewModel.isError.observe(this) {
+            showMessage(it)
+        }
+
+        confirmViewModel.scanResult.observe(this) { scanResult1 ->
+            scanResult = UploadResponse(scanResult1.imgLink, scanResult1.user, scanResult1.scanResult)
+        }
     }
 
     private fun bitmapToBase64(bitmap: Bitmap?): String {
@@ -112,10 +137,36 @@ class ConfirmActivity : AppCompatActivity() {
 
         confirmViewModel.uploadImage(token)
 
-        confirmViewModel.isError.observe(this) {
-            showMessage(it)
-        }
+    }
 
+    @RequiresApi(Build.VERSION_CODES.N)
+    private fun rotateImageIfRequired(img: Bitmap): Bitmap {
+        val selectedImage = contentResolver.openInputStream(Uri.parse(imageUri))
+        val ei = selectedImage?.let { ExifInterface(it) }
+
+        return when (ei?.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL)) {
+            ExifInterface.ORIENTATION_ROTATE_90 -> rotateImage(img, 90)
+            ExifInterface.ORIENTATION_ROTATE_180 -> rotateImage(img, 180)
+            ExifInterface.ORIENTATION_ROTATE_270 -> rotateImage(img, 270)
+            else -> img
+        }
+    }
+
+    private fun rotateImage(img: Bitmap, degree: Int): Bitmap {
+        val matrix = Matrix()
+        matrix.postRotate(degree.toFloat())
+        val rotatedImg = Bitmap.createBitmap(img, 0, 0, img.width, img.height, matrix, true)
+        img.recycle()
+        return rotatedImg
+    }
+
+    private fun flip(src: Bitmap): Bitmap {
+        // create new matrix for transformation
+        val matrix = Matrix()
+        matrix.preScale(-1.0f, 1.0f)
+
+        // return transformed image
+        return Bitmap.createBitmap(src, 0, 0, src.width, src.height, matrix, true)
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -133,13 +184,16 @@ class ConfirmActivity : AppCompatActivity() {
 
     private fun showMessage(isError: Boolean) {
         if (isError) {
-            Toast.makeText(this@ConfirmActivity, "error", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@ConfirmActivity, getString(R.string.upload_failed), Toast.LENGTH_SHORT).show()
         } else {
             AlertDialog.Builder(this).apply {
                 setTitle("Berhasil!")
                 setMessage("Silahkan Lanjut")
                 setPositiveButton("Lanjut") { _, _ ->
+
+
                     val intent = Intent(context, ResultActivity::class.java)
+                    intent.putExtra("extra_data", scanResult)
                     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                     startActivity(intent)
                     finish()

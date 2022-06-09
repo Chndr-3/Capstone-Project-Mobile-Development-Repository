@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bangkit.skutapplication" >
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.bangkit.skutapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -21,7 +22,13 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SkutApplication" >
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.SkutApplication"
+        tools:targetApi="m">
+        <activity
+            android:name=".view.result.SolutionActivity"
+            android:exported="false"
+            android:theme="@style/Theme.NoActionBar" />
         <activity
             android:name=".view.history.FaceScanHistoryActivity"
             android:exported="false" />
@@ -37,7 +44,8 @@
             android:label="Daily Treatment" />
         <activity
             android:name=".view.result.ResultActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.NoActionBar" />
         <activity
             android:name=".view.confirm.ConfirmActivity"
             android:exported="false"
@@ -79,9 +87,8 @@
         <receiver
             android:name=".view.dailytreatment.AlarmReceiver"
             android:enabled="true"
-            android:exported="false" >
-        </receiver>
-
+            android:exported="false" />
+      
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

@@ -11,6 +11,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.ActivityRegisterBinding
+import com.bangkit.skutapplication.model.DailyTreatmentItem
 import com.bangkit.skutapplication.model.user.RegisterModel
 import com.bangkit.skutapplication.view.customview.MyButton
 import com.bangkit.skutapplication.view.customview.MyEditText
@@ -23,6 +24,7 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var myButton: MyButton
     private lateinit var myEditText: MyEditText
     private val registerViewModel: RegisterViewModel by viewModels()
+    private val arrayList: ArrayList<String> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,32 +61,41 @@ class RegisterActivity : AppCompatActivity() {
             showLoading(it)
         }
 
-        registerViewModel.registerResult.observe(this) { result ->
-            registerViewModel.registerError.observe(this) { error ->
-                if (result.message?.isNotEmpty() == true) {
-                    AlertDialog.Builder(this).apply {
-                        setTitle("Hore!")
-                        setMessage(getString(R.string.account_created))
-                        setPositiveButton(getString(R.string.next)) { _, _ ->
-                            finish()
-                        }
-                        create()
-                        show()
-                    }
-                } else {
-                    Toast.makeText(this, result.errors.toString(), Toast.LENGTH_SHORT).show()
-                    if (error != null) {
-                        for (i in 0 until error.count()) {
-                            // Message
-                            val message = error[i].message ?: "N/A"
-                            Log.d("error2: ", message)
-                        }
-//                        Log.d("errorr", message)
-                    }
-
-                }
-            }
+        registerViewModel.isSuccess.observe(this) {
+            showResult(it)
         }
+//        registerViewModel.registerResult.observe(this) { result ->
+//            registerViewModel.registerError.observe(this) { error ->
+//                if (result.message != null) {
+//                    Log.d("kok gak masuk sini", result.message.toString())
+//                    AlertDialog.Builder(this).apply {
+//                        setTitle("Hore!")
+//                        setMessage(getString(R.string.account_created))
+//                        setPositiveButton(getString(R.string.next)) { _, _ ->
+//                            finish()
+//                        }
+//                        create()
+//                        show()
+//                    }
+//                } else {
+//                    Log.d("kok gak masuk sini", listOf(error).toString())
+//                    Toast.makeText(
+//                        this@RegisterActivity,
+//                        getString(R.string.email_already_registered),
+//                        Toast.LENGTH_SHORT
+//                    ).show()
+
+//                    if (kotlin.error != null) {
+//                        for (i in 0 until kotlin.error.count()) {
+//                            // Message
+//                            val message = kotlin.error[i].message ?: "N/A"
+//                            Log.d("error2: ", message)
+//                        }
+//                        Log.d("errorr", message)
+//                    }
+//                }
+//            }
+//        }
     }
 
     private fun setupAction() {
@@ -132,6 +143,28 @@ class RegisterActivity : AppCompatActivity() {
             binding.progressBar.visibility = View.VISIBLE
         } else {
             binding.progressBar.visibility = View.GONE
+        }
+    }
+
+    private fun showResult(isSuccess: Boolean) {
+        if (isSuccess) {
+            Log.d("kok gak masuk sini", "yey123")
+            AlertDialog.Builder(this).apply {
+                setTitle("Hore!")
+                setMessage(getString(R.string.account_created))
+                setPositiveButton(getString(R.string.next)) { _, _ ->
+                    finish()
+                }
+                create()
+                show()
+            }
+        } else {
+            Log.d("kok gak masuk sini", "yey321")
+            Toast.makeText(
+                this@RegisterActivity,
+                getString(R.string.email_already_registered),
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 }

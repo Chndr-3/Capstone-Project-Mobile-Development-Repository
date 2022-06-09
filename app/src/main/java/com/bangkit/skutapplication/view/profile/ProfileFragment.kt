@@ -36,9 +36,9 @@ class ProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
-        return binding.getRoot();
+        return binding.root;
 
     }
 
@@ -51,15 +51,21 @@ class ProfileFragment : Fragment() {
             val intent = Intent(activity, AboutActivity::class.java)
             startActivity(intent)
         }
+        
         viewModel.getUser().observe(getViewLifecycleOwner()) {
                 binding.userName.text = it.username
             binding.imageProfileText.text = it.username[0].toString()
             Toast.makeText(context, it.username, Toast.LENGTH_SHORT).show()
+
         }
         binding.buttonLogout.setOnClickListener {
             viewModel.logout()
         }
 
+
+        binding.buttonLogout.setOnClickListener {
+            viewModel.logout()
+        }
 
     }
 

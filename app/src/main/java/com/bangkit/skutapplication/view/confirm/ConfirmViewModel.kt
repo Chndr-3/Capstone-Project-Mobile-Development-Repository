@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
-import com.bangkit.skutapplication.api.ApiConfig
+import com.bangkit.skutapplication.api.ApiConfig2
 import com.bangkit.skutapplication.datastore.UserPreference
 import com.bangkit.skutapplication.model.response.UploadResponse
 import com.bangkit.skutapplication.model.User
@@ -25,6 +25,9 @@ class ConfirmViewModel(private val pref: UserPreference) : ViewModel() {
     private val _isError = MutableLiveData<Boolean>()
     val isError: LiveData<Boolean> = _isError
 
+    private val _scanResult = MutableLiveData<UploadResponse>()
+    val scanResult: LiveData<UploadResponse> = _scanResult
+
     private val imageBase64 = MutableLiveData<String>()
 
     fun setImageBase64(base64Image: String) {
@@ -41,7 +44,7 @@ class ConfirmViewModel(private val pref: UserPreference) : ViewModel() {
             .trimIndent().toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
 
         _isLoading.value = true
-        val client = ApiConfig.getApiService().uploadImage("Bearer $token", body)
+        val client = ApiConfig2.getApiService().uploadImage("Bearer $token", body)
         client.enqueue(object : Callback<UploadResponse> {
             override fun onResponse(
                 call: Call<UploadResponse>,
@@ -50,8 +53,9 @@ class ConfirmViewModel(private val pref: UserPreference) : ViewModel() {
                 _isLoading.value = false
                 if (response.isSuccessful) {
                     _isError.value = false
+                    _scanResult.value = response.body()
 //                    _uploadMessage.value = response.body()?.message
-                    Log.d("testhahaha", response.body()?.user?.name.toString())
+                    Log.d("testhahaha", _scanResult.value?.user?.name.toString())
 //                    Log.d("base64", base64Image)
                 } else {
                     _isError.value = false

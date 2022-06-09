@@ -5,6 +5,7 @@ data class User (
     var email: String,
     var password: String,
     var token: String,
-    var image: String
+    var image: String,
+    var calendar: String
 )
 

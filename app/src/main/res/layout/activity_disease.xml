@@ -17,7 +17,7 @@
         android:text="@string/disease_name"
         android:textAlignment="viewStart"
 
-        android:textColor="?android:textColorPrimary"
+        android:textColor="@color/blue"
         android:textSize="34sp"
         android:transitionName="name"
         app:layout_constraintEnd_toEndOf="parent"

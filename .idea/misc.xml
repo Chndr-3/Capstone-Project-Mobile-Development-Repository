@@ -20,14 +20,13 @@
         <entry key="..\:/SkutApplication/app/src/main/res/layout/activity_add_daily_treatment.xml" value="0.33" />
         <entry key="..\:/SkutApplication/app/src/main/res/layout/activity_beauty_tips.xml" value="0.18" />
         <entry key="..\:/SkutApplication/app/src/main/res/layout/activity_daily_treatment.xml" value="0.25" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/activity_disease.xml" value="0.22327898550724637" />
+        <entry key="..\:/SkutApplication/app/src/main/res/layout/activity_disease.xml" value="0.1" />
         <entry key="..\:/SkutApplication/app/src/main/res/layout/activity_edit_profile.xml" value="0.1956521739130435" />
         <entry key="..\:/SkutApplication/app/src/main/res/layout/activity_login.xml" value="0.13272543059777103" />
         <entry key="..\:/SkutApplication/app/src/main/res/layout/activity_main.xml" value="0.1956521739130435" />
         <entry key="..\:/SkutApplication/app/src/main/res/layout/activity_register.xml" value="0.1897644927536232" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/activity_result.xml" value="0.12129629629629629" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/beauty_tips_item.xml" value="0.25" />
+        <entry key="..\:/SkutApplication/app/src/main/res/layout/activity_splash_screen.xml" value="0.18" />
+        <entry key="..\:/SkutApplication/app/src/main/res/layout/beauty_tips_item.xml" value="0.1" />
         <entry key="..\:/SkutApplication/app/src/main/res/layout/daily_routine_item.xml" value="0.25" />
         <entry key="..\:/SkutApplication/app/src/main/res/layout/daily_treatment_item.xml" value="0.3251833740831296" />
         <entry key="..\:/SkutApplication/app/src/main/res/layout/fragment_camera.xml" value="0.1" />
@@ -37,7 +36,7 @@
         <entry key="..\:/SkutApplication/app/src/main/res/layout/fragment_skincare_treatment.xml" value="0.28125" />
         <entry key="..\:/SkutApplication/app/src/main/res/layout/fragment_store.xml" value="0.22327898550724637" />
         <entry key="..\:/SkutApplication/app/src/main/res/layout/radio_normal.xml" value="0.1" />
-        <entry key="..\:/SkutApplication/app/src/main/res/layout/view_pager_item.xml" value="0.25" />
+        <entry key="..\:/SkutApplication/app/src/main/res/layout/view_pager_item.xml" value="0.1" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/drawable-v24/ic_baseline_calendar_month_24.xml" value="0.1375" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/drawable/bg_button.xml" value="0.1725" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/drawable/bg_button_disabled.xml" value="0.1525" />

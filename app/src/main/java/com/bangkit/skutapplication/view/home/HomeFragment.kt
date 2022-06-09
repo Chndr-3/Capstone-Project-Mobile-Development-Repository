@@ -10,12 +10,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.FragmentHomeBinding
 import com.bangkit.skutapplication.model.ViewPagerItem
 import com.bangkit.skutapplication.view.beautytips.BeautyTipsActivity
+import com.bangkit.skutapplication.view.camera.CameraFragment
 import com.bangkit.skutapplication.view.dailytreatment.DailyTreatmentActivity
+import com.bangkit.skutapplication.view.history.FaceScanHistoryActivity
 import java.time.LocalDate
 import java.util.*
 
@@ -66,12 +70,17 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         showViewPager()
         binding.buttonBeautyTips.setOnClickListener {
-            val intent = Intent(activity, BeautyTipsActivity::class.java)
-            startActivity(intent)
+            startActivity( Intent(activity, BeautyTipsActivity::class.java))
         }
         binding.buttonDailyTreatment.setOnClickListener {
-            val intent = Intent(activity, DailyTreatmentActivity::class.java)
-            startActivity(intent)
+
+            startActivity(Intent(activity, DailyTreatmentActivity::class.java))
+        }
+        binding.buttonCamera.setOnClickListener {
+            it.findNavController().navigate(R.id.cameraNav)
+        }
+        binding.buttonHistory.setOnClickListener {
+            startActivity(Intent(activity, FaceScanHistoryActivity::class.java))
         }
         val trivia = resources.getStringArray(R.array.daily_trivia)
         val daysSinceEpoch = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

@@ -137,5 +137,9 @@
     <string name="mulai_rawat_kulitmu_setiap_hari">Start taking care of your skin every day</string>
     <string name="cari_tahu_tips_tips_untuk_merawat_kulitmu">Find out tips for taking care of your skin</string>
     <string name="mulai_peduli_dengan_kulitmu_untuk_mendapatkan_hasil_maksimal">Start caring about your skin to get maximum results</string>
+    <string name="lihat_perkembangan_kulitmu_lewat_riwayat_scan_wajah">See the progress of your skin through the history of facial scans</string>
+    <string name="riwayat_scan_wajah">Face Scan History</string>
+    <string name="scan_wajah">Take Picture</string>
+    <string name="lakukan_scan_pada_wajah_untuk_mengenal_wajahmu_lebih_lanjut">Do a facial scan to get to know your face more</string>
 
 </resources>

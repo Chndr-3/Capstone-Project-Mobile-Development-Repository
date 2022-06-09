@@ -40,8 +40,9 @@
             android:exported="false"
             android:theme="@style/Theme.NoActionBar" />
         <activity
-            android:name=".view.profile.editprofile.EditProfileActivity"
-            android:exported="false" />
+            android:name=".view.profile.editprofile.AboutActivity"
+            android:exported="false"
+            android:label="About"/>
         <activity
             android:name=".view.register.RegisterActivity"
             android:exported="false"

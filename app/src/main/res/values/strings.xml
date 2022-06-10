@@ -12,11 +12,11 @@
         <item>Tahukah Anda bahwa pelembab adalah pertahanan terbaik melawan kulit kering?</item>
         <item>Tahukah Anda bahwa memakai tabir surya setiap hari sebenarnya melindungi Anda dari penuaan?</item>
         <item>Tahukah Anda bahwa eksfoliasi membuat kulit halus?</item>
-        <item>Tahukah Anda bahwa menari membuat kulit Anda bercahaya?</item>
         <item>Tahukah Anda bahwa kurang tidur dapat mempengaruhi kulit Anda?</item>
         <item>Tahukah Anda bahwa makan ikan sangat baik untuk kulit Anda?</item>
         <item>Tahukah Anda bahwa pelembap yang berlebihan dapat menyebabkan breakout?</item>
         <item>Tahukah Anda bahwa kafein menyebabkan kulit kering?</item>
+        <item>Tahukah Anda bahwa menari membuat kulit Anda bercahaya?</item>
     </string-array>
     <string-array name="skinDisease">
         <item>Jerawat</item>
@@ -250,6 +250,9 @@
     <string name="riwayat_scan_wajah">Riwayat Scan Wajah</string>
     <string name="scan_wajah">Ambil Foto</string>
     <string name="lakukan_scan_pada_wajah_untuk_mengenal_wajahmu_lebih_lanjut">Lakukan scan pada wajah untuk mengenal wajahmu lebih lanjut</string>
+    <string name="history_result" translatable="false">%1$s : %2$d</string>
+    <string name="result">Hasil:</string>
+    <string name="percentageResult">Percentage</string>
     <string name="how_to_take_a_picture">Bagaimana cara mengambil Foto</string>
     <string name="product_name_input">Nama Produk</string>
     <string name="how_to_description">Silahkan ambil foto pada area kulit yang terinfeksi penyakit. Anda dapat melihat contohnya pada gambar berikut</string>

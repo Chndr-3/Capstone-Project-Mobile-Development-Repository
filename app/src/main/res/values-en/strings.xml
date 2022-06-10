@@ -11,11 +11,11 @@
         <item>Do you know that moisturizer is the best defense against dry skin?</item>
         <item>Do you know that wearing sunscreen daily is actually protect you against aging?</item>
         <item>Do you know that exfoliating leaves skin smooth?</item>
-        <item>Do you know that dancing makes your skin glow?</item>
         <item>Do you know that a lack of sleep can affect your skin?</item>
         <item>Do you know that eating fish is great for your skin?</item>
         <item>Do you know that over moisturizing can leads to breakout?</item>
         <item>Do you know that caffeine leads to dry skin?</item>
+        <item>Do you know that dancing makes your skin glow?</item>
     </string-array>
     <string-array name="skinDisease">
         <item>Acne</item>
@@ -153,8 +153,14 @@
     <string name="riwayat_scan_wajah">Face Scan History</string>
     <string name="scan_wajah">Take Picture</string>
     <string name="lakukan_scan_pada_wajah_untuk_mengenal_wajahmu_lebih_lanjut">Do a facial scan to get to know your face more</string>
+
+    <string name="history_result" translatable="false">%1$s : %2$d</string>
+    <string name="result">Result:</string>
+    <string name="percentageResult">Percentage</string>
+
     <string name="how_to_take_a_picture">How to take a Picture</string>
     <string name="how_to_description">Please take a photo of the area of the skin that is infected with the disease. You can see an example in the following image</string>
+
 
 
 </resources>

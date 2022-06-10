@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.AlarmManager
 import android.app.NotificationManager
 import android.app.PendingIntent
+import android.app.PendingIntent.FLAG_IMMUTABLE
 import android.app.PendingIntent.FLAG_UPDATE_CURRENT
 import android.content.Context
 import android.content.Context.ALARM_SERVICE
@@ -52,7 +53,7 @@ class SkincareRoutineFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentSkincareTreatmentBinding.inflate(inflater, container, false)
         return binding.root
@@ -162,7 +163,7 @@ class SkincareRoutineFragment : Fragment() {
             context,
             id,
             intent,
-            FLAG_UPDATE_CURRENT
+            FLAG_IMMUTABLE
         )
 
         val alarmManager = requireContext().getSystemService(ALARM_SERVICE) as AlarmManager
@@ -188,7 +189,7 @@ class SkincareRoutineFragment : Fragment() {
             context,
             id,
             intent,
-            FLAG_UPDATE_CURRENT
+            FLAG_IMMUTABLE
         )
         alarmManager.cancel(pendingIntent)
     }

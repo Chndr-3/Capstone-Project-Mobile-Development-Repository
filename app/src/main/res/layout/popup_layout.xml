@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B363AAC5"
+    android:orientation="vertical">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnClose"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        app:icon="@drawable/ic_outline_cancel_24"
+        android:backgroundTint="#87cefa"
+        app:iconGravity="end"
+        app:iconSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/textview_border"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="5dp"
+        android:text="@string/how_to_take_a_picture"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnClose" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/how_to_description"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toEndOf="@+id/tvTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <ImageView
+        android:id="@+id/correctExample"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="24dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/acne_example"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="@+id/tvDescription"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
+
+    <ImageView
+        android:id="@+id/checkIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_baseline_check_circle_outline_24"
+        app:layout_constraintEnd_toEndOf="@+id/correctExample"
+        app:layout_constraintStart_toStartOf="@+id/correctExample"
+        app:layout_constraintTop_toBottomOf="@+id/correctExample" />
+
+    <ImageView
+        android:id="@+id/wrongExample"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="24dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/blurr"
+        app:layout_constraintEnd_toEndOf="@+id/tvDescription"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
+
+    <ImageView
+        android:id="@+id/crossIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/ic_outline_close_24"
+        app:layout_constraintEnd_toEndOf="@+id/wrongExample"
+        app:layout_constraintStart_toStartOf="@+id/wrongExample"
+        app:layout_constraintTop_toBottomOf="@+id/wrongExample" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/checkIcon"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,8 +28,8 @@ class FaceScanHistoryAdapter(private val listHistory: List<ListHistoryFaceItem>)
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val history = listHistory[position]
-        val time = history.timestamp.toString().substring(11, 18)
-        val date = history.timestamp.toString().substring(0, 9)
+        val time = history.timestamp.toString().substring(11, 19)
+        val date = history.timestamp.toString().substring(0, 10)
         viewHolder.historyTime.text = time
         viewHolder.historyDate.text = date
         Glide.with(viewHolder.itemView)

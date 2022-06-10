@@ -25,40 +25,22 @@ import com.bangkit.skutapplication.datastore.UserPreference
 import com.bangkit.skutapplication.datastore.ViewModelFactory
 import com.bangkit.skutapplication.view.login.LoginActivity
 
-private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val mainViewModel by viewModels<MainViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val mainViewModel = ViewModelProvider(
-            this,
-            ViewModelFactory(UserPreference.getInstance(dataStore))
-        )[MainViewModel::class.java]
-
         val navView: BottomNavigationView = binding.bottomNavigationView
-
         val navController = findNavController(R.id.navHostFragment)
-
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                R.id.homeNav, R.id.cameraNav, R.id.storeNav, R.id.profileNav
             )
         )
-        mainViewModel.getUser().observe(this){
-            mainViewModel.getItem("Bearer ${it.token}")
-        }
-        mainViewModel.name.observe(this){
-            mainViewModel.saveUser(it)
-        }
-
-        setupViewModel()
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
@@ -72,50 +54,7 @@ class MainActivity : AppCompatActivity() {
                 navView.visibility = View.VISIBLE
             }
         }
-
-//        selection()
     }
 
-    private fun setupViewModel() {
-        mainViewModel.getUser().observe(this) { user ->
-            if (user.token.isNotEmpty()) {
-//                binding.nameTextView.text = getString(R.string.greeting, user.name)
-                Log.d("token", user.token)
 
-//                mainViewModel.getUserStories(user.token)
-//
-//                mainViewModel.isError.observe(this) {
-//                    showMessage(it)
-//                }
-            } else {
-                startActivity(Intent(this, LoginActivity::class.java))
-                finish()
-            }
-        }
-    }
-
-//    private fun selection() {
-//        loadFragment(HomeFragment())
-//        binding.bottomNavigationView.setOnItemReselectedListener {
-//            when (it.itemId) {
-//                R.id.home -> {
-//                    loadFragment(HomeFragment())
-//                }
-//                R.id.camera -> {
-//                    loadFragment(ChatFragment())
-//                    return@setOnNavigationItemReselectedListener
-//                }
-//                R.id.profile -> {
-//                    loadFragment(SettingFragment())
-//                    return@setOnNavigationItemReselectedListener
-//                }
-//            }
-//        }
-//    }
-//    private fun loadFragment(fragment: Fragment){
-//        val transaction = supportFragmentManager.beginTransaction()
-//        transaction.replace(R.id.container,fragment)
-//        transaction.addToBackStack(null)
-//        transaction.commit()
-//    }
 }

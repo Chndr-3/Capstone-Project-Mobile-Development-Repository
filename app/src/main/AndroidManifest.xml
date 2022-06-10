@@ -31,7 +31,8 @@
             android:theme="@style/Theme.NoActionBar" />
         <activity
             android:name=".view.history.FaceScanHistoryActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/riwayat_scan_wajah"/>
         <activity
             android:name=".view.dailytreatment.NotificationActivity"
             android:exported="false" />

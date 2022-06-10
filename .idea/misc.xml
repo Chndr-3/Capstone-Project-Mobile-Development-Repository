@@ -37,6 +37,7 @@
         <entry key="..\:/SkutApplication/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/SkutApplication/app/src/main/res/layout/fragment_skincare_treatment.xml" value="0.28125" />
         <entry key="..\:/SkutApplication/app/src/main/res/layout/fragment_store.xml" value="0.22327898550724637" />
+        <entry key="..\:/SkutApplication/app/src/main/res/layout/history_item.xml" value="0.33" />
         <entry key="..\:/SkutApplication/app/src/main/res/layout/product_item.xml" value="0.12512664640324214" />
         <entry key="..\:/SkutApplication/app/src/main/res/layout/radio_normal.xml" value="0.1" />
         <entry key="..\:/SkutApplication/app/src/main/res/layout/view_pager_item.xml" value="0.1" />
@@ -67,8 +68,7 @@
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/activity_main.xml" value="0.256547300908605" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/activity_pop_up.xml" value="0.2975630611372381" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/activity_register.xml" value="0.33" />
-        <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/activity_result.xml" value="0.33" />
-        <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/activity_solution.xml" value="0.2975630611372381" />
+        <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/activity_result.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/activity_upload.xml" value="0.5" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/beauty_tips_item.xml" value="0.2975630611372381" />
         <entry key="..\:/Users/abiyy/Documents/Akademik/Kuliah/Bangkit/Capstone/Project/Capstone-Project-Mobile-Development-Repository/app/src/main/res/layout/category_item.xml" value="0.33" />

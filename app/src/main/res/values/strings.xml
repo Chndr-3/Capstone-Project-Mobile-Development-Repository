@@ -253,4 +253,8 @@
     <string name="history_result" translatable="false">%1$s : %2$d</string>
     <string name="result">Hasil:</string>
     <string name="percentageResult">Percentage</string>
+    <string name="how_to_take_a_picture">Bagaimana cara mengambil Foto</string>
+    <string name="product_name_input">Nama Produk</string>
+    <string name="how_to_description">Silahkan ambil foto pada area kulit yang terinfeksi penyakit. Anda dapat melihat contohnya pada gambar berikut</string>
+
 </resources>

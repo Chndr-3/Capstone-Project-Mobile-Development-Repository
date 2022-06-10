@@ -2,6 +2,7 @@ package com.bangkit.skutapplication.view.camera
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -10,6 +11,8 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
@@ -108,6 +111,8 @@ class CameraFragment : Fragment() {
         outputDirectory = getOutputDirectory()
 
         cameraExecutor = Executors.newSingleThreadExecutor()
+
+        createNewPopupDialog()
 
     }
 
@@ -211,6 +216,26 @@ class CameraFragment : Fragment() {
             startActivity(intent)
             Log.d("imageeeeee", selectedImg.toString())
         }
+    }
+
+    private fun createNewPopupDialog() {
+        var dialog: AlertDialog? = null
+        val builder = AlertDialog.Builder(requireContext())
+        // set the custom layout
+        val view = layoutInflater.inflate(R.layout.popup_layout, null)
+
+//        val tvTitle: TextView = view.findViewById(R.id.tvTitle) // Get reference of your XML views
+
+        val btnClose: Button = view.findViewById(R.id.btnClose)
+
+        btnClose.setOnClickListener {
+            dialog?.dismiss()
+        }
+
+        builder.setView(view)
+        // create and show the alert dialog
+        dialog = builder.create()
+        dialog.show()
     }
 
     @SuppressLint("ClickableViewAccessibility")

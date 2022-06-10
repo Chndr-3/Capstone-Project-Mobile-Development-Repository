@@ -14,6 +14,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.bangkit.skutapplication.databinding.FragmentProfileBinding
 import com.bangkit.skutapplication.datastore.UserPreference
 import com.bangkit.skutapplication.datastore.ViewModelFactory
+import com.bangkit.skutapplication.view.login.LoginActivity
+import com.bangkit.skutapplication.view.main.MainActivity
 import com.bangkit.skutapplication.view.profile.editprofile.AboutActivity
 
 // TODO: Rename parameter arguments, choose names that match
@@ -44,6 +46,7 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.buttonLanguage.setOnClickListener {
             startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
         }
@@ -53,19 +56,23 @@ class ProfileFragment : Fragment() {
         }
         
         viewModel.getUser().observe(getViewLifecycleOwner()) {
+            if (it.token.isNotEmpty()) {
                 binding.userName.text = it.username
-            binding.imageProfileText.text = it.username[0].toString()
-            Toast.makeText(context, it.username, Toast.LENGTH_SHORT).show()
-
+                binding.imageProfileText.text = it.username[0].toString()
+                Toast.makeText(context, it.username, Toast.LENGTH_SHORT).show()
+            } else {
+                startActivity(Intent(activity, MainActivity::class.java))
+            }
         }
         binding.buttonLogout.setOnClickListener {
             viewModel.logout()
         }
 
 
-        binding.buttonLogout.setOnClickListener {
-            viewModel.logout()
-        }
+//        binding.buttonLogout.setOnClickListener {
+////            startActivity(Intent(activity, MainActivity::class.java))
+//            viewModel.logout()
+//        }
 
     }
 

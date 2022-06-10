@@ -39,6 +39,7 @@ class MainViewModel(private val pref: UserPreference) :ViewModel() {
 //
                 } else {
                     _isSuccess.value = false
+                    Log.d("masuk sini", "yahahahha")
                 }
             }
 

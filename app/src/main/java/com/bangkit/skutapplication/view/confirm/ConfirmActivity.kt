@@ -75,7 +75,6 @@ class ConfirmActivity : AppCompatActivity() {
         Log.d("imaggeeee2", bitmapImage.toString())
 
         val rotatedBitmap = rotateImageIfRequired(bitmapImage)
-        val flipBitmap = flip(rotatedBitmap)
 
 //        binding.imgPreview.setImageURI(Uri.parse(imageUri))
         binding.imgPreview.setImageBitmap(rotatedBitmap)
@@ -83,15 +82,22 @@ class ConfirmActivity : AppCompatActivity() {
         Log.d("test", imageUri)
 
         binding.mirrorButton.setOnClickListener {
-            binding.imgPreview.setImageBitmap(flipBitmap)
-            pressed = true
+            if (pressed) {
+                binding.imgPreview.setImageBitmap(flip2(rotatedBitmap))
+                pressed = false
+            } else {
+                binding.imgPreview.setImageBitmap(flip(rotatedBitmap))
+                pressed = true
+            }
+
+
         }
 
         binding.uploadButton.setOnClickListener {
             if (pressed) {
-                confirmViewModel.setImageBase64(bitmapToBase64(flipBitmap))
+                confirmViewModel.setImageBase64(bitmapToBase64(flip(rotatedBitmap)))
             } else {
-                confirmViewModel.setImageBase64(bitmapToBase64(rotatedBitmap))
+                confirmViewModel.setImageBase64(bitmapToBase64(flip2(rotatedBitmap)))
             }
             confirmViewModel.getUser().observe(this) { user ->
 
@@ -164,6 +170,15 @@ class ConfirmActivity : AppCompatActivity() {
         // create new matrix for transformation
         val matrix = Matrix()
         matrix.preScale(-1.0f, 1.0f)
+
+        // return transformed image
+        return Bitmap.createBitmap(src, 0, 0, src.width, src.height, matrix, true)
+    }
+
+    private fun flip2(src: Bitmap): Bitmap {
+        // create new matrix for transformation
+        val matrix = Matrix()
+        matrix.preScale(1.0f, 1.0f)
 
         // return transformed image
         return Bitmap.createBitmap(src, 0, 0, src.width, src.height, matrix, true)

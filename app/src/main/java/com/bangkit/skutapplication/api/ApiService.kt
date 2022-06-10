@@ -15,11 +15,6 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface ApiService {
-    @POST("v1/register")
-    fun registerUser(
-
-    )
-
     @POST("upload")
     fun uploadImage(
         @Header("Authorization") token: String,

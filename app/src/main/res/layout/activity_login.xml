@@ -95,7 +95,7 @@
 
     <TextView
         android:id="@+id/tvRegister"
-        style="@style/TextContent.Medium"
+        style="@style/TextContent.small"
         android:layout_marginTop="32dp"
         android:text="@string/does_not_have_an_account"
         android:textColor="?android:textColorPrimary"
@@ -108,9 +108,10 @@
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:text="@string/register"
+        android:textAlignment="viewStart"
         android:textAllCaps="false"
         android:textColor="@color/blue"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/tvRegister"
         app:layout_constraintStart_toEndOf="@+id/tvRegister"
         app:layout_constraintTop_toTopOf="@+id/tvRegister" />

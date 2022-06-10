@@ -36,7 +36,6 @@ class ResultActivity : AppCompatActivity() {
         val data = intent.getParcelableExtra<UploadResponse>("extra_data") as UploadResponse
 
         setupView(data)
-
     }
 
     private fun setupView(scanResult: UploadResponse) {
@@ -128,6 +127,14 @@ class ResultActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
         return super.onSupportNavigateUp()
+    }
+
+    override fun onBackPressed() {
+        Log.d("CDA", "onBackPressed Called")
+        val setIntent = Intent(this, MainActivity::class.java)
+        startActivity(setIntent)
+
+        return super.onBackPressed()
     }
 
 

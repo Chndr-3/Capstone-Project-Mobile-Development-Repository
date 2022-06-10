@@ -12,6 +12,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -226,7 +227,7 @@ class CameraFragment : Fragment() {
 
 //        val tvTitle: TextView = view.findViewById(R.id.tvTitle) // Get reference of your XML views
 
-        val btnClose: Button = view.findViewById(R.id.btnClose)
+        val btnClose: ImageView = view.findViewById(R.id.btnClose)
 
         btnClose.setOnClickListener {
             dialog?.dismiss()

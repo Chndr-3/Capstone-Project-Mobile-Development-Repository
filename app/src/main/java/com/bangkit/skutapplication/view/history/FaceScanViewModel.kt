@@ -18,10 +18,16 @@ import retrofit2.Response
 class FaceScanViewModel(private val pref: UserPreference) : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
+
     private val _isSuccess = MutableLiveData<Boolean>()
     val isSuccess: LiveData<Boolean> = _isSuccess
+
+    private val _isSuccess1 = MutableLiveData<Boolean>()
+    val isSuccess1: LiveData<Boolean> = _isSuccess1
+
     private val _name = MutableLiveData<String>()
     val name : LiveData<String> = _name
+
     private val _listHistory = MutableLiveData<List<ListHistoryFaceItem>>()
     val listHistory: LiveData<List<ListHistoryFaceItem>> = _listHistory
     fun getUser(): LiveData<User> {
@@ -62,11 +68,16 @@ class FaceScanViewModel(private val pref: UserPreference) : ViewModel() {
                 response: Response<String>
             ) {
                 _isLoading.value = false
-                _isSuccess.value = response.isSuccessful
+                if (response.isSuccessful) {
+                    _isSuccess1.value = true
+//
+                } else {
+                    _isSuccess1.value = false
+                }
             }
 
             override fun onFailure(call: Call<String>, t: Throwable) {
-                _isSuccess.value = false
+                _isSuccess1.value = false
                 _isLoading.value = false
                 Log.d(ContentValues.TAG, "onFailure: ${t.message}")
             }

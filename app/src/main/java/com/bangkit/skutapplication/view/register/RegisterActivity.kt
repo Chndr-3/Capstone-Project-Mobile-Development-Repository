@@ -1,5 +1,6 @@
 package com.bangkit.skutapplication.view.register
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -14,7 +15,6 @@ import com.bangkit.skutapplication.databinding.ActivityRegisterBinding
 import com.bangkit.skutapplication.model.user.RegisterModel
 import com.bangkit.skutapplication.view.customview.MyButton
 import com.bangkit.skutapplication.view.customview.MyEditText
-import com.google.android.material.appbar.MaterialToolbar
 import java.util.*
 
 class RegisterActivity : AppCompatActivity() {
@@ -30,11 +30,9 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val toolbar: MaterialToolbar = binding.toolbar
-        setSupportActionBar(toolbar)
-
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = ""
+        binding.backButton.setOnClickListener {
+            onBackPressed()
+        }
 
         myEditText = binding.passwordEditText
         myButton = binding.registerButton
@@ -64,38 +62,18 @@ class RegisterActivity : AppCompatActivity() {
         registerViewModel.isSuccess.observe(this) {
             showResult(it)
         }
-//        registerViewModel.registerResult.observe(this) { result ->
-//            registerViewModel.registerError.observe(this) { error ->
-//                if (result.message != null) {
-//                    Log.d("kok gak masuk sini", result.message.toString())
-//                    AlertDialog.Builder(this).apply {
-//                        setTitle("Hore!")
-//                        setMessage(getString(R.string.account_created))
-//                        setPositiveButton(getString(R.string.next)) { _, _ ->
-//                            finish()
-//                        }
-//                        create()
-//                        show()
-//                    }
-//                } else {
-//                    Log.d("kok gak masuk sini", listOf(error).toString())
-//                    Toast.makeText(
-//                        this@RegisterActivity,
-//                        getString(R.string.email_already_registered),
-//                        Toast.LENGTH_SHORT
-//                    ).show()
 
-//                    if (kotlin.error != null) {
-//                        for (i in 0 until kotlin.error.count()) {
-//                            // Message
-//                            val message = kotlin.error[i].message ?: "N/A"
-//                            Log.d("error2: ", message)
-//                        }
-//                        Log.d("errorr", message)
-//                    }
-//                }
-//            }
-//        }
+        when (resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
+            Configuration.UI_MODE_NIGHT_YES -> {
+                binding.backButton.setImageResource(R.drawable.ic_baseline_arrow_back_24)
+            }
+            Configuration.UI_MODE_NIGHT_NO -> {
+                binding.backButton.setImageResource(R.drawable.ic_baseline_arrow_back_black_24)
+            }
+            Configuration.UI_MODE_NIGHT_UNDEFINED -> {
+                binding.backButton.setImageResource(R.drawable.ic_baseline_arrow_back_black_24)
+            }
+        }
     }
 
     private fun setupAction() {

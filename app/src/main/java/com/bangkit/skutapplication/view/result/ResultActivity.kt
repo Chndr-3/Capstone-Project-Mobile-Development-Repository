@@ -30,7 +30,7 @@ class ResultActivity : AppCompatActivity() {
         val toolbar: MaterialToolbar = binding.toolbar
         setSupportActionBar(toolbar)
 
-        supportActionBar?.title = getString(R.string.result_title)
+        supportActionBar?.title = getString(R.string.store)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 

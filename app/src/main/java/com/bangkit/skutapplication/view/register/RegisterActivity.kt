@@ -35,6 +35,7 @@ class RegisterActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = ""
 
         myEditText = binding.passwordEditText
         myButton = binding.registerButton

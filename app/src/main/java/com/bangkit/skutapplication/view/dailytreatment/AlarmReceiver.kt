@@ -26,7 +26,7 @@ class AlarmReceiver : BroadcastReceiver() {
             context,
             0,
             repeatingIntent,
-            PendingIntent.FLAG_UPDATE_CURRENT
+            PendingIntent.FLAG_IMMUTABLE
         )
         val builder: NotificationCompat.Builder =
             NotificationCompat.Builder(context, "Notification")

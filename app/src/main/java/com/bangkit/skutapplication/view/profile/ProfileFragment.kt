@@ -17,6 +17,7 @@ import com.bangkit.skutapplication.datastore.ViewModelFactory
 import com.bangkit.skutapplication.view.login.LoginActivity
 import com.bangkit.skutapplication.view.main.MainActivity
 import com.bangkit.skutapplication.view.profile.editprofile.AboutActivity
+import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -55,11 +56,12 @@ class ProfileFragment : Fragment() {
             startActivity(intent)
         }
         
-        viewModel.getUser().observe(getViewLifecycleOwner()) {
+        viewModel.getUser().observe(viewLifecycleOwner) {
             if (it.token.isNotEmpty()) {
                 binding.userName.text = it.username
                 binding.imageProfileText.text = it.username[0].toString()
-                Toast.makeText(context, it.username, Toast.LENGTH_SHORT).show()
+                    .uppercase(Locale.getDefault())
+//                Toast.makeText(context, it.username, Toast.LENGTH_SHORT).show()
             } else {
                 startActivity(Intent(activity, MainActivity::class.java))
             }

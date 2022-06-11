@@ -1,7 +1,6 @@
 package com.bangkit.skutapplication.view.camera
 
 import android.Manifest
-import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.ContentValues.TAG
 import android.content.Intent
@@ -12,14 +11,11 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
-import androidx.camera.view.PreviewView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.bangkit.skutapplication.R
@@ -175,8 +171,6 @@ class CameraFragment : Fragment() {
                     preview,
                     imageCapture
                 )
-                zoomCamera(cameraLifecycle, binding.viewFinder)
-
             } catch (exc: Exception) {
                 Toast.makeText(
                     requireContext(),
@@ -225,9 +219,7 @@ class CameraFragment : Fragment() {
         // set the custom layout
         val view = layoutInflater.inflate(R.layout.popup_layout, null)
 
-//        val tvTitle: TextView = view.findViewById(R.id.tvTitle) // Get reference of your XML views
-
-        val btnClose: ImageView = view.findViewById(R.id.btnClose)
+        val btnClose: Button = view.findViewById(R.id.doneButton)
 
         btnClose.setOnClickListener {
             dialog?.dismiss()
@@ -238,70 +230,4 @@ class CameraFragment : Fragment() {
         dialog = builder.create()
         dialog.show()
     }
-
-    @SuppressLint("ClickableViewAccessibility")
-    private fun zoomCamera(cameraLifecycle: Camera, viewFinder: PreviewView) {
-        val listener = object : ScaleGestureDetector.SimpleOnScaleGestureListener() {
-            override fun onScale(detector: ScaleGestureDetector): Boolean {
-                val currentZoomRatio: Float = cameraLifecycle.cameraInfo.zoomState.value?.zoomRatio ?: 1F
-                val delta = detector.scaleFactor
-                cameraLifecycle.cameraControl.setZoomRatio(currentZoomRatio * delta)
-                return true
-            }
-        }
-        val scaleGestureDetector = ScaleGestureDetector(context, listener)
-
-        viewFinder.setOnTouchListener { _: View, motionEvent: MotionEvent ->
-            scaleGestureDetector.onTouchEvent(motionEvent)
-            when (motionEvent.action) {
-                MotionEvent.ACTION_DOWN -> {
-                    return@setOnTouchListener true
-                }
-                MotionEvent.ACTION_UP -> {
-                    // Get the MeteringPointFactory from PreviewView
-                    val factory = viewFinder.meteringPointFactory
-
-                    // Create a MeteringPoint from the tap coordinates
-                    val point = factory.createPoint(motionEvent.x, motionEvent.y)
-
-                    // Create a MeteringAction from the MeteringPoint, you can configure it to specify the metering mode
-                    val action = FocusMeteringAction.Builder(point).build()
-
-                    // Trigger the focus and metering. The method returns a ListenableFuture since the operation
-                    // is asynchronous. You can use it get notified when the focus is successful or if it fails.
-                    cameraLifecycle.cameraControl.startFocusAndMetering(action)
-
-                    return@setOnTouchListener true
-                }
-                else -> return@setOnTouchListener false
-            }
-        }
-    }
-
-//    @SuppressLint("ClickableViewAccessibility")
-//    private fun setupZoomAndTapToFocus(camera: Camera, viewFinder: PreviewView) {
-//        val listener = object : ScaleGestureDetector.SimpleOnScaleGestureListener() {
-//            override fun onScale(detector: ScaleGestureDetector): Boolean {
-//                val currentZoomRatio: Float = camera.cameraInfo.zoomState.value?.zoomRatio ?: 1F
-//                val delta = detector.scaleFactor
-//                camera.cameraControl.setZoomRatio(currentZoomRatio * delta)
-//                return true
-//            }
-//        }
-//
-//        val scaleGestureDetector = ScaleGestureDetector(viewFinder.context, listener)
-//
-//        viewFinder.setOnTouchListener { _, event ->
-//            scaleGestureDetector.onTouchEvent(event)
-//            if (event.action == MotionEvent.ACTION_DOWN) {
-//                val factory = viewFinder.createMeteringPointFactory(cameraSelector)
-//                val point = factory.createPoint(event.x, event.y)
-//                val action = FocusMeteringAction.Builder(point, FocusMeteringAction.FLAG_AF)
-//                    .setAutoCancelDuration(5, TimeUnit.SECONDS)
-//                    .build()
-//                cameraControl.startFocusAndMetering(action)
-//            }
-//            true
-//        }
-//    }
 }

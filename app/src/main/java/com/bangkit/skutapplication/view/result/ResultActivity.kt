@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.ActivityResultBinding
 import com.bangkit.skutapplication.model.response.UploadResponse
+import com.bangkit.skutapplication.view.dailytreatment.DailyTreatmentActivity
 import com.bangkit.skutapplication.view.main.MainActivity
 import com.bumptech.glide.Glide
 import com.google.android.material.appbar.MaterialToolbar
@@ -34,6 +35,11 @@ class ResultActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val data = intent.getParcelableExtra<UploadResponse>("extra_data") as UploadResponse
+
+        binding.dailyButton.setOnClickListener {
+            val intent = Intent(this, DailyTreatmentActivity::class.java)
+            startActivity(intent)
+        }
 
         setupView(data)
     }

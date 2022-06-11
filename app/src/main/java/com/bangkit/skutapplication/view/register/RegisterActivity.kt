@@ -11,7 +11,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.ActivityRegisterBinding
-import com.bangkit.skutapplication.model.DailyTreatmentItem
 import com.bangkit.skutapplication.model.user.RegisterModel
 import com.bangkit.skutapplication.view.customview.MyButton
 import com.bangkit.skutapplication.view.customview.MyEditText

@@ -202,12 +202,12 @@
     <string name="switch_camera">Ganti kamera</string>
     <string name="image_preview">Pratinjau gambar</string>
     <string name="scan">Pindai</string>
-    <string name="mirror">Balik Gambar</string>
+    <string name="mirror">Balik\nGambar</string>
     <string name="result_title">Hasil</string>
     <string name="failed_to_load_camera">Gagal menampilkan Kamera</string>
     <string name="permission_not_granted">Tidak mendapatkan permission.</string>
     <string name="failed_take_photo">Gagal menangkap gambar</string>
-    <string name="next">Lanjut</string>
+    <string name="solusi">Solusi</string>
     <string name="confirm">Konfirmasi</string>
     <string name="store">Toko</string>
 
@@ -258,4 +258,8 @@
     <string name="how_to_description">Silahkan ambil foto pada area kulit yang terinfeksi penyakit. Anda dapat melihat contohnya pada gambar berikut</string>
     <string name="gagal_ambil_history_data">Gagal mengambil riwayat scan wajah, periksa kembali koneksi anda</string>
     <string name="about">About</string>
+    <string name="ok" translatable="false">OK</string>
+    <string name="daily_ntreatment">Perawatan\nHarian</string>
+    <string name="next">Lanjut</string>
+
 </resources>

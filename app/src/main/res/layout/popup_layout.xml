@@ -6,17 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/btnClose"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="2dp"
-        android:src="@drawable/ic_outline_cancel_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="0dp"
@@ -33,7 +22,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnClose" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvDescription"
@@ -63,9 +52,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
         android:src="@drawable/ic_baseline_check_circle_outline_24"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/correctExample"
         app:layout_constraintStart_toStartOf="@+id/correctExample"
         app:layout_constraintTop_toBottomOf="@+id/correctExample" />
@@ -87,12 +74,24 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
         android:src="@drawable/ic_outline_close_24"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/wrongExample"
         app:layout_constraintStart_toStartOf="@+id/wrongExample"
         app:layout_constraintTop_toBottomOf="@+id/wrongExample" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/doneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#C5C5C5"
+        android:textColor="#000000"
+        android:text="@string/ok"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/crossIcon" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"

@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
-import com.bangkit.skutapplication.api.ApiConfig2
+import com.bangkit.skutapplication.api.ApiConfig
 import com.bangkit.skutapplication.datastore.UserPreference
 import com.bangkit.skutapplication.model.response.UploadResponse
 import com.bangkit.skutapplication.model.User
@@ -44,7 +44,7 @@ class ConfirmViewModel(private val pref: UserPreference) : ViewModel() {
             .trimIndent().toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
 
         _isLoading.value = true
-        val client = ApiConfig2.getApiService().uploadImage("Bearer $token", body)
+        val client = ApiConfig.getApiService().uploadImage("Bearer $token", body)
         client.enqueue(object : Callback<UploadResponse> {
             override fun onResponse(
                 call: Call<UploadResponse>,

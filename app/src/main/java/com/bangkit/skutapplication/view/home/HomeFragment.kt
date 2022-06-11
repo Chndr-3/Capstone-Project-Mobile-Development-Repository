@@ -39,8 +39,6 @@ import kotlin.collections.ArrayList
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private val list = ArrayList<ViewPagerItem>()
-    private  lateinit var viewModel: HomeViewModel
-    private val Context.dataStore by preferencesDataStore(name = "profile")
     private var historyData: ArrayList<ListHistoryFaceItem> = arrayListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,12 +80,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         showViewPager()
-        viewModel.getUser().observe(viewLifecycleOwner){
-            viewModel.getItem("Bearer ${it.token}")
-        }
-        viewModel.name.observe(viewLifecycleOwner){
-            viewModel.saveUser(it)
-        }
+
         binding.buttonBeautyTips.setOnClickListener {
             startActivity( Intent(activity, BeautyTipsActivity::class.java))
         }
@@ -97,11 +90,6 @@ class HomeFragment : Fragment() {
         }
         binding.buttonCamera.setOnClickListener {
             it.findNavController().navigate(R.id.cameraNav)
-        }
-        viewModel.listHistory.observe(viewLifecycleOwner){
-            for (data in it){
-                historyData.add(data)
-            }
         }
         binding.buttonHistory.setOnClickListener {
             val intent = Intent(activity, FaceScanHistoryActivity::class.java)
@@ -118,27 +106,6 @@ class HomeFragment : Fragment() {
         val random = Random(daysSinceEpoch)
         binding.dailyTriviaValue.text = trivia[random.nextInt(trivia.size)]
     }
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        viewModel = ViewModelProvider(
-            this,
-            ViewModelFactory(UserPreference.getInstance(context.dataStore))
-        )[HomeViewModel::class.java]
-        viewModel.getUser().observe(this) { user ->
-            if (user.token.isNotEmpty()) {
-//                binding.nameTextView.text = getString(R.string.greeting, user.name)
-                Log.d("token", user.token)
 
-//                mainViewModel.getUserStories(user.token)
-//
-//                mainViewModel.isError.observe(this) {
-//                    showMessage(it)
-//                }
-            } else {
-                startActivity(Intent(context, LoginActivity::class.java))
-            }
-        }
-
-    }
 
 }

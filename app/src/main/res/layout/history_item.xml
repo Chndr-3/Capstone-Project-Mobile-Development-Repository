@@ -76,7 +76,7 @@
             android:id="@+id/imageView11"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginStart="188dp"
+            android:layout_marginStart="176dp"
             android:layout_marginTop="92dp"
             app:layout_constraintStart_toEndOf="@+id/historyImage"
             app:layout_constraintTop_toTopOf="parent"
@@ -91,6 +91,14 @@
             app:layout_constraintStart_toStartOf="@+id/imageView11"
             app:layout_constraintTop_toBottomOf="@+id/imageView11"
             app:srcCompat="@drawable/ic_baseline_calendar_month_24" />
+
+        <ImageView
+            android:id="@+id/buttonDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/btn_dialog" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -5,19 +5,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.net.toUri
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.skutapplication.R
-import com.bangkit.skutapplication.databinding.DailyTreatmentItemBinding
 import com.bangkit.skutapplication.model.DailyTreatmentItem
-import com.dicoding.picodiploma.mynoteapps.helper.NoteDiffCallback
+import com.dicoding.picodiploma.mynoteapps.helper.SkincareDiffCallback
 import java.util.ArrayList
 
 class DailyTreatmentAdapter : RecyclerView.Adapter<DailyTreatmentAdapter.DailyTreatmentViewHolder>() {
     private val listItem = ArrayList<DailyTreatmentItem>()
     fun setListItem(listItem: List<DailyTreatmentItem>) {
-        val diffCallback = NoteDiffCallback(this.listItem, listItem)
+        val diffCallback = SkincareDiffCallback(this.listItem, listItem)
         val diffResult = DiffUtil.calculateDiff(diffCallback)
         this.listItem.clear()
         this.listItem.addAll(listItem)

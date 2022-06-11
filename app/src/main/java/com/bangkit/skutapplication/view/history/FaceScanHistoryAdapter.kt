@@ -10,15 +10,33 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.skutapplication.R
+import com.bangkit.skutapplication.helper.HistoryDiffCallback
 import com.bangkit.skutapplication.model.BeautyTipsItem
+import com.bangkit.skutapplication.model.DailyTreatmentItem
 import com.bangkit.skutapplication.model.response.ListHistoryFaceItem
+import com.bangkit.skutapplication.view.dailytreatment.DailyTreatmentAdapter
 import com.bumptech.glide.Glide
+import com.dicoding.picodiploma.mynoteapps.helper.SkincareDiffCallback
+import okhttp3.internal.notifyAll
+import java.util.ArrayList
 import kotlin.math.absoluteValue
 
-class FaceScanHistoryAdapter(private val listHistory: List<ListHistoryFaceItem>) : RecyclerView.Adapter<FaceScanHistoryAdapter.ViewHolder>() {
-
+class FaceScanHistoryAdapter : RecyclerView.Adapter<FaceScanHistoryAdapter.ViewHolder>() {
+    private lateinit var onItemClickCallback: OnItemClickCallback
+    private val listItem = ArrayList<ListHistoryFaceItem>()
+    fun setListItem(listItem: List<ListHistoryFaceItem>) {
+        val diffCallback = HistoryDiffCallback(this.listItem, listItem)
+        val diffResult = DiffUtil.calculateDiff(diffCallback)
+        this.listItem.clear()
+        this.listItem.addAll(listItem)
+        diffResult.dispatchUpdatesTo(this)
+    }
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int) =
         ViewHolder(
             LayoutInflater.from(viewGroup.context)
@@ -27,8 +45,8 @@ class FaceScanHistoryAdapter(private val listHistory: List<ListHistoryFaceItem>)
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        val history = listHistory[position]
-        val time = history.timestamp.toString().substring(11, 19)
+        val history = listItem[position]
+        val time = history.timestamp.toString().substring(12, 20)
         val date = history.timestamp.toString().substring(0, 10)
         viewHolder.historyTime.text = time
         viewHolder.historyDate.text = date
@@ -40,6 +58,10 @@ class FaceScanHistoryAdapter(private val listHistory: List<ListHistoryFaceItem>)
         val keys = map.filterValues { it == maxValue }.keys.first().toString()
         val numberPercentage = (maxValue * 100).toString().substring(0,2)
         viewHolder.historyResult.text = "$keys : $numberPercentage%"
+        viewHolder.deleteButton.setOnClickListener {
+            onItemClickCallback.onItemClicked(listItem[viewHolder.adapterPosition])
+        }
+
     }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -47,7 +69,12 @@ class FaceScanHistoryAdapter(private val listHistory: List<ListHistoryFaceItem>)
         val historyImage: ImageView = view.findViewById(R.id.historyImage)
         val historyTime: TextView = view.findViewById(R.id.historyTime)
         val historyDate: TextView = view.findViewById(R.id.historyDate)
+        val deleteButton: ImageView = view.findViewById(R.id.buttonDelete)
     }
 
-    override fun getItemCount() = listHistory.size
+    override fun getItemCount() = listItem.size
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: ListHistoryFaceItem)
+    }
 }

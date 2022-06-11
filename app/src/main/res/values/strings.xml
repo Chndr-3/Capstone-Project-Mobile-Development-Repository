@@ -256,5 +256,5 @@
     <string name="how_to_take_a_picture">Bagaimana cara mengambil Foto</string>
     <string name="product_name_input">Nama Produk</string>
     <string name="how_to_description">Silahkan ambil foto pada area kulit yang terinfeksi penyakit. Anda dapat melihat contohnya pada gambar berikut</string>
-
+    <string name="gagal_ambil_history_data">Gagal mengambil riwayat scan wajah, periksa kembali koneksi anda</string>
 </resources>

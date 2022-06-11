@@ -1,19 +1,21 @@
-package com.bangkit.skutapplication.view.home
+package com.bangkit.skutapplication.view.history
 
 import android.content.ContentValues
 import android.util.Log
 import androidx.lifecycle.*
 import com.bangkit.skutapplication.api.ApiConfig
 import com.bangkit.skutapplication.datastore.UserPreference
+import com.bangkit.skutapplication.model.DeleteTreatment
 import com.bangkit.skutapplication.model.User
 import com.bangkit.skutapplication.model.response.Dashboard
 import com.bangkit.skutapplication.model.response.ListHistoryFaceItem
+import com.bangkit.skutapplication.model.user.DeleteHistory
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class HomeViewModel(private val pref: UserPreference) : ViewModel() {
+class FaceScanViewModel(private val pref: UserPreference) : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
     private val _isSuccess = MutableLiveData<Boolean>()
@@ -51,9 +53,23 @@ class HomeViewModel(private val pref: UserPreference) : ViewModel() {
             }
         })
     }
-    fun saveUser(user: String) {
-        viewModelScope.launch {
-            pref.saveUsername(user)
-        }
+    fun deleteHistory(token: String, item: DeleteHistory) {
+        _isLoading.value = true
+        val client = ApiConfig.getApiService().deleteHistory(token, item)
+        client.enqueue(object : Callback<String> {
+            override fun onResponse(
+                call: Call<String>,
+                response: Response<String>
+            ) {
+                _isLoading.value = false
+                _isSuccess.value = response.isSuccessful
+            }
+
+            override fun onFailure(call: Call<String>, t: Throwable) {
+                _isSuccess.value = false
+                _isLoading.value = false
+                Log.d(ContentValues.TAG, "onFailure: ${t.message}")
+            }
+        })
     }
 }

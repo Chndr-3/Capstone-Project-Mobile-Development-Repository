@@ -1,10 +1,10 @@
-package com.dicoding.picodiploma.mynoteapps.helper
+package com.bangkit.skutapplication.helper
 
 import androidx.recyclerview.widget.DiffUtil
 import com.bangkit.skutapplication.model.DailyTreatmentItem
+import com.bangkit.skutapplication.model.response.ListHistoryFaceItem
 
-
-class NoteDiffCallback(private val mOldItem: List<DailyTreatmentItem>, private val mNewItem: List<DailyTreatmentItem>) : DiffUtil.Callback() {
+class HistoryDiffCallback(private val mOldItem: List<ListHistoryFaceItem>, private val mNewItem: List<ListHistoryFaceItem>) : DiffUtil.Callback() {
     override fun getOldListSize(): Int {
         return mOldItem.size
     }
@@ -14,12 +14,12 @@ class NoteDiffCallback(private val mOldItem: List<DailyTreatmentItem>, private v
     }
 
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        return mOldItem[oldItemPosition].id == mNewItem[newItemPosition].id
+        return mOldItem[oldItemPosition].scanId == mNewItem[newItemPosition].scanId
     }
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         val oldItem = mOldItem[oldItemPosition]
         val newItem = mNewItem[newItemPosition]
-        return oldItem.id == newItem.id && oldItem.id == newItem.id
+        return oldItem.scanId == newItem.scanId
     }
 }

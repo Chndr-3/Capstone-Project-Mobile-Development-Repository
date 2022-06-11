@@ -23,13 +23,15 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.bangkit.skutapplication.datastore.UserPreference
 import com.bangkit.skutapplication.datastore.ViewModelFactory
+
 import com.bangkit.skutapplication.view.login.LoginActivity
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
+    private lateinit var viewModel: MainViewModel
+    private val Context.dataStore by preferencesDataStore(name = "profile")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -41,7 +43,20 @@ class MainActivity : AppCompatActivity() {
                R.id.homeNav, R.id.cameraNav, R.id.storeNav, R.id.profileNav
             )
         )
+        viewModel = ViewModelProvider(
+            this,
+            ViewModelFactory(UserPreference.getInstance(dataStore))
+        )[MainViewModel::class.java]
 
+        viewModel.getUser().observe(this) { user ->
+            viewModel.getItem("Bearer ${user.token}")
+            if (user.token.isEmpty()) {
+                startActivity(Intent(this, LoginActivity::class.java))
+            }
+        }
+        viewModel.name.observe(this){
+            viewModel.saveUser(it)
+        }
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 

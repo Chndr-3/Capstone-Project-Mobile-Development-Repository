@@ -28,53 +28,79 @@
         <activity
             android:name=".view.result.SolutionActivity"
             android:exported="false"
-            android:theme="@style/Theme.NoActionBar" />
+            android:theme="@style/Theme.NoActionBar"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".view.history.FaceScanHistoryActivity"
             android:exported="false"
-            android:label="@string/riwayat_scan_wajah"/>
+            android:label="@string/riwayat_scan_wajah"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".view.dailytreatment.NotificationActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".view.dailytreatment.AddDailyTreatmentActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".view.dailytreatment.DailyTreatmentActivity"
             android:exported="false"
-            android:label="Daily Treatment" />
+            android:label="Daily Treatment"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".view.result.ResultActivity"
             android:exported="false"
-            android:theme="@style/Theme.NoActionBar" />
+            android:theme="@style/Theme.NoActionBar"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".view.confirm.ConfirmActivity"
             android:exported="false"
-            android:theme="@style/Theme.NoActionBar" />
+            android:theme="@style/Theme.NoActionBar"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".view.profile.editprofile.AboutActivity"
             android:exported="false"
-            android:label="About" />
+            android:label="About"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".view.register.RegisterActivity"
             android:exported="false"
-            android:theme="@style/Theme.NoActionBar" />
+            android:theme="@style/Theme.NoActionBar"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".view.login.LoginActivity"
             android:exported="false"
-            android:theme="@style/Theme.NoActionBar" />
+            android:theme="@style/Theme.NoActionBar"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name=".view.beautytips.BeautyTipsActivity"
             android:exported="false"
-            android:label="Beauty Tips" />
+            android:label="Beauty Tips"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name=".view.disease.DiseaseActivity"
             android:exported="false"
-            android:label="@string/common_facial_skin_disease" />
+            android:label="@string/common_facial_skin_disease"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name=".view.main.SplashScreenActivity"
             android:exported="true"
-            android:theme="@style/SplashScreen" >
+            android:theme="@style/SplashScreen"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -83,12 +109,15 @@
         </activity>
         <activity
             android:name=".view.main.MainActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
 
         <receiver
             android:name=".view.dailytreatment.AlarmReceiver"
             android:enabled="true"
-            android:exported="false" />
+            android:exported="false"
+            />
       
         <meta-data
             android:name="preloaded_fonts"

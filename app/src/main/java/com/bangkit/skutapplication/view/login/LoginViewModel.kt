@@ -9,7 +9,6 @@ import com.bangkit.skutapplication.model.User
 import com.bangkit.skutapplication.model.response.LoginResponse
 import com.bangkit.skutapplication.model.user.LoginModel
 import kotlinx.coroutines.launch
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

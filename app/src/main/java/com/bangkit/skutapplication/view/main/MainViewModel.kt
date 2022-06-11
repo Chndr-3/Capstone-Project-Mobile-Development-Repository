@@ -7,9 +7,6 @@ import com.bangkit.skutapplication.api.ApiConfig
 import com.bangkit.skutapplication.datastore.UserPreference
 import com.bangkit.skutapplication.model.User
 import com.bangkit.skutapplication.model.response.Dashboard
-import com.bangkit.skutapplication.model.response.ListDailyTreatmentItem
-import com.bangkit.skutapplication.model.response.ListHistoryFaceItem
-import com.bangkit.skutapplication.model.response.ResultsItem
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback

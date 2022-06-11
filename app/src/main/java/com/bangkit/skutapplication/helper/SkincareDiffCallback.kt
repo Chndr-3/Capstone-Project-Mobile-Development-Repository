@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.mynoteapps.helper
+package com.bangkit.skutapplication.helper
 
 import androidx.recyclerview.widget.DiffUtil
 import com.bangkit.skutapplication.model.DailyTreatmentItem

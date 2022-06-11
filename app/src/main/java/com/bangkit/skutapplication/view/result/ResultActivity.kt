@@ -16,9 +16,7 @@ import kotlin.reflect.full.memberProperties
 
 class ResultActivity : AppCompatActivity() {
 
-    val gson = Gson()
-//    var maxKey: String? = null
-    var maxEntry: Map.Entry<String, Double>? = null
+    private var maxEntry: Map.Entry<String, Double>? = null
 
     private lateinit var binding: ActivityResultBinding
 
@@ -76,7 +74,7 @@ class ResultActivity : AppCompatActivity() {
             .into(binding.imgPreview)
 
         val scanPercentage = (maxEntry!!.value * 100)
-        val scanPercentageFormat:Double = String.format("%.2f", scanPercentage).toDouble()
+        val scanPercentageFormat = String.format("%.2f", scanPercentage)
 
 
         when (maxEntry?.key) {

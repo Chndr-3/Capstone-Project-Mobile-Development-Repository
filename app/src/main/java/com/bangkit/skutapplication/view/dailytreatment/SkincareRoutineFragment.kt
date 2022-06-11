@@ -106,14 +106,14 @@ class SkincareRoutineFragment : Fragment() {
                 val date2: Date = df.parse(data.time.toString()) as Date
                 if (!(date1.after(date2))) {
                     setCalendar(data, data.id)
-                    if(!(date1.equals(date2))){
+                    if(date1 != date2){
                         setCalendar(data, data.id)
                     }
                 }
             }
 
         }
-        NotificationChannel()
+        notificationChannel()
         adapter.setOnItemClickCallback(
             object : SkincareRoutineAdapter.OnItemClickCallback {
                 override fun onItemClicked(data: DailyTreatmentItem) {
@@ -132,10 +132,10 @@ class SkincareRoutineFragment : Fragment() {
 
     private fun obtainViewModel(activity: AppCompatActivity): DailyTreatmentViewModel {
         val factory = ItemViewModelFactory.getInstance(activity.application)
-        return ViewModelProvider(activity, factory).get(DailyTreatmentViewModel::class.java)
+        return ViewModelProvider(activity, factory)[DailyTreatmentViewModel::class.java]
     }
 
-    private fun NotificationChannel() {
+    private fun notificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name: CharSequence = "PASTICCINO"
             val description = "PASTICCINO`S CHANNEL"
@@ -165,14 +165,14 @@ class SkincareRoutineFragment : Fragment() {
         val alarmManager = requireContext().getSystemService(ALARM_SERVICE) as AlarmManager
         alarmManager.setRepeating(
             AlarmManager.RTC_WAKEUP,
-            calendar.getTimeInMillis(),
+            calendar.timeInMillis,
             AlarmManager.INTERVAL_DAY,
             pendingIntent
         )
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             alarmManager.setExactAndAllowWhileIdle(
                 AlarmManager.RTC_WAKEUP,
-                calendar.getTimeInMillis(),
+                calendar.timeInMillis,
                 pendingIntent
             )
         }

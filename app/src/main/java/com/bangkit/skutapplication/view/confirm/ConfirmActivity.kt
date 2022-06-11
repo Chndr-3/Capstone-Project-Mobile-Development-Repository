@@ -17,7 +17,6 @@ import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.camera.core.CameraSelector
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -62,10 +61,6 @@ class ConfirmActivity : AppCompatActivity() {
         supportActionBar?.title = getString(R.string.confirm)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-//        val byteArray: ByteArray = getArgument().getByteArrayExtra("image")
-//        val bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
-
         imageUri = intent.extras?.getString(EXTRA_IMAGE_URI).toString()
 
         val imageStream = contentResolver.openInputStream(Uri.parse(imageUri))
@@ -76,18 +71,17 @@ class ConfirmActivity : AppCompatActivity() {
 
         val rotatedBitmap = rotateImageIfRequired(bitmapImage)
 
-//        binding.imgPreview.setImageURI(Uri.parse(imageUri))
         binding.imgPreview.setImageBitmap(rotatedBitmap)
 
         Log.d("test", imageUri)
 
         binding.mirrorButton.setOnClickListener {
-            if (pressed) {
+            pressed = if (pressed) {
                 binding.imgPreview.setImageBitmap(flip2(rotatedBitmap))
-                pressed = false
+                false
             } else {
                 binding.imgPreview.setImageBitmap(flip(rotatedBitmap))
-                pressed = true
+                true
             }
 
 
@@ -102,15 +96,10 @@ class ConfirmActivity : AppCompatActivity() {
             confirmViewModel.getUser().observe(this) { user ->
 
                 if (user.token.isNotEmpty()) {
-//                binding.nameTextView.text = getString(R.string.greeting, user.name)
                     Log.d("token", user.token)
 
                     uploadImage(user.token)
-//                mainViewModel.getUserStories(user.token)
-//
-//                mainViewModel.isError.observe(this) {
-//                    showMessage(it)
-//                }
+
                 } else {
                     startActivity(Intent(this, LoginActivity::class.java))
                     finish()
@@ -220,8 +209,6 @@ class ConfirmActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val CAMERA_X_RESULT = 200
         const val EXTRA_IMAGE_URI = "extra_image"
-        private const val REQUEST_CODE_PERMISSIONS = 10
     }
 }

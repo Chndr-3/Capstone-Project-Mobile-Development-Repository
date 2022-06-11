@@ -112,14 +112,14 @@ class DailyTreatmentFragment : Fragment() {
         val alarmManager = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
         alarmManager.setRepeating(
             AlarmManager.RTC_WAKEUP,
-            calendar.getTimeInMillis(),
+            calendar.timeInMillis,
             AlarmManager.INTERVAL_DAY,
             pendingIntent
         )
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             alarmManager.setExactAndAllowWhileIdle(
                 AlarmManager.RTC_WAKEUP,
-                calendar.getTimeInMillis(),
+                calendar.timeInMillis,
                 pendingIntent
             )
         }

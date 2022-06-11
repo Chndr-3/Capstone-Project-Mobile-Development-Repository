@@ -40,8 +40,7 @@ class CameraFragment : Fragment() {
 
     private lateinit var outputDirectory: File
     private lateinit var cameraExecutor: ExecutorService
-    lateinit var cameraLifecycle: Camera
-//    lateinit var rotatedBitmap: Bitmap
+    private lateinit var cameraLifecycle: Camera
 
     companion object {
         private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"

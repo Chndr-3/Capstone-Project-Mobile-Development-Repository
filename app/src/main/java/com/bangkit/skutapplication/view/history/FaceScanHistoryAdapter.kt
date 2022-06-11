@@ -1,7 +1,6 @@
 package com.bangkit.skutapplication.view.history
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -46,8 +45,7 @@ class FaceScanHistoryAdapter : RecyclerView.Adapter<FaceScanHistoryAdapter.ViewH
             .into(viewHolder.historyImage)
         val map: Map<String, Double?> = mapOf("Acne" to history.acne, "Rosacea" to history.rosacea, "Eksim" to history.eksim, "Normal" to history.normal)
         val maxValue = map.maxOf { it.value!! }
-        val keys = map.filterValues { it == maxValue }.keys.first().toString()
-        val skinDisease = when(keys) {
+        val skinDisease = when(map.filterValues { it == maxValue }.keys.first().toString()) {
             "Acne" -> viewHolder.itemView.context.getString(R.string.acne)
             "Rosacea" -> viewHolder.itemView.context.getString(R.string.rosacea)
             "Eksim" -> viewHolder.itemView.context.getString(R.string.eczema)
@@ -57,7 +55,7 @@ class FaceScanHistoryAdapter : RecyclerView.Adapter<FaceScanHistoryAdapter.ViewH
             }
         }
         val numberPercentage = (maxValue * 100).toString().substring(0,2)
-        viewHolder.historyResult.text = "${skinDisease} : ${numberPercentage}%"
+        viewHolder.historyResult.text = "$skinDisease : ${numberPercentage}%"
         viewHolder.deleteButton.setOnClickListener {
             onItemClickCallback.onItemClicked(listItem[viewHolder.adapterPosition])
         }

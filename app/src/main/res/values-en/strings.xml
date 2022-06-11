@@ -199,6 +199,7 @@
     <string name="gagal_ambil_history_data">Failed to retrieve face scan history, check your connection again</string>
     <string name="about">About</string>
     <string name="next">Next</string>
+    <string name="icon">icon</string>
 
 
 </resources>

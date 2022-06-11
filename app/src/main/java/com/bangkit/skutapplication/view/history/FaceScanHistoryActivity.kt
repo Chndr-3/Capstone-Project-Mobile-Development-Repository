@@ -15,12 +15,8 @@ import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.ActivityFaceScanHistoryBinding
 import com.bangkit.skutapplication.datastore.UserPreference
 import com.bangkit.skutapplication.datastore.ViewModelFactory
-import com.bangkit.skutapplication.model.DailyTreatmentItem
-import com.bangkit.skutapplication.model.DeleteTreatment
 import com.bangkit.skutapplication.model.response.ListHistoryFaceItem
 import com.bangkit.skutapplication.model.user.DeleteHistory
-import com.bangkit.skutapplication.view.dailytreatment.SkincareRoutineAdapter
-import okhttp3.internal.notify
 
 
 class FaceScanHistoryActivity : AppCompatActivity() {
@@ -72,12 +68,12 @@ class FaceScanHistoryActivity : AppCompatActivity() {
             object : FaceScanHistoryAdapter.OnItemClickCallback {
                 @RequiresApi(Build.VERSION_CODES.N)
                 override fun onItemClicked(data: ListHistoryFaceItem) {
-                    viewModel.getUser().observe(this@FaceScanHistoryActivity) {
+                    viewModel.getUser().observe(this@FaceScanHistoryActivity) { it ->
                         viewModel.deleteHistory(
                             "Bearer ${it.token}",
                             DeleteHistory(data.scanId.toString())
                         )
-                        array.removeIf { it.scanId == data.scanId }
+                        array.removeIf { it -> it.scanId == data.scanId }
                         listHistoryAdapter.setListItem(array)
                     }
                 }

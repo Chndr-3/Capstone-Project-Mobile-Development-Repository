@@ -3,13 +3,11 @@ package com.bangkit.skutapplication.datastore
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import com.bangkit.skutapplication.model.User
-import com.bangkit.skutapplication.model.response.LoginResponse
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import java.net.URI
+
 
 class UserPreference private constructor(private val dataStore: DataStore<Preferences>) {
     fun getUser(): Flow<User> {

@@ -23,7 +23,6 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var myButton: MyButton
     private lateinit var myEditText: MyEditText
     private val registerViewModel: RegisterViewModel by viewModels()
-    private val arrayList: ArrayList<String> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

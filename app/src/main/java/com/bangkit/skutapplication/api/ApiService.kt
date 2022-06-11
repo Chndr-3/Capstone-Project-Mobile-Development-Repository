@@ -1,6 +1,5 @@
 package com.bangkit.skutapplication.api
 
-import com.bangkit.skutapplication.model.DailyTreatmentItem
 import com.bangkit.skutapplication.model.DeleteTreatment
 import com.bangkit.skutapplication.model.PostTreatment
 import com.bangkit.skutapplication.model.response.Dashboard
@@ -19,14 +18,11 @@ interface ApiService {
     @POST("upload")
     fun uploadImage(
         @Header("Authorization") token: String,
-//        @Field("image") image: String
         @Body json: RequestBody
     ): Call<UploadResponse>
 
     @POST("login")
     fun loginUser(
-//        @Field("email") email: String,
-//        @Field("password") password: String
         @Body loginModel: LoginModel
     ): Call<LoginResponse>
 

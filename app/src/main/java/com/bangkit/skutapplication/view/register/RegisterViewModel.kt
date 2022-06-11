@@ -2,16 +2,12 @@ package com.bangkit.skutapplication.view.register
 
 import android.content.ContentValues
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.api.ApiConfig
 import com.bangkit.skutapplication.model.response.ErrorsItem
-import com.bangkit.skutapplication.model.response.LoginResponse
 import com.bangkit.skutapplication.model.response.RegisterResponse
-import com.bangkit.skutapplication.model.user.LoginModel
 import com.bangkit.skutapplication.model.user.RegisterModel
 import retrofit2.Call
 import retrofit2.Callback

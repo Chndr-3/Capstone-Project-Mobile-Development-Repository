@@ -27,7 +27,4 @@ class DailyTreatmentRepository(application: Application) {
         executorService.execute { mDailyTreatmentDao.delete(id) }
     }
 
-    fun update(dailyTreatmentItem: DailyTreatmentItem) {
-        executorService.execute { mDailyTreatmentDao.update(dailyTreatmentItem) }
-    }
 }

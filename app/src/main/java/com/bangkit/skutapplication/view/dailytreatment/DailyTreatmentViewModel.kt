@@ -9,10 +9,8 @@ import androidx.lifecycle.ViewModel
 import com.bangkit.skutapplication.api.ApiConfig
 import com.bangkit.skutapplication.model.DailyTreatmentItem
 import com.bangkit.skutapplication.model.DeleteTreatment
-import com.bangkit.skutapplication.model.PostTreatment
 import com.bangkit.skutapplication.model.response.Dashboard
 import com.bangkit.skutapplication.model.response.ListDailyTreatmentItem
-import com.bangkit.skutapplication.model.response.TreatmentResponse
 import com.bangkit.skutapplication.repository.DailyTreatmentRepository
 import retrofit2.Call
 import retrofit2.Callback

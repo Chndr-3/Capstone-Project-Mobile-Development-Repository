@@ -1,14 +1,12 @@
 package com.bangkit.skutapplication.view.result
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.ActivitySolutionBinding
 import com.bangkit.skutapplication.model.DailyRoutine
-import com.bangkit.skutapplication.view.main.MainActivity
 import com.bangkit.skutapplication.view.store.StoreCategoryAdapter
 import com.google.android.material.appbar.MaterialToolbar
 

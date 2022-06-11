@@ -2,7 +2,6 @@ package com.bangkit.skutapplication.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.bangkit.skutapplication.model.BeautyTipsItem
 import com.bangkit.skutapplication.model.DailyTreatmentItem
 
 @Dao

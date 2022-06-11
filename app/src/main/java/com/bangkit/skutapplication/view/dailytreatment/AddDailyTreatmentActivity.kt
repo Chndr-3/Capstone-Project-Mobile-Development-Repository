@@ -97,5 +97,5 @@ class AddDailyTreatmentActivity : AppCompatActivity() {
 
 private fun obtainViewModel(activity: AppCompatActivity): AddDailyTreatmentViewModel {
     val factory = ItemViewModelFactory.getInstance(activity.application)
-    return ViewModelProvider(activity, factory).get(AddDailyTreatmentViewModel::class.java)
+    return ViewModelProvider(activity, factory)[AddDailyTreatmentViewModel::class.java]
 }

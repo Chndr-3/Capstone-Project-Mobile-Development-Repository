@@ -27,8 +27,6 @@ class ItemViewModelFactory private constructor(private val mApplication: Applica
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(DailyTreatmentViewModel::class.java)) {
             return DailyTreatmentViewModel(mApplication) as T
-        } else if (modelClass.isAssignableFrom(AddDailyTreatmentViewModel::class.java)) {
-            return AddDailyTreatmentViewModel(mApplication) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
     }

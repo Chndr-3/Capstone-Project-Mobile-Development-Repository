@@ -3,17 +3,7 @@ package com.bangkit.skutapplication.view.customview
 import android.text.InputFilter
 import android.text.Spanned
 
-class MinMaxFilter: InputFilter {
-    private var min:Int = 0
-    private var max:Int = 0
-    constructor(min:Int, max:Int) {
-        this.min = min
-        this.max = max
-    }
-    constructor(min:String, max:String) {
-        this.min = Integer.parseInt(min)
-        this.max = Integer.parseInt(max)
-    }
+class MinMaxFilter(private var min: Int, private var max: Int) : InputFilter {
     override fun filter(source:CharSequence, start:Int, end:Int, dest: Spanned, dstart:Int, dend:Int): CharSequence? {
         try
         {

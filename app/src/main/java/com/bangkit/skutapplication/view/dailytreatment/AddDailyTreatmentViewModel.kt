@@ -5,19 +5,15 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bangkit.skutapplication.api.ApiConfig
-import com.bangkit.skutapplication.model.DailyTreatmentItem
 import com.bangkit.skutapplication.model.PostTreatment
-import com.bangkit.skutapplication.model.response.ListDailyTreatmentItem
 import com.bangkit.skutapplication.model.response.ResultsItem
 import com.bangkit.skutapplication.model.response.TreatmentResponse
 import com.bangkit.skutapplication.repository.DailyTreatmentRepository
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class AddDailyTreatmentViewModel(application: Application) : ViewModel(){private val mDailyTreatmentRepository: DailyTreatmentRepository = DailyTreatmentRepository(application)
+class AddDailyTreatmentViewModel : ViewModel(){
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
     private val _isSuccess = MutableLiveData<Boolean>()

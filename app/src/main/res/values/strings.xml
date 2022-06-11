@@ -261,5 +261,6 @@
     <string name="ok" translatable="false">OK</string>
     <string name="daily_ntreatment">Perawatan\nHarian</string>
     <string name="next">Lanjut</string>
+    <string name="icon">icon</string>
 
 </resources>

@@ -1,7 +1,6 @@
 package com.bangkit.skutapplication.helper
 
 import androidx.recyclerview.widget.DiffUtil
-import com.bangkit.skutapplication.model.DailyTreatmentItem
 import com.bangkit.skutapplication.model.response.ListHistoryFaceItem
 
 class HistoryDiffCallback(private val mOldItem: List<ListHistoryFaceItem>, private val mNewItem: List<ListHistoryFaceItem>) : DiffUtil.Callback() {

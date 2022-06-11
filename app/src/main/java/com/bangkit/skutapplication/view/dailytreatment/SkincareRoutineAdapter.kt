@@ -8,8 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.skutapplication.R
+import com.bangkit.skutapplication.helper.SkincareDiffCallback
 import com.bangkit.skutapplication.model.DailyTreatmentItem
-import com.dicoding.picodiploma.mynoteapps.helper.SkincareDiffCallback
 import java.util.ArrayList
 
 class SkincareRoutineAdapter : RecyclerView.Adapter<SkincareRoutineAdapter.DailyTreatmentViewHolder>() {

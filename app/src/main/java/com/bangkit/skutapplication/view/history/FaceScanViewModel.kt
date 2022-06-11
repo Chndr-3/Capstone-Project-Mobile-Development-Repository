@@ -5,12 +5,10 @@ import android.util.Log
 import androidx.lifecycle.*
 import com.bangkit.skutapplication.api.ApiConfig
 import com.bangkit.skutapplication.datastore.UserPreference
-import com.bangkit.skutapplication.model.DeleteTreatment
 import com.bangkit.skutapplication.model.User
 import com.bangkit.skutapplication.model.response.Dashboard
 import com.bangkit.skutapplication.model.response.ListHistoryFaceItem
 import com.bangkit.skutapplication.model.user.DeleteHistory
-import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,18 +16,14 @@ import retrofit2.Response
 class FaceScanViewModel(private val pref: UserPreference) : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
-
     private val _isSuccess = MutableLiveData<Boolean>()
     val isSuccess: LiveData<Boolean> = _isSuccess
-
-    private val _isSuccess1 = MutableLiveData<Boolean>()
-    val isSuccess1: LiveData<Boolean> = _isSuccess1
-
     private val _name = MutableLiveData<String>()
     val name : LiveData<String> = _name
-
     private val _listHistory = MutableLiveData<List<ListHistoryFaceItem>>()
     val listHistory: LiveData<List<ListHistoryFaceItem>> = _listHistory
+    private val _isSuccess1 = MutableLiveData<Boolean>()
+    val isSuccess1: LiveData<Boolean> = _isSuccess1
     fun getUser(): LiveData<User> {
         return pref.getUser().asLiveData()
     }
@@ -68,12 +62,7 @@ class FaceScanViewModel(private val pref: UserPreference) : ViewModel() {
                 response: Response<String>
             ) {
                 _isLoading.value = false
-                if (response.isSuccessful) {
-                    _isSuccess1.value = true
-//
-                } else {
-                    _isSuccess1.value = false
-                }
+                _isSuccess1.value = response.isSuccessful
             }
 
             override fun onFailure(call: Call<String>, t: Throwable) {

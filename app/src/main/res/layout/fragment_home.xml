@@ -160,7 +160,7 @@
                             android:layout_marginTop="5dp"
                             android:layout_marginEnd="20dp"
                             android:layout_marginBottom="20dp"
-                            android:text="@string/mulai_rawat_kulitmu_setiap_hari"
+                            android:text="@string/daily_treatment"
                             android:textAlignment="center"
                             android:textColor="?android:textColorPrimary"
                             android:textStyle="bold"

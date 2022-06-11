@@ -15,8 +15,12 @@ import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.ActivityFaceScanHistoryBinding
 import com.bangkit.skutapplication.datastore.UserPreference
 import com.bangkit.skutapplication.datastore.ViewModelFactory
+import com.bangkit.skutapplication.model.DailyTreatmentItem
+import com.bangkit.skutapplication.model.DeleteTreatment
 import com.bangkit.skutapplication.model.response.ListHistoryFaceItem
 import com.bangkit.skutapplication.model.user.DeleteHistory
+import com.bangkit.skutapplication.view.dailytreatment.SkincareRoutineAdapter
+import okhttp3.internal.notify
 
 
 class FaceScanHistoryActivity : AppCompatActivity() {

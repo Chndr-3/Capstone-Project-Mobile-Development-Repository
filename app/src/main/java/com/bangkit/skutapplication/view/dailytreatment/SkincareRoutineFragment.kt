@@ -5,7 +5,6 @@ import android.app.AlarmManager
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.PendingIntent.FLAG_IMMUTABLE
-import android.app.PendingIntent.FLAG_UPDATE_CURRENT
 import android.content.Context
 import android.content.Context.ALARM_SERVICE
 import android.content.Intent
@@ -15,8 +14,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -29,7 +26,6 @@ import com.bangkit.skutapplication.datastore.ViewModelFactory
 import com.bangkit.skutapplication.helper.ItemViewModelFactory
 import com.bangkit.skutapplication.model.DailyTreatmentItem
 import com.bangkit.skutapplication.model.DeleteTreatment
-import com.bangkit.skutapplication.model.response.Dashboard
 import com.bangkit.skutapplication.view.profile.ProfileViewModel
 import java.text.SimpleDateFormat
 import java.util.*
@@ -63,7 +59,7 @@ class SkincareRoutineFragment : Fragment() {
     @SuppressLint("SimpleDateFormat")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = DailyTreatmentAdapter()
+        val adapter = SkincareRoutineAdapter()
         binding.rvItem.layoutManager = LinearLayoutManager(context)
         binding.rvItem.setHasFixedSize(true)
         binding.rvItem.adapter = adapter
@@ -119,7 +115,7 @@ class SkincareRoutineFragment : Fragment() {
         }
         NotificationChannel()
         adapter.setOnItemClickCallback(
-            object : DailyTreatmentAdapter.OnItemClickCallback {
+            object : SkincareRoutineAdapter.OnItemClickCallback {
                 override fun onItemClicked(data: DailyTreatmentItem) {
                     profileViewModel.getUser().observe(viewLifecycleOwner) {
                         skincareTreatmentViewModel.deleteItem(data.id)

@@ -44,7 +44,8 @@
             android:id="@+id/acne"
             style="@style/RadioButton"
             android:layout_width="100dp"
-            android:text="@string/acne" />
+            android:text="@string/acne"
+            android:checked="true"/>
 
         <RadioButton
             android:id="@+id/rosacea"

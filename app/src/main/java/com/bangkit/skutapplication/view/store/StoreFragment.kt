@@ -27,7 +27,7 @@ class StoreFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        setData(listAcneProduct)
         binding.acne.setOnClickListener{
             setData(listAcneProduct)
         }

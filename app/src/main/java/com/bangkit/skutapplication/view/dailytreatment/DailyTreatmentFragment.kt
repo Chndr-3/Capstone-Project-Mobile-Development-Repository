@@ -10,8 +10,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,9 +18,7 @@ import com.bangkit.skutapplication.databinding.FragmentDailyTreatmentBinding
 import com.bangkit.skutapplication.datastore.UserPreference
 import com.bangkit.skutapplication.datastore.ViewModelFactory
 import com.bangkit.skutapplication.model.DailyRoutine
-import com.bangkit.skutapplication.model.DailyTreatmentItem
 import com.bangkit.skutapplication.view.profile.ProfileViewModel
-import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -47,7 +43,8 @@ class DailyTreatmentFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         checkTime()
-        binding.acne.setOnClickListener{
+        setData(listAcneDailyRoutine)
+        binding.acne.setOnCheckedChangeListener { button, b ->
             setData(listAcneDailyRoutine)
         }
         binding.rosacea.setOnClickListener {
@@ -62,7 +59,7 @@ class DailyTreatmentFragment : Fragment() {
     private fun setData(item: ArrayList<DailyRoutine>){
         val layoutManager = LinearLayoutManager(activity)
         binding.rvDailyRoutine.layoutManager = layoutManager
-        binding.rvDailyRoutine.adapter = SkincareRoutineAdapter(item)
+        binding.rvDailyRoutine.adapter = DailyRoutineAdapter(item)
     }
 
     private val listAcneDailyRoutine: ArrayList<DailyRoutine>

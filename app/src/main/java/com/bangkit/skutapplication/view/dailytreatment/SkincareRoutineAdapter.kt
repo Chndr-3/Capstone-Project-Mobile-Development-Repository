@@ -5,31 +5,51 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.skutapplication.R
-import com.bangkit.skutapplication.model.DailyRoutine
+import com.bangkit.skutapplication.model.DailyTreatmentItem
+import com.dicoding.picodiploma.mynoteapps.helper.SkincareDiffCallback
+import java.util.ArrayList
 
-class SkincareRoutineAdapter(private val listTips: List<DailyRoutine>) : RecyclerView.Adapter<SkincareRoutineAdapter.ViewHolder>() {
+class SkincareRoutineAdapter : RecyclerView.Adapter<SkincareRoutineAdapter.DailyTreatmentViewHolder>() {
+    private val listItem = ArrayList<DailyTreatmentItem>()
+    fun setListItem(listItem: List<DailyTreatmentItem>) {
+        val diffCallback = SkincareDiffCallback(this.listItem, listItem)
+        val diffResult = DiffUtil.calculateDiff(diffCallback)
+        this.listItem.clear()
+        this.listItem.addAll(listItem)
+        diffResult.dispatchUpdatesTo(this)
+    }
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int) =
-        ViewHolder(
-            LayoutInflater.from(viewGroup.context)
-                .inflate(R.layout.daily_routine_item, viewGroup, false)
+        DailyTreatmentViewHolder(
+            LayoutInflater.from(viewGroup.context).inflate(R.layout.daily_treatment_item, viewGroup, false)
         )
 
-    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        val tips = listTips[position]
-        viewHolder.dailyRoutine.text = tips.dailyRoutine
-        viewHolder.image.setImageResource(tips.dailyRoutineIcon)
 
+    override fun onBindViewHolder(holder: DailyTreatmentViewHolder, position: Int) {
+        val item = listItem[position]
+        holder.productName.text = item.product_name
+        holder.time.text = item.time
+        holder.exitButton.setOnClickListener { onItemClickCallback.onItemClicked(listItem[holder.adapterPosition]) }
     }
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val image: ImageView = view.findViewById(R.id.dailyRoutineIcon)
-        val dailyRoutine: TextView = view.findViewById(R.id.dailyRoutine)
+    override fun getItemCount(): Int {
+        return listItem.size
     }
 
-    override fun getItemCount() = listTips.size
-
-
+    inner class DailyTreatmentViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val productName : TextView =view.findViewById(R.id.productNm)
+        val time: TextView = view.findViewById(R.id.time)
+        val exitButton: ImageView = view.findViewById(R.id.exitIcon)
+    }
+    interface OnItemClickCallback {
+        fun onItemClicked(data: DailyTreatmentItem)
+    }
 }

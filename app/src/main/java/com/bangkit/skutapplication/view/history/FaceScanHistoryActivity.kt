@@ -9,20 +9,14 @@ import android.view.View
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.datastore.preferences.preferencesDataStore
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.ActivityFaceScanHistoryBinding
 import com.bangkit.skutapplication.datastore.UserPreference
 import com.bangkit.skutapplication.datastore.ViewModelFactory
-import com.bangkit.skutapplication.model.BeautyTipsItem
-import com.bangkit.skutapplication.model.DailyTreatmentItem
-import com.bangkit.skutapplication.model.DeleteTreatment
 import com.bangkit.skutapplication.model.response.ListHistoryFaceItem
 import com.bangkit.skutapplication.model.user.DeleteHistory
-import com.bangkit.skutapplication.view.dailytreatment.DailyTreatmentAdapter
-import okhttp3.internal.notify
 
 
 class FaceScanHistoryActivity : AppCompatActivity() {

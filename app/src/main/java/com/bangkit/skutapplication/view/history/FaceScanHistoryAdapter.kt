@@ -1,28 +1,18 @@
 package com.bangkit.skutapplication.view.history
 
 import android.annotation.SuppressLint
-import android.app.Activity
-import android.content.Context
-import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.helper.HistoryDiffCallback
-import com.bangkit.skutapplication.model.BeautyTipsItem
-import com.bangkit.skutapplication.model.DailyTreatmentItem
 import com.bangkit.skutapplication.model.response.ListHistoryFaceItem
-import com.bangkit.skutapplication.view.dailytreatment.DailyTreatmentAdapter
 import com.bumptech.glide.Glide
-import com.dicoding.picodiploma.mynoteapps.helper.SkincareDiffCallback
-import okhttp3.internal.notifyAll
 import java.util.ArrayList
-import kotlin.math.absoluteValue
 
 class FaceScanHistoryAdapter : RecyclerView.Adapter<FaceScanHistoryAdapter.ViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback

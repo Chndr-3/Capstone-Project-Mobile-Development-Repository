@@ -59,6 +59,41 @@
         <item>@drawable/night</item>
         <item>@drawable/vitamin</item>
     </integer-array>
+    <string-array name="rosaceaDailyRoutine">
+        <item>Wash your face with a mild cleanser</item>
+        <item>Apply a hydrating moisturizer</item>
+        <item>Use sunscreen every day</item>
+        <item>Smooth on a soothing facial serum</item>
+        <item>Incorporate a soothing mask once or twice a week</item>
+        <item>Consult a dermatologist for additional treatment</item>
+    </string-array>
+
+    <integer-array name="rosaceaDailyRoutineIcon">
+        <item>@drawable/foam</item>
+        <item>@drawable/cream</item>
+        <item>@drawable/suncream</item>
+        <item>@drawable/serum</item>
+        <item>@drawable/soothingmask</item>
+        <item>@drawable/dermatologist</item>
+    </integer-array>
+
+    <string-array name="eczemaDailyRoutine">
+        <item>In the morning, just wash your face with water</item>
+        <item>Moisturize your skin 2 to 3 times a day</item>
+        <item>Apply any recipe cream</item>
+        <item>Apply sunscreen if you are going out today</item>
+        <item>Make sure your clothes are made of materials that won\'t irritate your skin</item>
+        <item>Before bed, wash your face with a gentle cleanser to remove any dirt and buildup from the day</item>
+    </string-array>
+
+    <integer-array name="eczemaDailyRoutineIcon">
+        <item>@drawable/sun</item>
+        <item>@drawable/cream</item>
+        <item>@drawable/soothingmask</item>
+        <item>@drawable/suncream</item>
+        <item>@drawable/clothes</item>
+        <item>@drawable/night</item>
+    </integer-array>
     <string-array name="beautyDescription">
         <item>Skincare is not one-size-fits-all, so customizing your routine can help get you the best results for your complexion. "Multi-masking is when multiple facial masks are used or layered simultaneously on the skin to combat different skin concerns at one time," explains New York City aesthetician Cecilia Wong.</item>
         <item>"The best times to moisturize are right after you get out of the shower and right before you go to bed," explained Dr. Janet Prystowsky M.D., an NYC-based dermatologist. Avoid lotions with heavy fragrances and make sure you find a moisturizer gentle enough for every day use with zero irritation.</item>
@@ -161,6 +196,6 @@
     <string name="how_to_take_a_picture">How to take a Picture</string>
     <string name="how_to_description">Please take a photo of the area of the skin that is infected with the disease. You can see an example in the following image</string>
     <string name="gagal_ambil_history_data">Failed to retrieve face scan history, check your connection again</string>
-
+    <string name="about">About</string>
 
 </resources>

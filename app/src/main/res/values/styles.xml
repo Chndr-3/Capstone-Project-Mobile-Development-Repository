@@ -19,11 +19,7 @@
             <item name="android:fontFamily">@font/open_sans</item>
         </style>
 
-        <style name="TextContent.Big">
-            <item name="android:textSize">24sp</item>
-        </style>
-
-        <style name="TextContent.Medium">
+    <style name="TextContent.Medium">
             <item name="android:textSize">20sp</item>
         </style>
 
@@ -47,15 +43,7 @@
             <item name="android:textSize">16sp</item>
         </style>
 
-        <style name="TextContent.Center">
-            <item name="android:gravity">center</item>
-        </style>
-
-        <style name="TextContent.Bold.Center">
-            <item name="android:gravity">center</item>
-        </style>
-
-        <style name="TextContent.Bold.Big.Center">
+    <style name="TextContent.Bold.Big.Center">
             <item name="android:gravity">center</item>
         </style>
     <style name="Widget.BottomNavigationView"

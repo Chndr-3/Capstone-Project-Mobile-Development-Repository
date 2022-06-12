@@ -45,6 +45,7 @@
 
         <TextView
             android:id="@+id/beautyTips"
+            style="@style/TextContent.Bold"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -66,6 +67,7 @@
 
         <TextView
             android:id="@+id/beautyDescription"
+            style="@style/TextContent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"

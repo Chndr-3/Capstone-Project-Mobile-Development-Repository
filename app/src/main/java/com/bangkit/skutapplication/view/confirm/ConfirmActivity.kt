@@ -17,6 +17,7 @@ import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.drawable.toDrawable
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -30,6 +31,8 @@ import com.bangkit.skutapplication.view.login.LoginActivity
 import com.bangkit.skutapplication.view.result.ResultActivity
 import com.google.android.material.appbar.MaterialToolbar
 import java.io.ByteArrayOutputStream
+import java.io.File
+import java.io.FileOutputStream
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
@@ -70,8 +73,7 @@ class ConfirmActivity : AppCompatActivity() {
         Log.d("imaggeeee2", bitmapImage.toString())
 
         val rotatedBitmap = rotateImageIfRequired(bitmapImage)
-
-        binding.imgPreview.setImageBitmap(rotatedBitmap)
+        binding.imgPreview.setImageBitmap(Bitmap.createScaledBitmap(rotatedBitmap,1000,1400,false))
 
         Log.d("test", imageUri)
 
@@ -207,7 +209,6 @@ class ConfirmActivity : AppCompatActivity() {
             }
         }
     }
-
     companion object {
         const val EXTRA_IMAGE_URI = "extra_image"
     }

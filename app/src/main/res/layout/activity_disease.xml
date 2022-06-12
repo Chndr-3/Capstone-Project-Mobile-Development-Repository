@@ -8,6 +8,7 @@
 
     <TextView
         android:id="@+id/diseaseDetailName"
+        style="@style/TextContent.Bold.Big"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -15,8 +16,8 @@
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/open_sans_bold"
         android:text="@string/disease_name"
-        android:textAlignment="viewStart"
 
+        android:textAlignment="viewStart"
         android:textColor="@color/blue"
         android:textSize="34sp"
         android:transitionName="name"
@@ -38,6 +39,7 @@
 
     <TextView
         android:id="@+id/diseaseDetailDescription"
+        style="@style/TextContent"
         android:layout_width="350dp"
         android:layout_height="0dp"
         android:layout_marginStart="20dp"

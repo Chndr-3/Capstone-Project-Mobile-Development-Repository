@@ -21,6 +21,7 @@
 
                 <TextView
                     android:id="@+id/beautyTips"
+                    style="@style/TextContent.Bold"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -31,7 +32,6 @@
                     android:textAlignment="viewStart"
                     android:textColor="@color/blue"
                     android:textSize="24sp"
-                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -47,6 +47,7 @@
 
                 <TextView
                     android:id="@+id/beautyDescription"
+                    style="@style/TextContent"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"

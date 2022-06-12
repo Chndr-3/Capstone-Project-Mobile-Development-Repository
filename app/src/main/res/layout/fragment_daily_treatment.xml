@@ -22,8 +22,8 @@
             android:id="@+id/acne"
             style="@style/RadioButton"
             android:layout_width="100dp"
-            android:text="@string/acne"
-            android:checked="true"/>
+            android:checked="true"
+            android:text="@string/acne" />
 
         <RadioButton
             android:id="@+id/rosacea"
@@ -54,7 +54,6 @@
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <ImageView
-        android:id="@+id/imageView3"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginBottom="1dp"
@@ -67,7 +66,6 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/imageView4"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginEnd="8dp"
@@ -81,7 +79,6 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/imageView5"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginBottom="8dp"

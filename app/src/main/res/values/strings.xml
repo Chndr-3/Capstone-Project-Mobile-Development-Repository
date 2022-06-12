@@ -1,12 +1,6 @@
 <resources>
     <string name="app_name">SKUT</string>
-    <string name="my_formatted_text">
-    <font color="@color/black">Your</font>
-    <font color="#6ED2F0">Sk<font color="@color/black">in</font></font>
-    <font color="@color/black">Sol<font color="#6ED2F0">ut</font>ion</font>
-    </string>
 
-    <string name="app_title">SKUT</string>
     <string name="splash_content_description">splash_image</string>
     <string-array name="daily_trivia">
         <item>Tahukah Anda bahwa pelembab adalah pertahanan terbaik melawan kulit kering?</item>
@@ -77,10 +71,12 @@
 
     <string-array name="acneProductPrice">
         <item>Rp279.650</item>
+        <item>RP153.000</item>
     </string-array>
 
     <integer-array name="acneProductImg">
         <item>@drawable/cosrx_ac_collection</item>
+        <item>@drawable/amura_acne_serum</item>
 
     </integer-array>
 
@@ -161,11 +157,9 @@
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="daily_trivia">Trivia Harian</string>
     <string name="do_you_know_that_moisturizer_is_the_best_defense_against_dry_skin">Tahukah Anda bahwa pelembab adalah pertahanan terbaik melawan kulit kering?</string>
     <string name="beauty_tips">Tips Kecantikan</string>
-    <string name="face_scan_history">Riwayat Pemindaian Wajah</string>
     <string name="welcome">Selamat Datang</string>
     <string name="common_facial_skin_disease">Penyakit Kulit Wajah Umum</string>
     <string name="daily_treatment">Perawatan Harian</string>
@@ -186,16 +180,10 @@
     <string name="camera">Kamera</string>
     <string name="profile">Profil</string>
     <string name="change_language">Ganti Bahasa</string>
-    <string name="edit_profil">Edit Profil</string>
-    <string name="choose_pictures">Pilih Gambar</string>
-    <string name="save">simpan</string>
     <string name="product_name">Nama produk</string>
     <string name="time">time</string>
-    <string name="create_your_own_daily_treatment_remainder_schedule">Buat jadwal sisa perawatan harian Anda sendiri</string>
     <string name="button">tombol</string>
     <string name="create">Buat</string>
-    <string name="time_input">Waktu</string>
-    <string name="add_image">tambah gambar</string>
     <string name="treatment_name_character">Karakter Nama Perawatan terlalu panjang</string>
     <string name="time_format_doesnt_match">Format waktu tidak cocok</string>
     <string name="capture_button">Tombol ambil gambar</string>
@@ -224,7 +212,6 @@
     <string name="price">Harga</string>
     <string name="re_type_password">Ketik Ulang Password</string>
     <string name="time_format" translatable="false">:</string>
-    <string name="treatment_name_input">Nama Perawatan</string>
     <string name="tab_text_1">Rutinitas harian</string>
     <string name="tab_text_2">Rutinitas Skincare</string>
     <string name="create_new_daily_skincare_routine">Buat Rutinitas Perawatan Kulit Harian Baru</string>
@@ -234,9 +221,7 @@
     <string name="example_apply_moisturizer">Contoh: Oleskan Pelembab</string>
     <string name="minute">Menit</string>
     <string name="hour">Jam</string>
-    <string name="skin_disease">Penyakit Kulit Umum Wajah</string>
     <string name="email_already_registered">Email sudah terdaftar</string>
-    <string name="guest" translatable="false">guest</string>
     <string name="solution_text">Berikut Adalah Beberapa Rekomendasi Produk untuk</string>
     <string name="upload_failed">Unggah Gagal</string>
     <string name="percentage" translatable="false">%1$s %%</string>
@@ -244,17 +229,14 @@
     <string name="app_description">SKUT (Solusi Kulit) hadir dalam bentuk APP yang menyediakan AI yang dapat mendeteksi penyakit kulit wajah dan memberikan rekomendasi perawatan dan produk. Produk kami dapat mendeteksi penyakit kulit pada wajah yang sering dialami oleh masyarakat antara lain jerawat, eksim, dan rosacea</string>
     <string name="tips_kecantikan">Tips Kecantikan</string>
     <string name="mulai_peduli_dengan_kulitmu_untuk_mendapatkan_hasil_maksimal">Mulai peduli dengan kulitmu untuk mendapatkan hasil maksimal</string>
-    <string name="mulai_rawat_kulitmu_setiap_hari">Mulai rawat kulitmu setiap hari</string>
     <string name="cari_tahu_tips_tips_untuk_merawat_kulitmu">Cari tahu tips-tips untuk merawat kulitmu</string>
     <string name="lihat_perkembangan_kulitmu_lewat_riwayat_scan_wajah">Lihat perkembangan kulitmu lewat riwayat scan wajah</string>
     <string name="riwayat_scan_wajah">Riwayat Scan Wajah</string>
     <string name="scan_wajah">Ambil Foto</string>
     <string name="lakukan_scan_pada_wajah_untuk_mengenal_wajahmu_lebih_lanjut">Lakukan scan pada wajah untuk mengenal wajahmu lebih lanjut</string>
-    <string name="history_result" translatable="false">%1$s : %2$d</string>
     <string name="result">Hasil:</string>
     <string name="percentageResult">Percentage</string>
     <string name="how_to_take_a_picture">Bagaimana cara mengambil Foto</string>
-    <string name="product_name_input">Nama Produk</string>
     <string name="how_to_description">Silahkan ambil foto pada area kulit yang terinfeksi penyakit. Anda dapat melihat contohnya pada gambar berikut</string>
     <string name="gagal_ambil_history_data">Gagal mengambil riwayat scan wajah, periksa kembali koneksi anda</string>
     <string name="about">About</string>

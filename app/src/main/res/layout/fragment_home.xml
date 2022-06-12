@@ -20,7 +20,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardView6"
                     android:layout_width="165dp"
                     android:layout_height="200dp"
                     android:layout_marginStart="20dp"
@@ -37,7 +36,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView16"
+                            style="@style/TextContent"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
@@ -54,6 +53,7 @@
 
                         <TextView
                             android:id="@+id/textView17"
+                            style="@style/TextContent.Bold"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
@@ -62,7 +62,6 @@
                             android:text="@string/scan_wajah"
                             android:textAlignment="center"
                             android:textColor="?android:textColorPrimary"
-                            android:textStyle="bold"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
@@ -154,6 +153,7 @@
 
                         <TextView
                             android:id="@+id/textView"
+                            style="@style/TextContent.Bold"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
@@ -172,7 +172,7 @@
                             app:layout_constraintVertical_bias="0.0" />
 
                         <TextView
-                            android:id="@+id/textView11"
+                            style="@style/TextContent"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -189,7 +189,6 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardView4"
                     android:layout_width="165dp"
                     android:layout_height="200dp"
                     android:layout_marginStart="20dp"
@@ -205,7 +204,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView13"
+                            style="@style/TextContent"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
@@ -222,6 +221,7 @@
 
                         <TextView
                             android:id="@+id/textView12"
+                            style="@style/TextContent.Bold"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
@@ -272,7 +272,6 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardView5"
                     android:layout_width="165dp"
                     android:layout_height="200dp"
                     android:layout_marginStart="20dp"
@@ -289,7 +288,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/textView15"
+                            style="@style/TextContent.Bold"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
@@ -306,6 +305,7 @@
 
                         <TextView
                             android:id="@+id/textView14"
+                            style="@style/TextContent"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
@@ -393,6 +393,7 @@
 
                 <TextView
                     android:id="@+id/dailyTriviaValue"
+                    style="@style/TextContent"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -408,7 +409,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/dailyTrivia" />
 
                 <ImageView
-                    android:id="@+id/imageView2"
                     android:layout_width="50dp"
                     android:layout_height="0dp"
                     android:layout_marginTop="10dp"
@@ -429,14 +429,14 @@
             app:layout_constraintStart_toStartOf="@+id/cardView"
             app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
-        <me.relex.circleindicator.CircleIndicator3
-            android:id="@+id/circleIndicator"
-            android:layout_width="0dp"
-            android:layout_height="20dp"
-            android:background="@color/blue"
-            app:layout_constraintEnd_toEndOf="@+id/viewPager"
-            app:layout_constraintStart_toStartOf="@+id/viewPager"
-            app:layout_constraintTop_toBottomOf="@+id/viewPager" />
+    <me.relex.circleindicator.CircleIndicator3
+        android:id="@+id/circleIndicator"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:background="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/viewPager"
+        app:layout_constraintStart_toStartOf="@+id/viewPager"
+        app:layout_constraintTop_toBottomOf="@+id/viewPager" />
 
         <TextView
             android:id="@+id/textView2"
@@ -469,7 +469,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/skinDiseaseLabel"
+                style="@style/TextContent.Bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/open_sans_bold"

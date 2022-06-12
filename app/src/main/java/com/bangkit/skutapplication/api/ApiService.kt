@@ -43,7 +43,7 @@ interface ApiService {
         @Body postTreatment: PostTreatment
     ) : Call<TreatmentResponse>
 
-
+    @HTTP(method = "DELETE", path = "treatment", hasBody = true)
     fun deleteTreatment(
         @Header("Authorization") token: String,
         @Body treatment_id: DeleteTreatment

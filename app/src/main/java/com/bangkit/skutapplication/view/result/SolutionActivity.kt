@@ -24,14 +24,14 @@ class SolutionActivity : AppCompatActivity() {
         val toolbar: MaterialToolbar = binding.toolbar
         setSupportActionBar(toolbar)
 
-        supportActionBar?.title = getString(R.string.result_title)
+        supportActionBar?.title = getString(R.string.solusi)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val text: String
 
         when (intent.extras?.getString("extra_disease")) {
-            "Acne" -> {
+            "acne" -> {
                 text = getString(R.string.solution_text) + " " + getString(R.string.acne)
                 binding.tvText.text = text
                 setData(listAcneProduct)

@@ -102,9 +102,9 @@
     <TextView
         android:id="@+id/tvResult"
         style="@style/TextContent.Bold.small"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="20dp"
         android:text="@string/disease_description"
         android:textColor="?android:textColorPrimary"
         app:layout_constraintEnd_toEndOf="parent"

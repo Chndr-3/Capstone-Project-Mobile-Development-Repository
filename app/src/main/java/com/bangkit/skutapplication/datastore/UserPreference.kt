@@ -30,11 +30,7 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
 
     suspend fun logout() {
         dataStore.edit { preferences ->
-            preferences[USER_NAME] = ""
-            preferences[EMAIL] = ""
-            preferences[PASSWORD] = ""
-            preferences[TOKEN] = ""
-            preferences[CALENDAR] = ""
+            preferences.clear()
         }
     }
 

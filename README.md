@@ -15,7 +15,7 @@ Developed by:
 ## Other Repository
 
 ML - https://github.com/Albert-Setiawan/Capstone-Project-Machine-Learning
-CC - https://github.com/senoaji91/Capstone-Project-Cloud-Computing-Repository
+<br> CC - https://github.com/senoaji91/Capstone-Project-Cloud-Computing-Repository
 
 ## Our LinkedIn
 

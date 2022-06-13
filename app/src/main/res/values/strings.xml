@@ -250,5 +250,7 @@
     <string name="enter_password">Masukkan password</string>
     <string name="enter_name">Masukkan nama</string>
     <string name="password_does_not_match">Password tidak sesuai</string>
+    <string name="success">Berhasil!</string>
+    <string name="please_continue">Silahkan Lanjut</string>
 
 </resources>

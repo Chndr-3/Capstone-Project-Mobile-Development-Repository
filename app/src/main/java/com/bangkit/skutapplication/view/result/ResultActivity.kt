@@ -105,6 +105,8 @@ class ResultActivity : AppCompatActivity() {
                 binding.tvPercentage.text = getString(R.string.percentage, scanPercentageFormat.toString())
                 binding.tvResult.text = getString(R.string.normal_description)
 
+                binding.nextButton.text = getString(R.string.home)
+
                 binding.nextButton.setOnClickListener {
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)

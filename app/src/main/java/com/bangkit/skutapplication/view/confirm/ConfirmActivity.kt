@@ -193,8 +193,8 @@ class ConfirmActivity : AppCompatActivity() {
             Toast.makeText(this@ConfirmActivity, getString(R.string.upload_failed), Toast.LENGTH_SHORT).show()
         } else {
             AlertDialog.Builder(this).apply {
-                setTitle("Berhasil!")
-                setMessage("Silahkan Lanjut")
+                setTitle(getString(R.string.success))
+                setMessage(getString(R.string.please_continue))
                 setPositiveButton("Lanjut") { _, _ ->
 
 

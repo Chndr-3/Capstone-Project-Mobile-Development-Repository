@@ -188,6 +188,8 @@
     <string name="enter_password">Enter password</string>
     <string name="enter_name">Enter name</string>
     <string name="password_does_not_match">Password doesn\'t match</string>
+    <string name="success">Success</string>
+    <string name="please_continue">Please Continue</string>
 
 
 </resources>

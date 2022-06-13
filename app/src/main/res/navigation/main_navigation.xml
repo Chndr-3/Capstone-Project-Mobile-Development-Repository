@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeNav">
+
+    <fragment
+        android:id="@+id/homeNav"
+        android:name="com.bangkit.skutapplication.view.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/cameraNav"
+        android:name="com.bangkit.skutapplication.view.camera.CameraFragment"
+        android:label="CameraFragment"
+        tools:layout="@layout/fragment_camera"/>
+
+    <fragment
+        android:id="@+id/profileNav"
+        android:name="com.bangkit.skutapplication.view.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"/>
+
+    <fragment
+        android:id="@+id/storeNav"
+        android:name="com.bangkit.skutapplication.view.store.StoreFragment"
+        android:label="StoreFragment"
+        tools:layout="@layout/fragment_store" />
+
+</navigation>

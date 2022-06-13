@@ -1,0 +1,187 @@
+<resources>
+    <string name="app_name">SKUT</string>
+    <string name="splash_content_description">gambar_splash</string>
+    <string-array name="daily_trivia">
+        <item>Do you know that moisturizer is the best defense against dry skin?</item>
+        <item>Do you know that wearing sunscreen daily is actually protect you against aging?</item>
+        <item>Do you know that exfoliating leaves skin smooth?</item>
+        <item>Do you know that a lack of sleep can affect your skin?</item>
+        <item>Do you know that eating fish is great for your skin?</item>
+        <item>Do you know that over moisturizing can leads to breakout?</item>
+        <item>Do you know that caffeine leads to dry skin?</item>
+        <item>Do you know that dancing makes your skin glow?</item>
+    </string-array>
+    <string-array name="skinDisease">
+        <item>Acne</item>
+        <item>Rosacea</item>
+        <item>Eczema</item>
+    </string-array>
+    <string-array name="skinDiseaseDescription">
+        <item>Acne is a skin condition that occurs when your hair follicles become plugged with oil and dead skin cells. It causes whiteheads, blackheads or pimples. Acne is most common among teenagers, though it affects people of all ages.</item>
+        <item>Rosacea (roe-ZAY-she-uh) is a common skin condition that causes blushing or flushing and visible blood vessels in your face. It may also produce small, pus-filled bumps. </item>
+        <item>Eczema is a term related to inflammation of the skin. This disorder is also known as dermatitis. When it occurs, an allergic skin reaction can be characterized by the appearance of redness, rash, and itching.</item>
+    </string-array>
+    <integer-array name="skinDiseaseIcon">
+        <item>@drawable/acne</item>
+        <item>@drawable/rosacea</item>
+        <item>@drawable/dermatitis</item>
+    </integer-array>
+
+
+    <string-array name="beautyTips">
+        <item>Use multiple face masks to maximize your results.</item>
+        <item>Moisturize both day and night.</item>
+        <item>Cleansing twice.</item>
+        <item>Cool-water cleanse</item>
+        <item>Facial massage</item>
+
+
+    </string-array>
+    <string-array name="acneDailyRoutine">
+        <item>Cleanse your face gently</item>
+        <item>Don\'t forget to apply your acne treatment medication</item>
+        <item>Apply an oil free moisturizer</item>
+        <item>Don\'t forget to use sunscreen </item>
+        <item>Cleanse again at night</item>
+        <item>Apply retinol product</item>
+    </string-array>
+    <integer-array name="acneDailyRoutineIcon">
+        <item>@drawable/foam</item>
+        <item>@drawable/facecleanser</item>
+        <item>@drawable/cream</item>
+        <item>@drawable/suncream</item>
+        <item>@drawable/night</item>
+        <item>@drawable/vitamin</item>
+    </integer-array>
+    <string-array name="rosaceaDailyRoutine">
+        <item>Wash your face with a mild cleanser</item>
+        <item>Apply a hydrating moisturizer</item>
+        <item>Use sunscreen every day</item>
+        <item>Smooth on a soothing facial serum</item>
+        <item>Incorporate a soothing mask once or twice a week</item>
+        <item>Consult a dermatologist for additional treatment</item>
+    </string-array>
+
+    <integer-array name="rosaceaDailyRoutineIcon">
+        <item>@drawable/foam</item>
+        <item>@drawable/cream</item>
+        <item>@drawable/suncream</item>
+        <item>@drawable/serum</item>
+        <item>@drawable/soothingmask</item>
+        <item>@drawable/dermatologist</item>
+    </integer-array>
+
+    <string-array name="eczemaDailyRoutine">
+        <item>In the morning, just wash your face with water</item>
+        <item>Moisturize your skin 2 to 3 times a day</item>
+        <item>Apply any recipe cream</item>
+        <item>Apply sunscreen if you are going out today</item>
+        <item>Make sure your clothes are made of materials that won\'t irritate your skin</item>
+        <item>Before bed, wash your face with a gentle cleanser to remove any dirt and buildup from the day</item>
+    </string-array>
+
+    <integer-array name="eczemaDailyRoutineIcon">
+        <item>@drawable/sun</item>
+        <item>@drawable/cream</item>
+        <item>@drawable/soothingmask</item>
+        <item>@drawable/suncream</item>
+        <item>@drawable/clothes</item>
+        <item>@drawable/night</item>
+    </integer-array>
+    <string-array name="beautyDescription">
+        <item>Skincare is not one-size-fits-all, so customizing your routine can help get you the best results for your complexion. "Multi-masking is when multiple facial masks are used or layered simultaneously on the skin to combat different skin concerns at one time," explains New York City aesthetician Cecilia Wong.</item>
+        <item>"The best times to moisturize are right after you get out of the shower and right before you go to bed," explained Dr. Janet Prystowsky M.D., an NYC-based dermatologist. Avoid lotions with heavy fragrances and make sure you find a moisturizer gentle enough for every day use with zero irritation.</item>
+        <item>Using two cleansers helps to remove debris, makeup, and oil from the day.</item>
+        <item>Hot water is too intense for your face. Use lukewarm or cool water, and avoid washing your face in the shower unless you turn down the temp.</item>
+        <item>A face massage or face roller can help de-puff your skin. A massaging tool can increase blood flow, leaving you looking awake and fresh.</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="daily_trivia">Daily Trivia</string>
+    <string name="do_you_know_that_moisturizer_is_the_best_defense_against_dry_skin">Did you know that moisturizer is the best defense against dry skin?</string>
+    <string name="beauty_tips">Beauty Tips</string>
+    <string name="welcome">Welcome</string>
+    <string name="common_facial_skin_disease">Common Facial Skin Disease</string>
+    <string name="daily_treatment">Daily Treatment</string>
+    <string name="disease_name">Disease Name</string>
+    <string name="disease_description">Disease Description</string>
+    <string name="password_error">Password minimum 6 characters</string>
+    <string name="login">Login</string>
+    <string name="does_not_have_an_account">Doesn\'t have an account?</string>
+    <string name="register">Register</string>
+    <string name="please_login_first">Please <font color="#63AAC5">login</font> first</string>
+    <string name="fill_your_data_correctly">Fill your <font color="#63AAC5">data</font> correctly</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="name">Nama</string>
+    <string name="account_created">Account created successfully</string>
+    <string name="logout">Logout</string>
+    <string name="home">Home</string>
+    <string name="camera">Camera</string>
+    <string name="profile">Profile</string>
+    <string name="change_language">Change Language</string>
+    <string name="product_name">Product name</string>
+    <string name="time">time</string>
+    <string name="button">button</string>
+    <string name="treatment_name_character">Treatment\'s Name character is too long</string>
+    <string name="time_format_doesnt_match">Time format doesn\'t match</string>
+    <string name="capture_button">Capture button</string>
+    <string name="switch_camera">switch camera</string>
+    <string name="image_preview">image preview</string>
+    <string name="scan">Scan</string>
+    <string name="mirror">Flip\nImage</string>
+    <string name="result_title">Result</string>
+    <string name="failed_to_load_camera">Failed to load Camera</string>
+    <string name="permission_not_granted">Permission not granted</string>
+    <string name="failed_take_photo">Failed to capture image</string>
+    <string name="solusi">Solution</string>
+    <string name="confirm">Confirm</string>
+    <string name="store">Store</string>
+    <string name="create">Create</string>
+
+    <string name="acne">Acne</string>
+    <string name="rosacea">Rosacea</string>
+    <string name="eczema">Eczema</string>
+
+    <string name="acne_description">Acne is a skin condition that occurs when your hair follicles become plugged with oil and dead skin cells. It causes whiteheads, blackheads or pimples. Acne is most common among teenagers, though it affects people of all ages.</string>
+    <string name="rosacea_description">Rosacea (roe-ZAY-she-uh) is a common skin condition that causes blushing or flushing and visible blood vessels in your face. It may also produce small, pus-filled bumps.</string>
+    <string name="eczema_description">Eczema is a term related to inflammation of the skin. This disorder is also known as dermatitis. When it occurs, an allergic skin reaction can be characterized by the appearance of redness, rash, and itching.</string>
+    <string name="normal_description">Your skin is Normal, be happy :).</string>
+
+    <string name="price">Price</string>
+    <string name="re_type_password">Re-type Password</string>
+    <string name="tab_text_1" translatable="false">Daily Routine</string>
+    <string name="tab_text_2">Skincare Routine</string>
+    <string name="create_new_daily_skincare_routine">Create New Daily Skincare Routine</string>
+    <string name="set_time">Set time</string>
+    <string name="example_20_30">Example: 20:30, 09:30</string>
+    <string name="new_treatment_name">New Treatment Name</string>
+    <string name="example_apply_moisturizer">Example: Apply Moisturizer</string>
+    <string name="minute">Minute</string>
+    <string name="hour">Hour</string>
+    <string name="email_already_registered">Email already registered</string>
+    <string name="solution_text">Here are some product recommendations for</string>
+    <string name="upload_failed">Upload Failed</string>
+  
+    <string name="app_description">SKUT (Solusi Kulit) comes in the form of an APP that provide AI that can detect facial skin-disease and give treatment and product recommendation.  Our product can detect skin diseases on the face that are often experienced by people including acne, eczema, and rosacea</string>
+    <string name="tips_kecantikan">Beauty Tips</string>
+    <string name="cari_tahu_tips_tips_untuk_merawat_kulitmu">Find out tips for taking care of your skin</string>
+    <string name="mulai_peduli_dengan_kulitmu_untuk_mendapatkan_hasil_maksimal">Start caring about your skin to get maximum results</string>
+    <string name="lihat_perkembangan_kulitmu_lewat_riwayat_scan_wajah">See the progress of your skin through the history of facial scans</string>
+    <string name="riwayat_scan_wajah">Face Scan History</string>
+    <string name="scan_wajah">Take Picture</string>
+    <string name="lakukan_scan_pada_wajah_untuk_mengenal_wajahmu_lebih_lanjut">Do a facial scan to get to know your face more</string>
+
+    <string name="result">Result:</string>
+    <string name="percentageResult">Percentage</string>
+
+    <string name="how_to_take_a_picture">How to take a Picture</string>
+    <string name="how_to_description">Please take a photo of the area of the skin that is infected with the disease. You can see an example in the following image</string>
+    <string name="daily_ntreatment">Daily\nTreatment</string>
+    <string name="gagal_ambil_history_data">Failed to retrieve face scan history, check your connection again</string>
+    <string name="about">About</string>
+    <string name="next">Next</string>
+    <string name="icon">icon</string>
+
+
+</resources>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+        <style name="SplashScreen" parent="Theme.AppCompat.DayNight.NoActionBar" >
+            <!-- Primary brand color. -->
+            <item name="colorPrimary">@color/blue</item>
+            <item name="colorPrimaryVariant">@color/blue</item>
+            <item name="colorOnPrimary">@color/white</item>
+            <!-- Secondary brand color. -->
+            <item name="colorSecondary">@color/teal_200</item>
+            <item name="colorSecondaryVariant">@color/teal_700</item>
+            <item name="colorOnSecondary">@color/black</item>
+            <!-- Status bar color. -->
+            <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        </style>
+
+        <style name="TextContent">
+            <item name="android:layout_width">0dp</item>
+            <item name="android:layout_height">wrap_content</item>
+            <item name="android:fontFamily">@font/open_sans</item>
+        </style>
+
+    <style name="TextContent.Medium">
+            <item name="android:textSize">20sp</item>
+        </style>
+
+        <style name="TextContent.small">
+            <item name="android:textSize">16sp</item>
+        </style>
+
+        <style name="TextContent.Bold">
+            <item name="android:textStyle">bold</item>
+        </style>
+
+        <style name="TextContent.Bold.Big">
+            <item name="android:textSize">24sp</item>
+        </style>
+
+        <style name="TextContent.Bold.Medium">
+            <item name="android:textSize">20sp</item>
+        </style>
+
+        <style name="TextContent.Bold.small">
+            <item name="android:textSize">16sp</item>
+        </style>
+
+    <style name="TextContent.Bold.Big.Center">
+            <item name="android:gravity">center</item>
+        </style>
+    <style name="Widget.BottomNavigationView"
+        parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/open_sans</item>
+        <item name="android:minHeight">0dp</item>
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">#63AAC5</item>
+        <item name="boxStrokeWidth">3dp</item>
+        <item name="boxCornerRadiusBottomEnd">16dp</item>
+        <item name="boxCornerRadiusBottomStart">16dp</item>
+        <item name="boxCornerRadiusTopEnd">16dp</item>
+        <item name="boxCornerRadiusTopStart">16dp</item>
+    </style>
+
+    <style name="RadioButton">
+        <item name="android:layout_width">75dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginHorizontal">10dp</item>
+        <item name="android:background">@drawable/radio_selector</item>
+        <item name="android:button">@android:color/transparent</item>
+        <item name="android:elevation">5dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@drawable/text_color</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

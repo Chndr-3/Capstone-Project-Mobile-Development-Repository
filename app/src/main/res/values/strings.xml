@@ -1,3 +1,248 @@
 <resources>
-    <string name="app_name">SkutApplication</string>
+    <string name="app_name">SKUT</string>
+
+    <string name="splash_content_description">splash_image</string>
+    <string-array name="daily_trivia">
+        <item>Tahukah Anda bahwa pelembab adalah pertahanan terbaik melawan kulit kering?</item>
+        <item>Tahukah Anda bahwa memakai tabir surya setiap hari sebenarnya melindungi Anda dari penuaan?</item>
+        <item>Tahukah Anda bahwa eksfoliasi membuat kulit halus?</item>
+        <item>Tahukah Anda bahwa kurang tidur dapat mempengaruhi kulit Anda?</item>
+        <item>Tahukah Anda bahwa makan ikan sangat baik untuk kulit Anda?</item>
+        <item>Tahukah Anda bahwa pelembap yang berlebihan dapat menyebabkan breakout?</item>
+        <item>Tahukah Anda bahwa kafein menyebabkan kulit kering?</item>
+        <item>Tahukah Anda bahwa menari membuat kulit Anda bercahaya?</item>
+    </string-array>
+    <string-array name="skinDisease">
+        <item>Jerawat</item>
+        <item>Rosacea</item>
+        <item>Eksim</item>
+    </string-array>
+
+    <string-array name="skinDiseaseDescription">
+        <item>Jerawat adalah kondisi kulit yang terjadi ketika folikel rambut tersumbat oleh minyak dan sel kulit mati. Ini menyebabkan whiteheads, komedo atau jerawat. Jerawat paling umum di kalangan remaja, meskipun itu mempengaruhi orang-orang dari segala usia.</item>
+        <item>Rosacea (roe-ZAY-she-uh) adalah kondisi kulit umum yang menyebabkan merona atau kemerahan dan pembuluh darah terlihat di wajah Anda. Ini juga dapat menghasilkan benjolan kecil berisi nanah.</item>
+        <item>Eksim adalah istilah yang berhubungan dengan peradangan pada kulit. Gangguan ini juga dikenal sebagai dermatitis. Ketika terjadi, reaksi alergi pada kulit bisa ditandai dengan munculnya kemerahan, ruam, dan gatal-gatal.</item>
+    </string-array>
+    <integer-array name="skinDiseaseIcon">
+        <item>@drawable/acne</item>
+        <item>@drawable/rosacea</item>
+        <item>@drawable/dermatitis</item>
+    </integer-array>
+
+
+    <string-array name="beautyTips">
+        <item>Gunakan beberapa masker wajah untuk memaksimalkan hasil Anda.</item>
+        <item>Melembabkan wajah siang dan malam</item>
+        <item>Bersihkan wajah dua kali.</item>
+        <item>Bersihkan wajah dengan air dingin</item>
+        <item>Pijat wajah</item>
+
+    </string-array>
+    <string-array name="beautyDescription">
+        <item>Perawatan kulit bukanlah satu ukuran untuk semua, jadi menyesuaikan rutinitas Anda dapat membantu Anda mendapatkan hasil terbaik untuk kulit Anda. "Multi-masking adalah ketika beberapa masker wajah digunakan atau dilapisi secara bersamaan pada kulit untuk mengatasi masalah kulit yang berbeda pada satu waktu," jelas ahli kecantikan Kota New York, Cecilia Wong.</item>
+        <item>"Waktu terbaik untuk melembabkan adalah tepat setelah Anda selesai mandi dan sebelum tidur," jelas Dr. Janet Prystowsky M.D., seorang dokter kulit yang berbasis di NYC. Hindari losion dengan wewangian berat dan pastikan Anda menemukan pelembab yang cukup lembut untuk digunakan setiap hari tanpa iritasi.</item>
+        <item>Menggunakan dua pembersih membantu menghilangkan kotoran, riasan, dan minyak sepanjang hari.</item>
+        <item>Air panas terlalu kuat untuk wajah Anda. Gunakan air hangat atau dingin, dan hindari mencuci muka di kamar mandi kecuali Anda menurunkan suhunya.</item>
+        <item>Pijat wajah atau roller wajah dapat membantu menghilangkan kerutan pada kulit Anda. Alat pijat dapat meningkatkan aliran darah, membuat Anda terlihat terjaga dan segar.</item>
+    </string-array>
+
+    <string-array name="acneDailyRoutine">
+        <item>Bersihkan wajah dengan lembut</item>
+        <item>Jangan lupa untuk menerapkan obat perawatan jerawat Anda</item>
+        <item>Apply an oil free moisturizer</item>
+        <item>Jangan lupa gunakan tabir surya</item>
+        <item>Bersihkan lagi wajah di malam hari</item>
+        <item>Gunakan produk berbasis retinolt</item>
+    </string-array>
+
+    <integer-array name="acneDailyRoutineIcon">
+        <item>@drawable/foam</item>
+        <item>@drawable/facecleanser</item>
+        <item>@drawable/cream</item>
+        <item>@drawable/suncream</item>
+        <item>@drawable/night</item>
+        <item>@drawable/vitamin</item>
+    </integer-array>
+
+    <string-array name="acneProduct">
+        <item>COSRX AC Collection Acne Hero Kit Intensive Skin Care (Untuk kulit berjerawat)</item>
+
+    </string-array>
+
+    <string-array name="acneProductPrice">
+        <item>Rp279.650</item>
+        <item>RP153.000</item>
+    </string-array>
+
+    <integer-array name="acneProductImg">
+        <item>@drawable/cosrx_ac_collection</item>
+        <item>@drawable/amura_acne_serum</item>
+
+    </integer-array>
+
+    <string-array name="acneProductUrl">
+        <item>https://shopee.co.id/cosrxindonesia/9053402951</item>
+    </string-array>
+
+    <string-array name="rosaceaDailyRoutine">
+        <item>Cuci muka dengan pembersih ringan</item>
+        <item>Oleskan pelembab yang menghidrasi</item>
+        <item>Gunakan tabir surya setiap hari</item>
+        <item>Halus pada serum wajah yang menenangkan</item>
+        <item>Gabungkan masker yang menenangkan sekali atau dua kali seminggu</item>
+        <item>Konsultasikan dengan dokter kulit untuk perawatan tambahan</item>
+    </string-array>
+
+    <integer-array name="rosaceaDailyRoutineIcon">
+        <item>@drawable/foam</item>
+        <item>@drawable/cream</item>
+        <item>@drawable/suncream</item>
+        <item>@drawable/serum</item>
+        <item>@drawable/soothingmask</item>
+        <item>@drawable/dermatologist</item>
+    </integer-array>
+
+    <string-array name="rosaceaProduct">
+        <item>Natural Oud Sabun Muka Untuk Rosacea / Sabun Pelembab Untuk Kulit Rosacea</item>
+
+    </string-array>
+
+    <string-array name="rosaceaProductPrice">
+        <item>Rp95.000</item>
+    </string-array>
+
+    <integer-array name="rosaceaProductImg">
+        <item>@drawable/natural_oud_sabun_untuk_kulit_rosacea</item>
+
+    </integer-array>
+
+    <string-array name="rosaceaProductUrl">
+        <item>https://shopee.co.id/naturaloud.store/13242264554</item>
+    </string-array>
+
+    <string-array name="eczemaDailyRoutine">
+        <item>Di pagi hari, cuci muka dengan air saja</item>
+        <item>Melembabkan kulit Anda 2 hingga 3 kali sehari</item>
+        <item>Oleskan krim resep apa pun</item>
+        <item>Oleskan tabir surya jika Anda akan keluar hari ini</item>
+        <item>Pastikan pakaian Anda terbuat dari bahan yang tidak akan mengiritasi kulit Anda</item>
+        <item>Before bed, wash your face with a gentle cleanser to remove any dirt and buildup from the day</item>
+    </string-array>
+
+    <integer-array name="eczemaDailyRoutineIcon">
+        <item>@drawable/sun</item>
+        <item>@drawable/cream</item>
+        <item>@drawable/soothingmask</item>
+        <item>@drawable/suncream</item>
+        <item>@drawable/clothes</item>
+        <item>@drawable/night</item>
+    </integer-array>
+
+    <string-array name="eczemaProduct">
+        <item>Obat Salep Eksim Kering Ampuh Basah Gatal Gatel Kulit Panu Kurap Kutu Air Jamur Kadas Luka Diabetes</item>
+
+    </string-array>
+
+    <string-array name="eczemaProductPrice">
+        <item>Rp49.000</item>
+    </string-array>
+
+    <integer-array name="eczemaProductImg">
+        <item>@drawable/obat_salep_eksim_kering</item>
+
+    </integer-array>
+
+    <string-array name="eczemaProductUrl">
+        <item>https://shopee.co.id/clarissastoreid/7855136704</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="daily_trivia">Trivia Harian</string>
+    <string name="do_you_know_that_moisturizer_is_the_best_defense_against_dry_skin">Tahukah Anda bahwa pelembab adalah pertahanan terbaik melawan kulit kering?</string>
+    <string name="beauty_tips">Tips Kecantikan</string>
+    <string name="welcome">Selamat Datang</string>
+    <string name="common_facial_skin_disease">Penyakit Kulit Wajah Umum</string>
+    <string name="daily_treatment">Perawatan Harian</string>
+    <string name="disease_name">Nama Penyakit</string>
+    <string name="disease_description">Deskripsi Penyakit</string>
+    <string name="password_error">Password minimal 6 karakter</string>
+    <string name="login">Masuk</string>
+    <string name="does_not_have_an_account">Tidak punya akun?</string>
+    <string name="register">Daftar</string>
+    <string name="please_login_first">Tolong <font color="#63AAC5">masuk</font> terlebih dahulu</string>
+    <string name="fill_your_data_correctly">Isi <font color="#63AAC5">data</font> anda dengan benar</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="name">Nama</string>
+    <string name="account_created">Akun berhasil dibuat</string>
+    <string name="logout">Keluar</string>
+    <string name="home">Halaman Utama</string>
+    <string name="camera">Kamera</string>
+    <string name="profile">Profil</string>
+    <string name="change_language">Ganti Bahasa</string>
+    <string name="product_name">Nama produk</string>
+    <string name="time">time</string>
+    <string name="button">tombol</string>
+    <string name="create">Buat</string>
+    <string name="treatment_name_character">Karakter Nama Perawatan terlalu panjang</string>
+    <string name="time_format_doesnt_match">Format waktu tidak cocok</string>
+    <string name="capture_button">Tombol ambil gambar</string>
+    <string name="switch_camera">Ganti kamera</string>
+    <string name="image_preview">Pratinjau gambar</string>
+    <string name="scan">Pindai</string>
+    <string name="mirror">Balik\nGambar</string>
+    <string name="result_title">Hasil</string>
+    <string name="failed_to_load_camera">Gagal menampilkan Kamera</string>
+    <string name="permission_not_granted">Tidak mendapatkan permission.</string>
+    <string name="failed_take_photo">Gagal menangkap gambar</string>
+    <string name="solusi">Solusi</string>
+    <string name="confirm">Konfirmasi</string>
+    <string name="store">Toko</string>
+
+    <string name="acne">Jerawat</string>
+    <string name="rosacea">Rosacea</string>
+    <string name="eczema">Eksim</string>
+    <string name="normal" translatable="false">Normal</string>
+
+    <string name="acne_description">Jerawat adalah kondisi kulit yang terjadi ketika folikel rambut tersumbat oleh minyak dan sel kulit mati. Ini menyebabkan whiteheads, komedo atau jerawat. Jerawat paling umum di kalangan remaja, meskipun itu mempengaruhi orang-orang dari segala usia.</string>
+    <string name="rosacea_description">Rosacea (roe-ZAY-she-uh) adalah kondisi kulit umum yang menyebabkan merona atau kemerahan dan pembuluh darah terlihat di wajah Anda. Ini juga dapat menghasilkan benjolan kecil berisi nanah.</string>
+    <string name="eczema_description">Eksim adalah istilah yang berhubungan dengan peradangan pada kulit. Gangguan ini juga dikenal sebagai dermatitis. Ketika terjadi, reaksi alergi pada kulit bisa ditandai dengan munculnya kemerahan, ruam, dan gatal-gatal.</string>
+    <string name="normal_description">Kulit anda normal, berbahagialah :).</string>
+
+    <string name="price">Harga</string>
+    <string name="re_type_password">Ketik Ulang Password</string>
+    <string name="time_format" translatable="false">:</string>
+    <string name="tab_text_1">Rutinitas harian</string>
+    <string name="tab_text_2">Rutinitas Skincare</string>
+    <string name="create_new_daily_skincare_routine">Buat Rutinitas Perawatan Kulit Harian Baru</string>
+    <string name="set_time">Atur waktu</string>
+    <string name="example_20_30">Contoh: 20:30, 09:30</string>
+    <string name="new_treatment_name">Nama Perawatan Baru</string>
+    <string name="example_apply_moisturizer">Contoh: Oleskan Pelembab</string>
+    <string name="minute">Menit</string>
+    <string name="hour">Jam</string>
+    <string name="email_already_registered">Email sudah terdaftar</string>
+    <string name="solution_text">Berikut Adalah Beberapa Rekomendasi Produk untuk</string>
+    <string name="upload_failed">Unggah Gagal</string>
+    <string name="percentage" translatable="false">%1$s %%</string>
+
+    <string name="app_description">SKUT (Solusi Kulit) hadir dalam bentuk APP yang menyediakan AI yang dapat mendeteksi penyakit kulit wajah dan memberikan rekomendasi perawatan dan produk. Produk kami dapat mendeteksi penyakit kulit pada wajah yang sering dialami oleh masyarakat antara lain jerawat, eksim, dan rosacea</string>
+    <string name="tips_kecantikan">Tips Kecantikan</string>
+    <string name="mulai_peduli_dengan_kulitmu_untuk_mendapatkan_hasil_maksimal">Mulai peduli dengan kulitmu untuk mendapatkan hasil maksimal</string>
+    <string name="cari_tahu_tips_tips_untuk_merawat_kulitmu">Cari tahu tips-tips untuk merawat kulitmu</string>
+    <string name="lihat_perkembangan_kulitmu_lewat_riwayat_scan_wajah">Lihat perkembangan kulitmu lewat riwayat scan wajah</string>
+    <string name="riwayat_scan_wajah">Riwayat Scan Wajah</string>
+    <string name="scan_wajah">Ambil Foto</string>
+    <string name="lakukan_scan_pada_wajah_untuk_mengenal_wajahmu_lebih_lanjut">Lakukan scan pada wajah untuk mengenal wajahmu lebih lanjut</string>
+    <string name="result">Hasil:</string>
+    <string name="percentageResult">Percentage</string>
+    <string name="how_to_take_a_picture">Bagaimana cara mengambil Foto</string>
+    <string name="how_to_description">Silahkan ambil foto pada area kulit yang terinfeksi penyakit. Anda dapat melihat contohnya pada gambar berikut</string>
+    <string name="gagal_ambil_history_data">Gagal mengambil riwayat scan wajah, periksa kembali koneksi anda</string>
+    <string name="about">About</string>
+    <string name="ok" translatable="false">OK</string>
+    <string name="daily_ntreatment">Perawatan\nHarian</string>
+    <string name="next">Lanjut</string>
+    <string name="icon">icon</string>
+
 </resources>

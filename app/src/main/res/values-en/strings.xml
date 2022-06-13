@@ -182,6 +182,12 @@
     <string name="about">About</string>
     <string name="next">Next</string>
     <string name="icon">icon</string>
+    <string name="login_succes">You have successfully logged in</string>
+    <string name="wrong_email">User not registered</string>
+    <string name="enter_email">Enter email</string>
+    <string name="enter_password">Enter password</string>
+    <string name="enter_name">Enter name</string>
+    <string name="password_does_not_match">Password doesn\'t match</string>
 
 
 </resources>

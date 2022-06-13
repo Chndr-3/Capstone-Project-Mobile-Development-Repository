@@ -83,19 +83,19 @@ class RegisterActivity : AppCompatActivity() {
             val password2 = binding.passwordEditText2.text.toString()
             when {
                 name.isEmpty() -> {
-                    binding.nameEditTextLayout.error = "Masukkan email"
+                    binding.nameEditTextLayout.error = getString(R.string.enter_name)
                 }
                 email.isEmpty() -> {
-                    binding.emailEditTextLayout.error = "Masukkan email"
+                    binding.emailEditTextLayout.error = getString(R.string.enter_email)
                 }
                 password.isEmpty() -> {
-                    binding.passwordEditTextLayout.error = "Masukkan password"
+                    binding.passwordEditTextLayout.error = getString(R.string.enter_password)
                 }
                 password2.isEmpty() -> {
-                    binding.passwordEditTextLayout.error = "Masukkan password"
+                    binding.passwordEditTextLayout.error = getString(R.string.enter_password)
                 }
                 password2 != password -> {
-                    binding.passwordEditTextLayout2.error = "Password tidak sesuai"
+                    binding.passwordEditTextLayout2.error = getString(R.string.password_does_not_match)
                 }
                 else -> {
                     registerViewModel.registerUser(RegisterModel(name, email, password, password2))

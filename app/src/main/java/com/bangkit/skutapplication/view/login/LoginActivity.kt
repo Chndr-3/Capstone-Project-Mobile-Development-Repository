@@ -14,6 +14,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
+import com.bangkit.skutapplication.R
 import com.bangkit.skutapplication.databinding.ActivityLoginBinding
 import com.bangkit.skutapplication.datastore.UserPreference
 import com.bangkit.skutapplication.datastore.ViewModelFactory
@@ -64,6 +65,12 @@ class LoginActivity : AppCompatActivity() {
             showLoading(it)
         }
 
+        loginViewModel.isSuccess.observe(this) {
+            if (!it) {
+                Toast.makeText(this, getString(R.string.wrong_email), Toast.LENGTH_SHORT).show()
+            }
+        }
+
         loginViewModel.loginResult.observe(this) { result ->
             loginViewModel.login(result.token.toString())
 
@@ -74,8 +81,8 @@ class LoginActivity : AppCompatActivity() {
             } else {
                 AlertDialog.Builder(this).apply {
                     setTitle("Hore!")
-                    setMessage("Anda berhasil login")
-                    setPositiveButton("Lanjut") { _, _ ->
+                    setMessage(getString(R.string.login_succes))
+                    setPositiveButton(getString(R.string.next)) { _, _ ->
                         val intent = Intent(context, MainActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                         startActivity(intent)
@@ -85,14 +92,6 @@ class LoginActivity : AppCompatActivity() {
                     show()
                 }
             }
-
-//            loginViewModel.isSuccess.observe(this) { isSuccess ->
-//                if (isSuccess) {
-
-//                } else {
-//                    Toast.makeText(this, result.message, Toast.LENGTH_SHORT).show()
-//                }
-
         }
     }
 
@@ -109,17 +108,12 @@ class LoginActivity : AppCompatActivity() {
             val password = myEditText.text.toString()
             when {
                 email.isEmpty() -> {
-                    binding.emailEditTextLayout.error = "Masukkan email"
+                    binding.emailEditTextLayout.error = getString(R.string.enter_email)
+
                 }
                 password.isEmpty() -> {
-                    binding.passwordEditTextLayout.error = "Masukkan password"
+                    binding.passwordEditTextLayout.error = getString(R.string.enter_password)
                 }
-//                email != "skut@gmail.com" -> {
-//                    binding.emailEditTextLayout.error = "Email tidak sesuai"
-//                }
-//                password != "skutapp" -> {
-//                    binding.passwordEditTextLayout.error = "Password tidak sesuai"
-//                }
                 else -> {
                     loginViewModel.loginUser(LoginModel(email, password))
                 }

@@ -244,5 +244,11 @@
     <string name="daily_ntreatment">Perawatan\nHarian</string>
     <string name="next">Lanjut</string>
     <string name="icon">icon</string>
+    <string name="login_succes">Anda berhasil login</string>
+    <string name="wrong_email">Email tidak terdaftar</string>
+    <string name="enter_email">Masukkan email</string>
+    <string name="enter_password">Masukkan password</string>
+    <string name="enter_name">Masukkan nama</string>
+    <string name="password_does_not_match">Password tidak sesuai</string>
 
 </resources>
